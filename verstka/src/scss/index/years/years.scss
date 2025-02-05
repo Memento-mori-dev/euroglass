@@ -1,0 +1,52 @@
+.years{
+    background-color: var(--orange);
+
+    &__sub-title{
+        font-family: var(--font-family);
+
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+        text-align: center;
+
+        color: var(--white-t-08);
+    }
+
+    &__title{
+        margin-top: 8px;
+
+        text-align: center;
+        color: var(--white);
+    }
+
+    &__content{
+        margin-top: 24px;
+
+        display: flex;
+    }
+
+    &__img{
+        aspect-ratio: 1;
+
+        background-color: var(--orange);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > img{
+            aspect-ratio: 1;
+        }
+    }
+
+    &__number{
+        font-family: var(--second-family);
+
+        color: var(--orange);
+    }
+
+    &__text{
+        font-family: var(--font-family);
+        color: var(--grey-t);
+    }
+}

@@ -1,0 +1,24 @@
+:root{
+    --orange: #EC503C;
+    --white-t-08: rgba(255, 255, 255, 0.8);
+    --white: #fff;
+    --grey-t: #504f5e;
+
+    --font-family: "Quarion", sans-serif;
+    --second-family: "Montserrat", sans-serif;
+    --third-family: "Tektur", sans-serif;
+}
+
+.wrapper{
+    margin: 0 auto;
+
+    width: 1328px;
+}
+
+.section-title{
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 38px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
