@@ -1,5 +1,9 @@
 @media (max-width: 1400px) and (min-width: 860px) {
-    body{
-        background-color: red;
+.years{
+    padding: 120px 0;
+
+    &__number{
+        margin-top: 40px;
     }
+}
 }

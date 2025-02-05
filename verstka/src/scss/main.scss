@@ -22,3 +22,12 @@
     letter-spacing: -0.02em;
     text-transform: uppercase;
 }
+
+@media (max-width: 1400px){
+    .wrapper{
+        margin: 0 20px;
+
+        width: auto;
+    }
+}
+

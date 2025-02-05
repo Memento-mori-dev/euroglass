@@ -21,8 +21,10 @@
 
     &__content{
         margin-top: 24px;
+    }
 
-        display: flex;
+    &__item{
+        background-color: var(--white);
     }
 
     &__img{

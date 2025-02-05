@@ -3,6 +3,7 @@
     padding: 130px 0;
 
     &__content{
+        display: flex;
         justify-content: space-between;
     }
     
@@ -10,8 +11,6 @@
         width: calc(33.3% - 0.66px);
 
         padding: 32px;
-
-        background-color: var(--white);
     }
 
     &__img{
