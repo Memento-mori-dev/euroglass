@@ -35,7 +35,11 @@
     color: var(--black);
 }
 
-
+@media (max-width: 860px) {
+.section-title{
+    font-size: 26px;
+}
+}
 // block
 
 .block{
@@ -60,5 +64,34 @@
         margin: 140px 20px 0 20px;
 
         width: auto;
+    }
+}
+
+// btn
+
+.btn{
+    padding: 16px 30px;
+
+    border: 1px solid var(--orange);
+
+    text-align: center;
+
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+
+    &__transparent{
+        background: none;
+        color: var(--orange);
+    }
+
+    &__orange{
+        background: var(--orange);
+        color: var(--white);
+    }
+
+    &__100-per{
+        width: 100%;
     }
 }

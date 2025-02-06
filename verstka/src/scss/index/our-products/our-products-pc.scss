@@ -1,1 +1,24 @@
-@media (min-width: 860px) {}
+@media (min-width: 860px) {
+.our-products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__item{
+        width: calc(33.3% - 16px);
+        min-height: 320px;
+    }
+    &__title{
+        font-weight: 500;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+    }
+    &__text{
+        margin-top: 6px;
+
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+    }
+}
+}

@@ -1,3 +1,33 @@
 .our-products{
-    
+    margin: -8px;
+
+    &__item{
+        display: block;
+
+        margin: 8px;
+
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__title{
+        font-family: var(--font-family);
+        color: var(--white);
+    }
+
+    &__text{
+        font-family: var(--font-family);
+        color: var(--white-t-08);
+    }
+
+    & > *{
+        text-decoration: none;
+    }
 }
