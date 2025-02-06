@@ -1,0 +1,35 @@
+.banner{
+    background-color: var(--blue);
+
+    &__title{
+        font-family: var(--second-family);
+        color: var(--black);
+    }
+    &__text{
+        margin-top: 12px;
+
+        font-family: var(--font-family);
+        color: var(--grey-t);
+    }
+    &__link{
+        display: inline-block;
+        
+        font-family: var(--font-family);
+        color: var(--orange);
+        
+        text-decoration: none;
+    }
+
+    position: relative;
+
+    &__img{
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        height: 100%;
+        width: 54%;
+
+        object-fit: cover;
+    }
+}
