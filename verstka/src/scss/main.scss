@@ -70,7 +70,7 @@
 // btn
 
 .btn{
-    padding: 16px 30px;
+    padding: 15px 29px 13px 29px;
 
     border: 1px solid var(--orange);
 
@@ -94,4 +94,14 @@
     &__100-per{
         width: 100%;
     }
+}
+
+@media (max-width: 860px){
+.btn{
+    padding: 13px 25px 11px 25px;
+
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+}
 }
