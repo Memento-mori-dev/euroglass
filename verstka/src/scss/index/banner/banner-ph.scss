@@ -1,1 +1,39 @@
-@media (max-width: 860px) {}
+@media (max-width: 860px) {
+.banner{
+    & .wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &__img{
+        margin: 0 -20px;
+
+        height: 280px;
+
+        object-fit: cover;
+    }
+
+    &__content{
+        padding-top: 28px;
+        padding-bottom: 21px;
+    }
+
+    &__title{
+        font-weight: 500;
+        font-size: 26px;
+        letter-spacing: -0.01em;
+    }
+    &__text{
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: -0.01em;        
+    }
+    &__link{
+        margin-top: 4px;
+
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+    }
+}
+}

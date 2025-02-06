@@ -4,6 +4,7 @@
     &__title{
         font-family: var(--second-family);
         color: var(--black);
+        text-transform: uppercase;
     }
     &__text{
         margin-top: 12px;
@@ -18,18 +19,5 @@
         color: var(--orange);
         
         text-decoration: none;
-    }
-
-    position: relative;
-
-    &__img{
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        height: 100%;
-        width: 54%;
-
-        object-fit: cover;
     }
 }

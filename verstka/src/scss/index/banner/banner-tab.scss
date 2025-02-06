@@ -1,1 +1,36 @@
-@media (max-width: 1400px) and (min-width: 860px) {}
+@media (max-width: 1400px) and (min-width: 860px) {
+.banner{
+    padding: 0;
+
+    & .wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    &__content{
+        width: 100%;
+
+        padding: 28px 0;
+    }
+
+    &__title{
+        font-weight: 600;
+        font-size: 26px;
+        letter-spacing: -0.02em;
+    }
+
+    &__img{
+        position: static;
+
+        margin: 0 -20px;
+
+        max-height: 380px;
+
+        width: calc(100% + 40px);
+    }
+
+    &__link{
+        margin-top: 12px;
+    }
+}
+}
