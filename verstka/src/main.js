@@ -50,16 +50,14 @@ const swiperWorks = new Swiper('.swiper-works', {
 
   breakpoints: {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 1.06,
+      spaceBetween: 12,
     },
     660: {
-      slidesPerView: 3,
+      slidesPerView: 2,
     },
     900: {
-      slidesPerView: 4,
-    },
-    1000: {
-      slidesPerView: 5.5,
+      slidesPerView: 3,
     },
     1400: {
       slidesPerView: 4,

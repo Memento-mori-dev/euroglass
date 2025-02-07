@@ -1,1 +1,23 @@
-@media (max-width: 1400px) and (min-width: 860px) {}
+@media (max-width: 1400px) and (min-width: 860px) {
+.completed-works{
+    &__btn-pc{
+        display: none;
+    }
+    &__btn-ph{
+        margin-top: 24px;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    & .swiper-works{
+        padding-bottom: 20px;
+    }
+
+    & .swiper-pagination{
+        bottom: -4px;
+
+        display: block;
+    }
+}
+}
