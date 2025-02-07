@@ -1,5 +1,56 @@
 .certificates{
     margin-top: 24px;
 
-    background-color: var(--blue);
+    padding: 0 16px;
+
+    &  .swiper-wrapper{
+        padding: 16px 0;
+
+        &::after{
+            content: '';
+
+            position: absolute;
+            top: 0;
+            left: -100%;
+            
+            width: 10000%;
+            height: 100%;
+
+            background-color: var(--blue);
+
+            z-index: -1;
+        }
+    }
+
+
+    position: relative;
+    &::before{
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 16px;
+        height: 100%;
+
+        background-color: var(--blue);
+
+        z-index: 10;
+    }
+
+    &::after{
+        content: '';
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 16px;
+        height: 100%;
+
+        background-color: var(--blue);
+
+        z-index: 10;
+    }
 }

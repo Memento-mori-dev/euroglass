@@ -1,13 +1,15 @@
 @media (min-width: 860px) {
 .certificates{
-    padding: 16px;
-
     &__img{
         width: 100%;
-        height: 295px;
+        max-height: 295px;
     }
 
     & .swiper-pagination{
+        display: none;
+    }
+
+    &__btn-tb{
         display: none;
     }
 }
