@@ -1,15 +1,19 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    
-    <link rel="stylesheet" href="src/scss/style.scss">
-  </head>
-  <body>
-    <section class="banner">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="src/scss/style.scss">
+</head>
+
+<body>
+  <!-- <section class="banner">
       <div class="wrapper">
         <div class="banner__content">
           <p class="banner__title">
@@ -28,9 +32,9 @@
 
         <img src="src/img/page/index/banner.png" alt="" class="banner__img">
       </div>
-    </section>
+    </section> -->
 
-    <!-- <div class="block">
+  <!-- <div class="block">
       <div class="block__header">
         <p class="section-title">Наша продукция</p>
       </div>
@@ -70,7 +74,7 @@
       </div>
     </div> -->
 
-    <!-- <section class="years">
+  <!-- <section class="years">
       <div class="wrapper">
         <p class="years__sub-title">Мы в цифрах</p>
         <p class="years__title section-title">16 лет на рынке остекления</p>
@@ -106,7 +110,7 @@
       </div>
     </section> -->
 
-    <!-- <div class="block">
+  <!-- <div class="block">
       <p class="section-title">Контакты</p>
 
       <section class="contacts">
@@ -149,5 +153,59 @@
       </section>
     </div> -->
 
-  </body>
+  <div class="block">
+    <div class="block__header">
+      <p class="section-title">Сертификаты и лецензии</p>
+
+      <a href="#" class="btn btn__transparent">Все сертификаты</a>
+    </div>
+    <section class="certificates">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="src/img/page/index/certificates.png" alt="">
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+      </div>
+    </section>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
 </html>
