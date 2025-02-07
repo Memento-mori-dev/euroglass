@@ -118,6 +118,12 @@
 
     background-color: var(--white);
 }
+.swiper-button-next{
+    right: 8px;
+}
+.swiper-button-prev{
+    left: 8px;
+}
 
 .swiper-button-next:after, .swiper-button-prev:after{
     font-size: 0;
@@ -136,6 +142,10 @@
     background-image: url(../img/svg/slider-arrow-left.svg);
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    opacity: 0;
 }
 
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
