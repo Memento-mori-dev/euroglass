@@ -1,0 +1,26 @@
+.completed-works{
+    margin-top: 24px;
+
+    &__img{
+        width: 100%;
+        aspect-ratio: 1;
+
+        padding: 20px;
+
+        display: flex;
+        align-items: end;
+
+        & p{
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+            color: var(--white);
+
+            display: -webkit-box;
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}
