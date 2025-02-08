@@ -3,4 +3,17 @@
 
     font-family: var(--second-family);
     color: var(--white);
+
+
+    &__big-img{
+        transition: all .3s;
+
+        &.transition{
+            filter: blur(4px);
+        }
+    }
+
+    &__img{
+        transition: all .3s
+    }
 }

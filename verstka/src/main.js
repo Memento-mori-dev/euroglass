@@ -65,7 +65,9 @@ const swiperWorks = new Swiper('.swiper-works', {
   }
 });
 
-const swiper = new Swiper('.swiper', {
+// Production
+
+const swiperProduction = new Swiper('.swiper-production', {
   // Optional parameters
   direction: 'vertical',
   slidesPerView: 5,
@@ -76,3 +78,34 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-pagination',
   },
 });
+
+let buttonsProduction = document.querySelectorAll('.production__img'),
+    imgProduction = document.querySelector('.production__big-img');
+
+buttonsProduction.forEach(button => {
+  button.onclick = function () {
+    let active = document.querySelector('.production__img.active');
+        
+    active.classList.remove('active');
+    button.classList.add('active');
+
+
+    let newImg = button.style.backgroundImage,
+        newText = button.textContent,
+        marker = imgProduction.classList.contains('transition');
+
+    imgProduction.style.backgroundImage = newImg;
+    imgProduction.textContent = newText;
+
+    if (!marker) {
+      imgProduction.classList.add('transition');
+
+      setTimeout(() => {
+        imgProduction.classList.remove('transition');
+      }, 300);
+    }
+    
+  }
+})
+
+// Production
