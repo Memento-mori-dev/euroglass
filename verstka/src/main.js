@@ -64,3 +64,15 @@ const swiperWorks = new Swiper('.swiper-works', {
     },
   }
 });
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  slidesPerView: 5,
+  spaceBetween: 16,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});

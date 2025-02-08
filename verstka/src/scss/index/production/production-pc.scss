@@ -1,0 +1,56 @@
+@media (min-width: 860px) {
+.production{
+    height: 700px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__big-img{
+        width: calc(100% - 336px);
+
+        padding: 40px;
+
+        font-weight: 600;
+        font-size: 32px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+
+    &__img{
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        border: none;
+        color: rgba(0, 0, 0, 0);
+
+        cursor: pointer;
+
+        &.active{
+            position: relative;
+
+            &::before{
+                content: '';
+
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                width: 100%;
+                height: 100%;
+
+                background: rgba(236, 80, 60, 0.4);
+            }
+        }
+    }
+
+    & .swiper{
+        margin: 0;
+        width: 320px;
+    }
+}
+}
