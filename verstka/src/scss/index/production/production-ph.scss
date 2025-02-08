@@ -1,1 +1,35 @@
-@media (max-width: 860px) {}
+@media (max-width: 860px) {
+.production{
+
+    &__big-img{
+        margin: 0 -20px;
+
+        height: 320px;
+
+        padding: 20px;
+
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+    }
+
+    &__img{
+        border: none;
+
+        background-size: cover;
+    }
+
+    & .swiper{
+        margin: 12px 0 0 0;
+
+        height: 100px;
+
+        padding-bottom: 20px;
+    }
+
+    & .swiper-pagination{
+        bottom: -4px;
+    }
+}
+}

@@ -76,7 +76,20 @@ const swiperProduction = new Swiper('.swiper-production', {
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
-  },
+  },breakpoints: {
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 12,
+      direction: 'horizontal',
+    },
+    600: {
+      slidesPerView: 2,
+      direction: 'horizontal',
+    },
+    1400: {
+      slidesPerView: 5,
+    },
+  }
 });
 
 let buttonsProduction = document.querySelectorAll('.production__img'),
