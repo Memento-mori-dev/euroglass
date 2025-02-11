@@ -1,1 +1,126 @@
-@media (max-width: 1400px) and (min-width: 860px) {}
+@media (max-width: 1400px) and (min-width: 860px) {
+.header{
+    padding: 24px 0;
+
+    &__menu{
+        display: none;
+    }
+
+    &__sub-menu{
+        display: none;
+    }
+
+    &__btn-pc{
+        display: none;
+    }
+    &__btn-ph{
+        display: block;
+    }
+
+    &__buttons{
+        margin-left: 16px;
+
+        display: flex;
+    }
+
+    &__btn-menu{
+        margin-left: 16px;
+
+        width: 50px;
+        aspect-ratio: 1;
+
+        background-color: var(--orange);
+        border: none;
+        
+        background-image: url(/src/img/page/main/menu.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+
+
+    }
+
+    &__phone-menu{
+        top: 74px;
+    }
+    &-phone-menu{
+        &__content{
+            padding: 0 20px 4px 20px;
+        }
+
+        &__menu{
+
+            & > li{
+
+                & > a{
+                    padding: 12px 28px 12px 0;
+
+                    font-weight: 400;
+                    font-size: 18px;
+                    letter-spacing: -0.01em;
+
+                    &::after {
+                        top: 15px;
+                    }
+                }
+            }
+        }
+
+        &__sub-menu{
+        }
+
+        &-sub-menu__content{
+            margin-top: 4px;
+            margin-bottom: 16px;
+
+            & li{
+                margin-top: 16px;
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+
+            & a{
+                font-weight: 400;
+                font-size: 14px;
+                letter-spacing: -0.01em;
+            }
+        }
+    }
+
+    &__phone-next{
+        top: 74px;
+    }
+    &-phone-next{
+        &__item{
+
+        }
+
+        &__header{
+            padding: 20px 16px;
+        }
+
+        &__name{
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        &__content{
+            padding: 16px 20px 20px 20px;
+        }
+
+        &__element{
+            &:nth-child(n + 3){
+                margin-top: 24px;
+            }
+            width: calc(50% - 8px); 
+        }
+
+        &__title{
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+        }
+    }
+}
+}
