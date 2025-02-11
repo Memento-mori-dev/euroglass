@@ -1,6 +1,12 @@
-.header{
-    padding: 28px 0;
-    
+.header{    
+    &__logo{
+        & img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
     &__wrapper{
         display: flex;
         justify-content: space-between;
@@ -42,6 +48,15 @@
             color: var(--grey-t);
             text-decoration: none;
         }
+    }
+
+    &__btn-menu{
+        background-color: var(--orange);
+        border: none;
+        
+        background-image: url(/src/img/page/main/menu.svg);
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     &__phone-menu{

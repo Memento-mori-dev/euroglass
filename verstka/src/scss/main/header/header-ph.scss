@@ -1,1 +1,140 @@
-@media (max-width: 860px) {}
+@media (max-width: 860px) {
+.header{
+    &__menu{
+        display: none;
+    }
+
+    &__sub-menu{
+        display: none;
+    }
+
+    &__btn-pc{
+        display: none;
+    }
+    &__btn-ph{
+        display: none;
+    }
+
+    &__contact{
+        display: none;
+    }
+
+    &-sub-menu__content{
+        display: none;
+    }
+
+    &__phone-menu{
+        top: 72px;
+
+        padding: 0 20px;
+    }
+
+    &__logo{
+        width: 134.4px;
+    }
+
+    &__btn-menu{
+        display: block;
+
+        width: 40px;
+        aspect-ratio: 1;
+    }
+
+    & > .wrapper{
+        padding: 16px 0;
+    }
+
+    &__pre{
+        padding: 12px 0;
+
+        background-color: var(--blue);
+
+        & > .wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &-pre{
+        &__phone{
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            color: var(--orange);
+
+            text-decoration: none;
+        }
+
+        &__mail{
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: -0.01em;
+            color: var(--grey-t);
+
+            text-decoration: none;
+        }
+    }
+
+    &-phone-menu__menu > li > a{
+        padding: 12px 0;
+
+        &::after{
+            top: 13.5px;
+        }
+
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+    }
+
+    &-phone-menu-sub-menu__content{
+        margin-top: 4px;
+        margin-bottom: 16px;
+
+        & > li{
+            margin-top: 16px;
+            &:first-child{
+                margin-top: 0;
+            }
+
+            & > a{
+                font-weight: 400;
+                font-size: 14px;
+                letter-spacing: -0.01em;
+            }
+        }
+    }
+
+    &__phone-next{
+        top: 72px;
+    }
+
+    &-phone-next__header{
+        padding: 13.5px 20px;
+    }
+    &-phone-next__name{
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+    }
+    &-phone-next__content{
+        padding: 16px 20px;
+    }
+    &-phone-next__element{
+        margin-top: 24px;
+        &:first-child{
+            margin-top: 0;
+        }
+
+        width: 100%;
+    }
+
+    &-phone-next__title{
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+    }
+}
+}
