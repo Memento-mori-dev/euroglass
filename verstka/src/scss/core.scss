@@ -383,3 +383,53 @@ template {
     padding: 0;
     box-sizing: border-box;
 }
+
+
+@font-face {
+    font-family: "Quarion";
+    src: local("Quarion-Book"),
+      local("Quarion Book"),
+      url("../fonts/quarion/Quarion-Book.ttf") format("ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Quarion";
+    src: local("Quarion-SemiBold"),
+      local("Quarion SemiBold"),
+      url("../fonts/quarion/Quarion-SemiBold.ttf") format("ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Quarion";
+    src: local("Quarion-Medium"),
+      local("Quarion Medium"),
+      url("../fonts/quarion/Quarion-Medium.ttf") format("ttf");
+    font-weight: 500;
+}
+
+
+@font-face {
+    font-family: "Quarion";
+    src: local("Quarion-Light"),
+      local("Quarion Light"),
+      url("../fonts/quarion/Quarion-Light.ttf") format("ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat-SemiBold"),
+      local("Montserrat SemiBold"),
+      url("../fonts/montserrat/Montserrat-SemiBold.ttf") format("ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Tektur";
+    src: local("Tektur-Medium"),
+      local("Tektur Medium"),
+      url("../fonts/tektur/Tektur-Medium.ttf") format("ttf");
+    font-weight: 500;
+}
