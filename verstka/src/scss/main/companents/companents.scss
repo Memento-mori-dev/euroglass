@@ -1,0 +1,28 @@
+.pagination{
+    display: flex;
+    align-items: center;
+
+    &__item{
+        aspect-ratio: 1;
+
+        margin-left: 8px;
+        &:first-child{
+            margin-left: 0;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: none;
+        border: none;
+
+        font-family: var(--font-family);
+        color: var(--orange);
+
+        &.active{
+            background-color: var(--orange);
+            color: var(--white);
+        }
+    }
+}

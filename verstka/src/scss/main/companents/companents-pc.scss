@@ -1,0 +1,13 @@
+@media (min-width: 860px) {
+.pagination{
+    &__item{
+        width: 52px;
+
+        border: 1px solid #ec503c;
+
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+    }
+}
+}
