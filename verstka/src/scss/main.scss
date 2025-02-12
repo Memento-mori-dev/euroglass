@@ -5,6 +5,7 @@
     --grey-t: #504f5e;
     --black: #111;
     --blue: #F2F6F8;
+    --grey-white: #F7F7F7;
 
     --font-family: "Quarion", sans-serif;
     --second-family: "Montserrat", sans-serif;
@@ -62,6 +63,13 @@
     &__first{
         margin-top: 32px;
     }
+
+    &_width{
+        margin-left: 0;
+        margin-right: 0;
+
+        width: 100%;
+    }
 }
 
 
@@ -70,6 +78,13 @@
         margin: 140px 20px 0 20px;
 
         width: auto;
+
+        &_width{
+            margin-left: 0;
+            margin-right: 0;
+    
+            width: 100%;
+        }
     }
 }
 

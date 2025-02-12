@@ -1,0 +1,75 @@
+@media (min-width: 860px) {
+.card{
+    &__baner{
+        padding: 40px 0;
+
+        background-color: var(--grey-white);
+
+        & .wrapper{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &-baner{
+        &__img{
+            margin: -40px 0;
+
+            width: 520px;
+            height: 440px;
+
+            object-fit: contain;
+            object-position: center;
+        }
+
+        &__content{
+            width: calc(100% - 560px);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &__title{
+            font-weight: 600;
+            font-size: 32px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+        &__description{
+            margin-top: 12px;
+
+            max-width: 728px;
+
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+        &__pre-price{
+            margin-top: 24px;
+
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+        &__price{
+            margin-top: 2px;
+
+            font-weight: 600;
+            font-size: 32px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        &__extra{
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        &__link{
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+    }
+}
+}
