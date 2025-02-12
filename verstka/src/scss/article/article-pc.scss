@@ -1,0 +1,52 @@
+@media (min-width: 860px) {
+.article{
+    &__content{
+        margin: 12px -12px -12px -12px;
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item{
+        margin: 12px;
+
+        width: calc(33.3% - 24px);
+    }
+    &-item{
+        &__img{
+            height: 240px;
+        }
+
+        &__title{
+            margin-top: 16px;
+
+            font-weight: 500;
+            font-size: 22px;
+            letter-spacing: -0.01em;
+        }
+
+        &__text{
+            margin-top: 8px;
+
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+        &__link{
+            margin-top: 4px;
+
+            font-size: 18px;
+            letter-spacing: -0.01em;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+    }
+
+    &__footer{
+        margin-top: 24px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+}
+}

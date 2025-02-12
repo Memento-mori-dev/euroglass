@@ -1,0 +1,26 @@
+.article{
+    margin-top: 40px;
+
+    &-item{
+        &__img{
+            width: 100%;
+        }
+
+        &__title{
+            font-family: var(--font-family);
+            color: var(--black);
+        }
+        &__text{
+            font-family: var(--font-family);
+            color: var(--grey-t);
+        }
+        &__link{
+            font-family: var(--font-family);
+            color: var(--orange)
+        }
+    }
+}
+
+@import url(article-pc.scss);
+@import url(article-tab.scss);
+@import url(article-ph.scss);

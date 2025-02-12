@@ -47,6 +47,9 @@
 
 .block{
     margin: 160px auto 0 auto;
+    &:first-child{
+        margin-top: 40px;
+    }
 
     width: 1328px;
 
