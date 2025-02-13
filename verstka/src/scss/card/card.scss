@@ -99,6 +99,37 @@
             }
         }
     }
+
+    &__form{
+        background-image: url(../../img/page/card/card-form.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+    }
+    &-form{
+        &__title{
+            font-family: var(--second-family);
+            color: var(--white);
+            text-transform: uppercase;
+        }
+        &__text{
+            font-family: var(--font-family);
+            color: var(--white);
+
+            opacity: .8;
+        }
+
+        &__conditions{
+            font-family: var(--font-family);
+            color: var(--white);
+            opacity: .8;
+
+            & a{
+                font-family: var(--font-family);
+                color: var(--white);
+            }
+        }
+    }
 }
 
 @import url(card-pc.scss);

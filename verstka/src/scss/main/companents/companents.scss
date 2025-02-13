@@ -26,3 +26,51 @@
         }
     }
 }
+
+.input{
+    padding: 15px 19px 14px 19px;
+
+    border: 1px solid var(--input);
+
+    font-family: var(--font-family);
+    color: var(--black);
+
+    &::placeholder {
+        color: var(--input);
+    }
+}
+
+.file{
+    padding-left: 40px;
+
+    background: 0;
+    border: none;
+
+    background-image: url(../../../img/svg/clip.svg);
+    background-repeat: no-repeat;
+    background-size: 32px;
+    background-position: center left;
+    
+    &__name{
+        margin-left: -11px;
+
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+        color: var(--white);
+    }
+
+    &__description{
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: -0.01em;
+        color: var(--white);
+        opacity: .8;
+    }
+
+    & input{
+        display: none;
+    }
+}

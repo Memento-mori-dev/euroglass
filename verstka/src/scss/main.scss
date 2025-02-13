@@ -6,6 +6,7 @@
     --black: #111;
     --blue: #F2F6F8;
     --grey-white: #F7F7F7;
+    --input: #a4a3ad;
 
     --font-family: "Quarion", sans-serif;
     --second-family: "Montserrat", sans-serif;
@@ -107,6 +108,12 @@
     &__transparent{
         background: none;
         color: var(--orange);
+    }
+
+    &__transparent-white{
+        background: none;
+        color: var(--white);
+        border-color: var(--white);
     }
 
     &__orange{
