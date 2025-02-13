@@ -56,6 +56,49 @@
             text-decoration: none;
         }
     }
+
+    &__description{
+        margin-top: 40px
+    }
+    &-description{
+        &__control{
+            display: flex;
+            background-color: var(--blue);
+        }
+        &-control{
+            &__item{
+                background: none;
+                border: none;
+
+                font-family: var(--font-family);
+                color: var(--grey-t);
+
+                &.active{
+                    background-color: var(--orange);
+                    color: var(--white);
+                }
+
+                transition: all .3s;
+            }
+        }
+
+        &__content{
+            transition: all .3s;
+
+            overflow: hidden;
+        }
+
+        &__item{
+            font-family: var(--font-family);
+            color: #504f5e;
+
+            display: none;
+
+            &.active{
+                display: block;
+            }
+        }
+    }
 }
 
 @import url(card-pc.scss);

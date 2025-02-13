@@ -71,5 +71,39 @@
             letter-spacing: -0.01em;
         }
     }
+
+    &__description{
+        width: 766px;
+    }
+    &-description{
+        &__control{
+            padding: 6px;
+        }
+
+        &-control{
+            &__item{
+                margin-left: 3px;
+                &:first-child{
+                    margin-left: 0
+                }
+
+                padding: 16px 20px 14px 20px;
+
+                font-weight: 500;
+                font-size: 18px;
+                letter-spacing: -0.01em;
+            }
+        }
+
+        &__content{
+            margin-top: 32px;
+        }
+
+        &__item{
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+    }
 }
 }
