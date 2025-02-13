@@ -1,0 +1,28 @@
+@media (min-width: 860px) {
+.certif{
+    & .tag{
+        margin-top: 24px;
+    }
+
+    &__content{
+        margin: 20px -8px -20px -8px;
+    }
+
+    &__item{
+        margin: 20px 8px;
+
+        width: calc(25% - 16px);
+    }
+
+    &__img{
+        height: 452px;
+    }
+    &__text{
+        margin-top: 8px;
+
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+    }
+}
+}

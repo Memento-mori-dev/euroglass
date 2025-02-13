@@ -1,0 +1,18 @@
+@media (max-width: 1400px) and (min-width: 860px) {
+.certif{
+    &__content{
+        margin: 8px -8px -16px -8px;
+    }
+
+    &__item{
+        margin: 16px 8px;
+
+        width: calc(50% - 16px);
+    }
+
+    &__img{
+        // height: 500px;
+        height: auto;
+    }
+}
+}
