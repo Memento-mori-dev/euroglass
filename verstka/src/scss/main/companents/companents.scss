@@ -74,3 +74,21 @@
         display: none;
     }
 }
+
+.tag{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    background-color: var(--blue);
+
+    &__item{
+        font-family: var(--font-family);
+        color: var(--grey-t);
+
+        &.active{
+            background-color: var(--orange);
+            color: var(--white);
+        }
+    }
+}
