@@ -1,0 +1,66 @@
+.products{
+    &__img{
+        background-color: var(--grey-white);
+
+        object-fit: contain;
+        object-position: center;
+    }
+
+    &-content{
+        &__title{
+            font-family: var(--font-family);
+            color: var(--black);
+        }
+        &__text{
+            margin-top: 8px;
+
+            font-family: var(--font-family);
+            color: var(--grey-t);
+        }
+
+        &__description{
+        }
+        &-description{
+            &__item{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                & p:first-child{
+                    font-family: var(--font-family);
+                    color: var(--input);
+                }
+    
+                & p:last-child{
+                    font-family: var(--font-family);
+                    color: var(--black);
+                }
+            }
+        }
+
+        &__price{
+            display: flex;
+            align-items: end;
+        }
+        &-price{
+            &__name{
+                font-family: var(--font-family);
+                color: var(--grey-t);
+            }
+
+            &__value{
+                margin-left: 8px;
+
+                font-family: var(--font-family);
+                color: var(--orange);
+
+                &::before{
+                    content: 'от ';
+                }
+                &::after{
+                    content: ' руб.';
+                }
+            }
+        }
+    }
+}
