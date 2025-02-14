@@ -1,4 +1,4 @@
-.form-prod{
+.calculation{
     background-color: var(--blue);
 
     &__item{
@@ -26,5 +26,15 @@
     &-add__title{
         font-family: var(--font-family);
         color: var(--black);
+    }
+
+    &__add{
+        & .card-form__conditions{
+            color: var(--input);
+
+            & a{
+                color: var(--grey-t);
+            }
+        }
     }
 }

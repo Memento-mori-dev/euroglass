@@ -1,5 +1,5 @@
 @media (min-width: 860px) {
-.form-prod{
+.calculation{
     padding: 39px 40px;
 
     &__item{
@@ -53,12 +53,6 @@
 
         & .card-form__conditions{
             margin-top: 36px;
-
-            color: var(--input);
-
-            & a{
-                color: var(--grey-t);
-            }
         }
     }
     &-add__title{
