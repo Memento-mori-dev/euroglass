@@ -97,3 +97,28 @@
     font-family: var(--font-family);
     color: var(--grey-t);
 }
+
+.input-radio{
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: var(--white);
+
+    & button{
+        background: none;
+        border: none;
+
+        font-family: var(--font-family);
+        color: var(--grey-);
+
+        &.active{
+            background-color: var(--orange);
+            color: var(--white);
+        }
+    }
+
+    & input{
+        display: none;
+    }
+}
