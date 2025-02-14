@@ -41,6 +41,8 @@
 }
 
 .file{
+    cursor: pointer;
+
     padding-left: 40px;
 
     background: 0;
@@ -72,6 +74,18 @@
 
     & input{
         display: none;
+    }
+
+    &_orange{
+        & .file__name{
+            color: var(--orange);
+        }
+
+        & .file__description{
+            color: var(--input);
+        }
+
+        background-image: url(../../../img/svg/clip-o.svg);
     }
 }
 
