@@ -1,0 +1,64 @@
+@media (min-width: 860px) {
+.banner-prod{
+    margin-top: 40px;
+
+    padding: 12px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &_reverse{
+        flex-direction: row-reverse;
+
+        & .banner-prod__content{
+            padding: 31.5px 28px 31.5px 0;
+        }
+    }
+
+    &__img{
+        width: 644px;
+        
+        object-fit: cover;
+    }
+
+    &__content{
+        width: calc(100% - 660px);
+
+        padding: 31.5px 0 31.5px 28px;
+    }
+
+    &-content{
+        &__title{
+            font-weight: 600;
+            font-size: 32px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+        &__text{
+            margin-top: 12px;
+
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        &__item{
+            margin-top: 28px;
+        }
+        &-item{
+            &__title{
+                font-weight: 500;
+                font-size: 18px;
+                letter-spacing: -0.01em;
+            }
+            &__list{
+                & li{
+                    font-weight: 400;
+                    font-size: 18px;
+                    letter-spacing: -0.01em;
+                }
+            }
+        }
+    }
+}
+}

@@ -1,0 +1,47 @@
+@media (max-width: 860px) {
+.banner-prod{
+    margin: 24px -20px 0 -20px;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    &__content{
+        padding: 20px;
+    }
+
+    &-content{
+        &__title{
+            font-weight: 600;
+            font-size: 20px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+        &__text{
+           margin-top: 8px;
+
+           font-weight: 400;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        &__item{
+            margin-top: 16px;
+        }
+
+        &-item{
+            &__title{
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: -0.01em;
+            }
+            &__list{
+                & li{
+                    font-weight: 400;
+                    font-size: 16px;
+                    letter-spacing: -0.01em;
+                }
+            }
+        }
+    }
+}
+}

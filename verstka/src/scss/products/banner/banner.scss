@@ -1,0 +1,55 @@
+.banner-prod{
+    background-color: var(--blue);
+
+    &__img{}
+
+    &-content{
+        &__title{
+            font-family: var(--second-family);
+            color: var(--black);
+        }
+        &__text{
+            font-family: var(--font-family);
+            color: var(--grey-t);
+        }
+
+        &__item{}
+        &-item{
+            &__title{
+                font-family: var(--font-family);
+                color: var(--black);
+            }
+            &__list{
+                margin-top: 8px;
+
+                list-style-type: none;
+
+                & li{
+                    margin-top: 8px;
+                    &:first-child{
+                        margin-top: 0;
+                    }
+
+                    padding-left: 12px;
+
+                    font-family: var(--font-family);
+                    color: var(--grey-t);
+
+                    position: relative;
+                    &::after{
+                        content: '';
+
+                        position: absolute;
+                        top: 6px;
+                        left: 0;
+
+                        width: 6px;
+                        aspect-ratio: 1;
+
+                        background-color: var(--orange);
+                    }
+                }
+            }
+        }
+    }
+}

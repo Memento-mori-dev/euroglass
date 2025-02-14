@@ -1,0 +1,46 @@
+@media (max-width: 1400px) and (min-width: 860px) {
+.banner-prod{
+    padding: 0;
+
+    flex-direction: column-reverse;
+
+    &__img{
+        width: 100%;
+        height: 320px;
+    }
+
+    &__content{
+        width: 100%;
+
+        padding: 24px;
+    }
+
+    &-content{
+        &__title{
+            font-weight: 600;
+            font-size: 32px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+        &__text{
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        &__item{
+            margin-top: 20px;
+        }
+        &-item{
+            &__title{}
+            &__list{
+                & li{
+                    font-weight: 400;
+                    font-size: 16px;
+                    letter-spacing: -0.01em;
+                }
+            }
+        }
+    }
+}
+}
