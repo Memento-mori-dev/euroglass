@@ -18,6 +18,8 @@
                 position: absolute;
 
                 background-image: url(../../../img/svg/play.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
                 pointer-events: none;
             }
         }

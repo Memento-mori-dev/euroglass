@@ -1,1 +1,30 @@
-@media (max-width: 1400px) and (min-width: 860px) {}
+@media (max-width: 1400px) and (min-width: 860px) {
+.tests{
+    margin: 16px -8px -8px -8px;
+
+    &__item{
+        margin: 8px;
+
+        width: calc(50% - 16px);
+    }
+    &-item{
+        &__video{
+            &::after{
+                top: calc(50% - 19px);
+                left: calc(50% - 19px);
+
+                width: 38px;
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    &__name{
+        margin-top: 12px;
+
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+    }
+}
+}
