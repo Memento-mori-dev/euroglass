@@ -1,0 +1,51 @@
+.form-prod{
+
+    &__content{
+        background-color: var(--orange);
+    }
+    &-content{
+        &__title{
+            font-family: var(--second-family);
+            color: var(--white);
+            text-transform: uppercase;
+        }
+        &__text{
+            font-family: var(--font-family);
+            color: var(--white);
+            opacity: .8;
+        }
+    }
+
+    &__card{
+        background-color: var(--blue);
+    }
+    &__img{
+        aspect-ratio: 1;
+        background-color: var(--white);
+
+        border-radius: 50px;
+    }
+
+    &__title{
+        font-family: var(--font-family);
+        color: var(--black);
+    }
+    &__post{
+        font-family: var(--font-family);
+        color: var(--grey-t);
+    }
+
+    &__phone{
+        font-family: var(--second-family);
+        color: var(--orange);
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    &__mail{
+        display: block;
+
+        font-family: var(--font-family);
+        color: var(--grey-t);
+        text-decoration: none;
+    }
+}

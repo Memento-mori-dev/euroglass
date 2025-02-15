@@ -1,0 +1,99 @@
+@media (min-width: 860px) {
+.form-prod{
+    display: flex;
+    justify-content: space-between;
+
+    &__content{
+        width: calc(100% - 448px);
+
+        padding: 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-content{
+        &__title{
+            font-weight: 600;
+            font-size: 38px;
+            letter-spacing: -0.02em;
+        }
+        &__text{
+            margin-top: 20px;
+
+            max-width: 728px;
+
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        &__fill{
+            margin-top: 60px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            & .input{
+                margin-left: 16px;
+                &:first-child{
+                    margin-left: 0;
+                }
+                &:nth-child(2){
+                    margin-right: calc(100% - 648px);
+                }
+
+                width: 314px;
+            }
+
+            & .btn{
+                margin-top: 24px;
+
+                display: inline-block;
+            }
+        }
+    }
+
+    &__card{
+        width: 432px;
+
+        padding: 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__img{
+        width: 80px;
+    }
+
+    &__title{
+        margin-top: 20px;
+
+        font-weight: 500;
+        font-size: 26px;
+        letter-spacing: -0.01em;
+    }
+    &__post{
+        margin-top: 4px;
+
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+    }
+
+    &__phone{
+        font-weight: 600;
+        font-size: 32px;
+        letter-spacing: -0.02em;
+    }
+    &__mail{
+        margin-top: 12px;
+
+        font-weight: 500;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+    }
+}
+}
