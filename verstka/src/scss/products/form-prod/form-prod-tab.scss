@@ -1,47 +1,76 @@
 @media (max-width: 1400px) and (min-width: 860px) {
 .form-prod{
     &__content{
+        width: calc(62.64% - 16px);
 
+        padding: 24px;
     }
     &-content{
         &__title{
-  
+            font-weight: 600;
+            font-size: 32px;
+            letter-spacing: -0.02em;
         }
         &__text{
+            margin-top: 12px;
 
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: -0.01em;
         }
 
         &__fill{
+            margin-top: 32px;
 
             & .input{
-     
+                margin-top: 16px;
+                &:first-child{
+                    margin-top: 0;
+                }
+                margin-left: 0;
+                &:nth-child(2){
+                    margin-right: 0;
+                }
+                
+
+                width: 100%;
             }
 
             & .btn{
+                margin-top: 16px;
 
+                width: 100%;
+            }
+
+            & .card-form__conditions{
+                margin: 24px 0 0 0;
+
+                text-align: start;
             }
         }
     }
 
     &__card{
+        width: 37.36%;
 
+        padding: 24px;
     }
 
     &__img{
-    }
-
-    &__title{
-   
-    }
-    &__post{
-
+        width: 120px;
     }
 
     &__phone{
-
+        font-weight: 500;
+        font-size: 22px;
+        letter-spacing: -0.01em;
     }
     &__mail{
- 
+        margin-top: 8px;
+
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: -0.01em;
     }
 }
 }
