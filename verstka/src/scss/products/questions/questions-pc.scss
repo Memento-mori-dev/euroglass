@@ -1,0 +1,34 @@
+@media (min-width: 860px) {
+.questions{
+    margin-top: 24px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__element{
+        width: calc(50% - 8px);
+    }
+
+    &__item{
+        margin-top: 16px;
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+
+    &__title{
+        font-weight: 500;
+        font-size: 22px;
+        letter-spacing: -0.01em;
+    }
+    &__text{
+        padding-top: 12px;
+
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+    }
+
+    &__content{}
+}
+}

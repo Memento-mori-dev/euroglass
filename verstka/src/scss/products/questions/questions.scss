@@ -1,0 +1,37 @@
+.questions{
+    margin-top: 24px;
+
+    &__element{}
+
+    &__item{
+        padding: 20px;
+
+        background-color: var(--blue);
+
+        &.active .questions__title{
+            background-image: url(../../../img/svg/minus.svg);
+            background-size: 24px;
+        }
+    }
+
+    &__title{
+        padding-right: 44px;
+
+        font-family: var(--font-family);
+        color: var(--black);
+
+        background-image: url(../../../img/svg/pluse.svg);
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: 18px;
+    }
+    &__text{
+        font-family: var(--font-family);
+        color: var(--grey-t);
+    }
+
+    &__content{
+        height: 0;
+        overflow: hidden;
+    }
+}
