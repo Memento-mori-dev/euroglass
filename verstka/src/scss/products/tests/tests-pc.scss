@@ -1,0 +1,37 @@
+@media (min-width: 860px) {
+.tests{
+    margin: 12px -12px -12px -12px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item{
+        margin: 12px;
+
+        width: calc(50% - 24px);
+
+        & video{
+            width: 100%;
+        }
+    }
+    &-item{
+        &__video{
+            &::after{
+                top: calc(50% - 38px);
+                left: calc(50% - 38px);
+
+                width: 76px;
+                aspect-ratio: 1;
+            }
+        }
+    }
+
+    &__name{
+        margin-top: 20px;
+
+        font-weight: 500;
+        font-size: 26px;
+        letter-spacing: -0.01em;
+    }
+}
+}

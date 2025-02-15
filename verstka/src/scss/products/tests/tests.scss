@@ -1,0 +1,30 @@
+.tests{
+    margin-top: 24px;
+
+    &__item{
+        & video{
+           
+        }
+    }
+    &-item{
+        &__video{
+            cursor: pointer;
+
+            position: relative;
+
+            &::after{
+                content: '';
+
+                position: absolute;
+
+                background-image: url(../../../img/svg/play.svg);
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__name{
+        font-family: var(--font-family);
+        color: var(--black);
+    }
+}
