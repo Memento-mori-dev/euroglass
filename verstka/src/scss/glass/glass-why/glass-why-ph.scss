@@ -6,6 +6,32 @@
         display: block;
 
         margin-top: 24px;
+
+        height: 200px;
+
+        padding: 8px;
+
+        display: flex;
+        align-items: end;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+    }
+    &-phone{
+        &__link{
+            display: block;
+
+            width: 36px;
+            aspect-ratio: 1;
+
+            background-color: var(--orange);
+
+            background-image: url(../../../img/svg/download-file.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20px;
+        }
     }
 }
 }
