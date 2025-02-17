@@ -136,3 +136,31 @@
         display: none;
     }
 }
+
+.input-checkbox{
+    width: 18px;
+    aspect-ratio: 1;
+
+    border: 1px solid var(--orange);
+    background: none;
+
+    position: relative;
+    &.active{
+        &::after{
+            content: '';
+
+            position: absolute;
+            top: 3px;
+            left: 3px;
+
+            width: 10px;
+            aspect-ratio: 1;
+
+            background-color: var(--orange);
+        }
+    }
+
+    & input{
+        display: none;
+    }
+}

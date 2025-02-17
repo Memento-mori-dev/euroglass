@@ -1,0 +1,15 @@
+.call{
+    max-width: 878px;
+
+    &__title{
+        text-align: center;
+    }
+    &__text{
+        font-family: var(--font-family);
+        color: var(--grey-t)
+    }
+}
+
+@import url(call-pc.scss);
+@import url(call-tab.scss);
+@import url(call-ph.scss);
