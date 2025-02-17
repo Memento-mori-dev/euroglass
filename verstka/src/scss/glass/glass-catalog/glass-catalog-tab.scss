@@ -1,0 +1,13 @@
+@media (max-width: 1400px) and (min-width: 860px) {
+.glass-catalog{
+
+    &__img{}
+    &__title{}
+    &__text{}
+    &__price{}
+    &-price{
+        &__description{}
+        &__value{}
+    }
+}
+}
