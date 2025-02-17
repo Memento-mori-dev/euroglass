@@ -1,13 +1,38 @@
 @media (max-width: 1400px) and (min-width: 860px) {
 .glass-catalog{
+    margin: 12px -8px 0 -8px;
 
-    &__img{}
+    &__item{
+        margin: 12px 8px;
+
+        width: calc(50% - 16px);
+    }
+
+    &__img{
+        height: 286px;
+
+        object-fit: contain;
+    }
     &__title{}
-    &__text{}
+    &__text{
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+    }
     &__price{}
     &-price{
-        &__description{}
-        &__value{}
+        &__description{
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+        }
+        &__value{
+            margin-left: 12px;
+
+            font-weight: 500;
+            font-size: 22px;
+            letter-spacing: -0.01em;
+        }
     }
 }
 }
