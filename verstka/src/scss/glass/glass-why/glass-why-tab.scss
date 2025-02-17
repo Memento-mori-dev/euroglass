@@ -1,0 +1,49 @@
+@media (max-width: 1400px) and (min-width: 860px) {
+.glass-why{
+
+    & thead{
+        
+        td{
+            padding: 12px;
+
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+    }
+
+    & tbody{
+        td:nth-child(1){
+            padding: 12px 20px 12px 20px;
+
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+        td:nth-child(2){
+            padding: 12px 20px 12px 32px;
+
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+            &::after{
+                top: 12px;
+                
+                width: 24px;
+            }
+        }
+        td:nth-child(3){
+            padding: 12px 20px 12px 32px;
+
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: -0.01em;
+            &::after{
+                top: 12px;
+
+                width: 24px;
+            }
+        }
+    }
+}
+}

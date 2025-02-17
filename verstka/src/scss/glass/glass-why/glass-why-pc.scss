@@ -1,0 +1,74 @@
+@media (min-width: 860px) {
+.glass-why{
+
+    & thead{
+        
+        td{
+            padding: 16px;
+
+            font-weight: 500;
+            font-size: 26px;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+        }
+    }
+
+    & tbody{
+        td:nth-child(1){
+            font-weight: 500;
+            font-size: 22px;
+            letter-spacing: -0.01em;
+        }
+        td:nth-child(2){
+            padding-left: 40px;
+
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+
+            position: relative;
+            &::after{
+                content: '';
+
+                position: absolute;
+                top: 16px;
+                left: 0;
+
+                width: 32px;
+                aspect-ratio: 1;
+
+                background-image: url(../../../img/page/glass/fire.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        td:nth-child(3){
+            padding-left: 40px;
+
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+
+            position: relative;
+            &::after{
+                content: '';
+
+                position: absolute;
+                top: 16px;
+                left: 0;
+
+                width: 32px;
+                aspect-ratio: 1;
+
+                background-image: url(../../../img/page/glass/warning.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    &__phone{
+        display: none;
+    }
+}
+}
