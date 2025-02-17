@@ -1,1 +1,19 @@
-@media (max-width: 860px) {}
+@media (max-width: 860px) {
+.glass-product{
+    &__content{
+
+    }
+    &__item{
+        margin-top: 12px;
+        &:first-child{
+            margin-top: 0;
+        }
+
+        height: 160px;
+
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+    }
+}
+}

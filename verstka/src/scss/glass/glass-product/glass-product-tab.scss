@@ -1,8 +1,24 @@
 @media (max-width: 1400px) and (min-width: 860px) {
 .glass-product{
-    &__title{}
+    &__content{
+        margin: 8px -8px -8px -8px;
 
-    &__content{}
-    &__item{}
+        flex-wrap: wrap;
+    }
+    &__item{
+        margin: 8px;
+
+        width: calc(33.3% - 16px);
+        height: 200px;
+
+        &:nth-child(1),
+        &:nth-child(2){
+            width: calc(50% - 16px);
+        }
+
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+    }
 }
 }
