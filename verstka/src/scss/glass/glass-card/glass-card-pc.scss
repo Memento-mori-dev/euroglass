@@ -1,0 +1,35 @@
+@media (min-width: 860px) {
+.glass-card{
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &__item{
+        width: calc(33.3% - 0.66px);
+
+        padding: 32px;
+    }
+
+    &__img{
+        width: 72px;
+
+        & svg{
+            width: 32px;
+        }
+    }
+    &__title{
+        margin-top: 32px;
+
+        font-weight: 600;
+        font-size: 32px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+    &__text{
+        font-weight: 400;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+    }
+}
+}

@@ -1,0 +1,28 @@
+.glass-card{
+    &__item{
+        background-color: var(--orange);
+    }
+
+    &__img{
+        aspect-ratio: 1;
+
+        background-color: var(--white);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & svg{
+            aspect-ratio: 1;
+        }
+    }
+    &__title{
+        font-family: var(--second-family);
+        color: var(--white);
+    }
+    &__text{
+        font-family: var(--font-family);
+        color: var(--white);
+        opacity: .8;
+    }
+}
