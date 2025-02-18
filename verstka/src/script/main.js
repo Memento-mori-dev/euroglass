@@ -346,3 +346,37 @@ tests.forEach(test => {
 
 }
 // tests
+
+
+// input-radio
+if (document.querySelector('.input-radio')) {
+
+let inputRadios = document.querySelectorAll('.input-radio');
+
+inputRadios.forEach(radio => {
+  let btns = radio.querySelectorAll('button'),
+      input = radio.querySelector('input');
+
+  btns.forEach(btn => {
+    btn.onclick = function (event) {
+      event.preventDefault();
+
+      let active = radio.querySelector('.active');
+
+      if (btn == active) return;
+      
+      let value = btn.textContent;
+
+      input.value = value;  
+      active.classList.remove('active');
+      btn.classList.add('active');
+    }
+  });
+
+
+
+  
+});
+
+}
+// input-radio
