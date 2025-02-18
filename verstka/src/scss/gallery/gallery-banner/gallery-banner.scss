@@ -1,0 +1,50 @@
+.gallery-banner{
+    &__sub-title{
+        font-family: var(--font-family);
+        color: var(--grey-t);
+    }
+
+    &__list{
+        list-style-type: none;
+
+        padding-left: 12px;
+
+        & li{
+            margin-top: 8px;
+            &:first-child{
+                margin-top: 0;
+            }
+
+            font-family: var(--font-family);
+            color: var(--grey-t);
+
+            position: relative;
+            &::after{
+                content: '';
+
+                position: absolute;
+                top: 6px;
+                left: -12px;
+
+                width: 6px;
+                aspect-ratio: 1;
+
+                background-color: var(--orange);
+            }
+        }
+    }
+
+    &-footer{
+        &__back{
+            font-family: var(--font-family);
+            color: var(--input);
+            text-decoration: none;
+        }
+
+        &__next{
+            font-family: var(--font-family);
+            color: var(--orange);
+            text-decoration: none;
+        }
+    }
+}
