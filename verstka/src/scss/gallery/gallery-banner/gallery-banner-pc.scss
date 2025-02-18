@@ -36,12 +36,19 @@
         }
     }
 
-    &__footer{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+
     &-footer{
+        &__back{
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        &__next{
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: -0.01em;
+        }
     }
 }
 }

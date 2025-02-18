@@ -33,7 +33,12 @@
             }
         }
     }
-
+    
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     &-footer{
         &__back{
             font-family: var(--font-family);
