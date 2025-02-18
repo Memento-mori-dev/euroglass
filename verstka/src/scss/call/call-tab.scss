@@ -1,6 +1,27 @@
 @media (max-width: 1400px) and (min-width: 860px) {
 .call{
-    &__left{}
-    &__right{}
+    &__title{
+
+    }
+    &__text{
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: -0.01em;
+    }
+
+    &__left{
+        width: 38.46%;
+
+        & .input{
+            margin-top: 16px;
+        }
+    }
+    &__right{
+        width: 59.34%;
+    }
+
+    &__confirm{
+        max-width: 551px;
+    }
 }
 }

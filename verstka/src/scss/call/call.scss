@@ -6,7 +6,26 @@
     }
     &__text{
         font-family: var(--font-family);
-        color: var(--grey-t)
+        color: var(--grey-t);
+        text-align: center;
+    }
+
+    &__confirm{
+        display: flex;
+        align-items: start;
+        
+        & p{
+            margin-left: 12px;
+            
+            font-family: var(--font-family);
+            color: var(--grey-t);
+
+            & a{
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                color: var(--orange);
+            }
+        }
     }
 }
 
