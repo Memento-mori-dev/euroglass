@@ -1,1 +1,11 @@
-@media (max-width: 860px) {}
+@media (max-width: 860px) {
+.gallery-img{
+    margin: 32px -8px -8px -8px;
+
+    &__item{
+        margin: 8px;
+
+        width: calc(50% - 16px);
+    }
+}
+}
