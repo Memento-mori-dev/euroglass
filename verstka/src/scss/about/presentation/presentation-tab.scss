@@ -1,0 +1,12 @@
+@media (max-width: 1400px) and (min-width: 860px) {
+.presentation{
+    &__item{
+        height: 218px;
+    }
+    &-item{
+        &__link{
+            width: 36px;
+        }
+    }
+}
+}

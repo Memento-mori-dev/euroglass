@@ -1,0 +1,12 @@
+.presentation{
+    &__title{
+        text-align: center;
+    }
+
+    &__content{}
+
+    &__add{
+        display: flex;
+        justify-content: center;
+    }
+}
