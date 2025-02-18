@@ -207,3 +207,24 @@ paginations.forEach(pagination => {
 
 }
 // pagination
+
+// input-checkbox
+if (document.querySelector('.input-checkbox')) {
+
+let inputCheckbox = document.querySelectorAll('.input-checkbox');
+
+inputCheckbox.forEach(checkbox => {
+  let input = checkbox.querySelector('input');
+
+  checkbox.onclick = function (event) {
+    if (!checkbox.classList.contains('active')) {
+      checkbox.classList.add('active');
+      input.checked = 1;
+    }else{
+      checkbox.classList.remove('active');
+      input.checked = 0;
+    }
+  }
+});
+}
+// input-checkbox
