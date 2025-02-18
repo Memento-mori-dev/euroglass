@@ -1,0 +1,16 @@
+@media (max-width: 1400px) and (min-width: 860px) {
+.about-card{
+    flex-wrap: wrap;
+
+    &__item{
+        width: calc(50% - 16px);
+        height: 400px;
+    }
+
+    &-item{
+        &__text{
+            
+        }
+    }
+}
+}
