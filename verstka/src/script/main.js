@@ -228,3 +228,57 @@ inputCheckbox.forEach(checkbox => {
 });
 }
 // input-checkbox
+
+// card__description
+if (document.querySelector('.card__description')) {
+  
+let buttonsDescription = document.querySelectorAll('.card-description-control__item'),
+    contentDescription = document.querySelector('.card-description__content'),
+    itemsDescription = document.querySelectorAll('.card-description__item');
+
+buttonsDescription.forEach((button, index) =>{
+    button.onclick = function () {
+        let activeButton = document.querySelector('.card-description-control__item.active');
+
+        if (activeButton == button) return;
+
+        activeButton.classList.remove('active');
+        button.classList.add('active');
+        
+        let activeItem = document.querySelector('.card-description__item.active'),
+            newItem = itemsDescription[index],
+            activeHeight = activeItem.offsetHeight;
+
+        contentDescription.style.height = `${activeHeight}px`;
+        newItem.classList.add('active');
+        
+        let newHeight = newItem.offsetHeight;
+
+        activeItem.classList.remove('active');
+        contentDescription.style.height = `${newHeight}px`;
+
+        setTimeout(() => {
+            contentDescription.style.height = 'auto';
+        }, 300);
+    }
+});
+
+}
+// card__description
+
+// file
+if (document.querySelector('.file')) {
+
+let files = document.querySelectorAll('.file');
+
+files.forEach(file => {
+  let inputFile = file.querySelector('input'),
+      nameFile = file.querySelector('.file__name');
+      
+  inputFile.addEventListener('change', (e) => {
+    nameFile.textContent = e.target.files[0].name;
+  });
+});
+
+}
+// file
