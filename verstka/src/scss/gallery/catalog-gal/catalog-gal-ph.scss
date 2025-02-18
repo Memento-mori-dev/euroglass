@@ -1,1 +1,33 @@
-@media (max-width: 860px) {}
+@media (max-width: 860px) {
+.catalog-gal{
+    margin-top: 16px;
+
+    &__controller{
+        & .select{
+            margin-top: 16px;
+        }
+    }
+
+    &__catalog{
+        margin-top: 24px;
+    }
+    &__item{
+        margin-top: 16px;
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+
+    &__footer{
+        margin-top: 24px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .pagination{
+            margin-top: 20px;
+        }
+    }
+}
+}
