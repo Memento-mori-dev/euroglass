@@ -188,3 +188,22 @@ selects.forEach(select => {
 
 }
 // select
+
+// pagination
+if (document.querySelector('.pagination')) {
+
+let paginations = document.querySelectorAll('.pagination__item');
+
+paginations.forEach(pagination => {
+  pagination.onclick = function () {
+    let active = document.querySelector('.pagination__item.active');
+
+    if (pagination == active) return;
+
+    active.classList.remove('active');
+    pagination.classList.add('active');
+  }
+});
+
+}
+// pagination
