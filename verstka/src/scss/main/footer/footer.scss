@@ -39,7 +39,7 @@
         }
 
         &__call{
-            margin-left: 16px;
+            
         }
         &-call{
             &__phone{
@@ -79,7 +79,7 @@
     }
 
     &__about{
-        padding: 28px 0;
+        border-top: 1px solid var(--orange);
 
         & p{
             font-family: var(--font-family);
