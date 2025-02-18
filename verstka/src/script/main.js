@@ -282,3 +282,43 @@ files.forEach(file => {
 
 }
 // file
+
+// questions
+if (document.querySelector('.questions')) {
+
+let questions = document.querySelectorAll('.questions__item');
+
+questions.forEach(question => {
+  let btn = question.querySelector('.questions__title');
+
+  btn.onclick = function () {
+    let block = question.querySelector('.questions__content'),
+        content = question.querySelector('.questions__text'),
+        newHeight = content.offsetHeight + 'px';
+
+    if (!question.classList.contains('active')) {
+      question.classList.add('active');
+      block.style.height = newHeight;
+
+      setTimeout(() => {
+        block.style.height = 'auto';
+      }, 300);
+    }else{
+      if (block.style.height == 'auto') {
+        block.style.height = newHeight;
+
+        setTimeout(() => {
+          block.style.height = 0;
+          question.classList.remove('active');
+        }, 0);
+      }
+    }
+
+
+  }
+  
+  
+});
+}
+// questions
+
