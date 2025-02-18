@@ -22,6 +22,12 @@
                 background-size: contain;
                 pointer-events: none;
             }
+
+            &.active{
+                &::after{
+                    display: none;
+                }
+            }
         }
     }
 

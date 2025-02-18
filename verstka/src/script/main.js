@@ -322,3 +322,27 @@ questions.forEach(question => {
 }
 // questions
 
+// tests
+if (document.querySelector('.tests')) {
+  
+let tests = document.querySelectorAll('.tests__item');
+
+tests.forEach(test => {
+  let video = test.querySelector('.tests-item__video'),
+      window = video.querySelector('video');
+
+  video.onclick = function () {
+    if (!video.classList.contains('active')) {
+      video.classList.add('active');
+      window.controls = true;
+    }
+  }
+
+  window.addEventListener("pause", (event) => {
+    video.classList.remove('active');
+    window.controls = false;
+  });
+});
+
+}
+// tests
