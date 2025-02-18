@@ -1,3 +1,5 @@
+if (document.querySelector('.swiper-certificates')) {
+
 const swiperCertificates = new Swiper('.swiper-certificates', {
     // Optional parameters
     direction: 'horizontal',
@@ -33,6 +35,11 @@ const swiperCertificates = new Swiper('.swiper-certificates', {
     }
 });
 
+}
+
+
+if (document.querySelector('.swiper-works')) {
+
 const swiperWorks = new Swiper('.swiper-works', {
   // Optional parameters
   direction: 'horizontal',
@@ -65,7 +72,11 @@ const swiperWorks = new Swiper('.swiper-works', {
   }
 });
 
+}
+
+
 // Production
+if (document.querySelector('.swiper-production')) {
 
 const swiperProduction = new Swiper('.swiper-production', {
   // Optional parameters
@@ -121,4 +132,59 @@ buttonsProduction.forEach(button => {
   }
 })
 
+}
 // Production
+
+// tag
+if (document.querySelector('.tag')) {
+
+let tagButtons = document.querySelectorAll('.tag__item');
+
+tagButtons.forEach(button => {
+  button.onclick = function () {
+    let active = document.querySelector('.tag__item.active');
+
+    if (button == active) return;
+
+    active.classList.remove('active');
+    button.classList.add('active');
+  }
+});
+}
+// tag
+
+// select
+if (document.querySelector('.select')) {
+
+let selects = document.querySelectorAll('.select');
+
+selects.forEach(select => {
+  let selectOpen = select.querySelector('.select__value'),
+      selectBlock = select.querySelector('.select__block'),
+      selectContent = select.querySelector('.select__list');
+
+  selectOpen.onclick = function () {
+    let newHeight = selectContent.offsetHeight + 'px';
+    
+
+    if (!selectOpen.classList.contains('active')) {
+      selectOpen.classList.add('active');
+
+      selectBlock.style.height = newHeight;
+
+      setTimeout(() => {
+        selectBlock.style.height = 'auto';
+      }, 300);
+    }else{
+      selectOpen.classList.remove('active');
+      selectBlock.style.height = newHeight;
+
+      setTimeout(() => {
+        selectBlock.style.height = 0;
+      }, 0);
+    }
+  }
+});
+
+}
+// select

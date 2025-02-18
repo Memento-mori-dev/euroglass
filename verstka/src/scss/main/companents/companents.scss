@@ -201,6 +201,9 @@
         height: 0;
 
         overflow: hidden;
+        z-index: 10;
+
+        transition: all .3s;
     }
     &__list{
         width: 100%;
