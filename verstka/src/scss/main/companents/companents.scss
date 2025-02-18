@@ -189,12 +189,18 @@
     }
     
     position: relative;
-    &__list{
+    &__block{
         position: absolute;
         top: 48px;
         left: -1px;
 
         width: calc(100% + 2px);
+        height: 0;
+
+        overflow: hidden;
+    }
+    &__list{
+        width: 100%;
 
         border: 1px solid var(--input);
         background-color: var(--white);
