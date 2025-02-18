@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="src/scss/style.scss">
+</head>
+
+<body>
+
+    <div class="block">
+        <div class="catalog-gal">
+            <div class="catalog-gal__controller">
+                <div class="tag">
+                    <div class="tag__item active" data-teg="">
+                        Все
+                    </div>
+        
+                    <div class="tag__item" data-teg="name">
+                        Двери
+                    </div>
+        
+                    <div class="tag__item" data-teg="dd">
+                        Окна
+                    </div>
+                </div>
+
+                <div class="select">
+                    <button class="select__value">
+                        Екатеринбург
+                    </button>
+
+                    <ul class="select__list">
+                        <li>
+                            <button>
+                                gorod a
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                gorod b
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="catalog-gal__catalog"></div>
+
+            <div class="catalog-gal__footer">
+
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
+</html>

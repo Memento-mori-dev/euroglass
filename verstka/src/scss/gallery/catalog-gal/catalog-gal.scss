@@ -1,0 +1,9 @@
+.catalog-gal{
+    &__item{
+        display: flex;
+        align-items: end;
+
+        font-family: var(--font-family);
+        color: var(--white);
+    }
+}
