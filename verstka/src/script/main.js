@@ -46,15 +46,84 @@ pcListMenu.forEach((li, index) => {
 // header
 
 // header phone
-let btnPhoneMenu = document.querySelector('.header__btn-menu');
+let btnPhoneMenu = document.querySelector('.header__btn-menu'),
+    phoneContentMenu = document.querySelector('.header-phone-menu__content'),
+    phoneBlockMenu = document.querySelector('.header__phone-menu');
 
 btnPhoneMenu.onclick = function () {
-  if (btnPhoneMenu.classList.contains('active')) {
+  let newHeight = phoneContentMenu.offsetHeight + 'px';
+
+  if (!btnPhoneMenu.classList.contains('active')) {
     btnPhoneMenu.classList.add('active');
+    phoneBlockMenu.style.height = newHeight;
+
+    setTimeout(() => {
+      phoneBlockMenu.style.height = 'auto';
+    }, 300);
   }else{
+    phoneBlockMenu.style.height = newHeight;
     btnPhoneMenu.classList.remove('active');
+
+    setTimeout(() => {
+      phoneBlockMenu.style.height = 0;
+    }, 0);
   }
 }
+
+let liPhone = document.querySelectorAll('.header-phone-menu__menu > li');
+
+liPhone.forEach(li => {
+  let liLink = li.querySelector('a'),
+      liBlock = li.querySelector('.header-phone-menu__sub-menu'),
+      liContent = li.querySelector('.header-phone-menu-sub-menu__content');
+
+  liLink.onclick = function () {
+   let liHeight = liContent.offsetHeight + 'px';
+
+   if (!li.classList.contains('active')) {
+    li.classList.add('active');
+    liBlock.style.height = liHeight;
+
+    setTimeout(() => {
+      liBlock.style.height = 'auto';
+    }, 300);
+   } else {
+    li.classList.remove('active');
+    liBlock.style.height = liHeight;
+
+    setTimeout(() => {
+      liBlock.style.height = 0;
+    }, 0);
+   }
+  }
+});
+
+let phoneBtnNext = document.querySelectorAll('.phone-next'),
+    phoneNextContent = document.querySelector('.header__phone-next'),
+    phoneNextItems = document.querySelectorAll('.header-phone-next__item');
+
+phoneBtnNext.forEach((next, index) => {
+  next.onclick = function () {
+    phoneNextItems[index].classList.add('active');
+    phoneNextContent.classList.add('active');
+  }
+})
+
+let exitPhoneNext = document.querySelectorAll('.header-phone-next__item');
+
+exitPhoneNext.forEach((exitPhone, index) => {
+  let btnExit = exitPhone.querySelector('.header-phone-next__close');
+
+  btnExit.onclick = function () {
+    document.querySelector('.header__phone-next.active').classList.remove('active');
+    
+    setTimeout(() => {
+      document.querySelector('.header-phone-next__item.active').classList.remove('active');
+    }, 300);
+  }
+})
+
+
 // header phone
 
 if (document.querySelector('.swiper-certificates')) {

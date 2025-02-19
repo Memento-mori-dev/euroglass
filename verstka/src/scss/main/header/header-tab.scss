@@ -36,12 +36,14 @@
     }
 
     &__phone-menu{
-        top: 74px;
+        top: 73px;
 
         height: 0;
         overflow: hidden;
 
         z-index: 100;
+
+        transition: all .3s;
     }
     &-phone-menu{
         &__content{
@@ -53,9 +55,8 @@
         }
 
         &__menu{
-
             & > li{
-
+                position: relative;
                 & > a{
                     padding: 12px 28px 12px 0;
 
@@ -71,11 +72,15 @@
         }
 
         &__sub-menu{
+            height: 0;
+            overflow: hidden;
+
+            transition: all .3s;
         }
 
         &-sub-menu__content{
-            margin-top: 4px;
-            margin-bottom: 16px;
+            padding-top: 4px;
+            padding-bottom: 16px;
 
             & li{
                 margin-top: 16px;
@@ -93,11 +98,24 @@
     }
 
     &__phone-next{
-        top: 74px;
+        top: 73px;
+        left: calc(100% + 20px);
+
+        z-index: 100;
+
+        transition: all .3s;
+
+        &.active{
+            left: -20px;
+        }
     }
     &-phone-next{
         &__item{
+            display: none;
 
+            &.active{
+                display: block;
+            }
         }
 
         &__header{
