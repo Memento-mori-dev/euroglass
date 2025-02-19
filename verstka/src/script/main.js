@@ -510,3 +510,38 @@ if (document.querySelector('.input-radio')) {
 
 }
 // input-radio
+
+
+// tag swap
+if (document.querySelector('.tag-swap')) {
+
+let tags = document.querySelectorAll('.tag-swap .tag__item'),
+    itemTags = document.querySelectorAll('.tag-swap__item');
+
+tags.forEach(tag => {
+  tag.onclick = function () {
+    let tagActive = document.querySelector('.tag__item.active');
+
+    if (tagActive == tag) return;
+
+    tagActive.classList.remove('active');
+    tag.classList.add('active');
+
+    let thisTag = tag.dataset.teg;
+
+    itemTags.forEach(item => {
+      let itemTag = item.dataset.teg;
+
+      if (thisTag != itemTag) {
+        item.classList.add('hide'); 
+      }
+
+      if (thisTag == itemTag || thisTag == '') {
+        item.classList.remove('hide')
+      }
+      
+    });
+  }
+})
+}
+// tag swap
