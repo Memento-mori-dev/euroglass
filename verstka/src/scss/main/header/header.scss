@@ -84,7 +84,7 @@
                     &::after {
                         content: "";
                         position: absolute;
-                        right: 20px;
+                        right: 0;
                         width: 16px;
                         aspect-ratio: 1;
                         background-image: url(/src/img/svg/menu-arrow.svg);
@@ -129,10 +129,16 @@
         width: calc(100% + 40px);
 
         background-color: var(--white);
+
+        z-index: 100;
     }
     &-phone-next{
         &__item{
+            display: none;
 
+            &.active{
+                display: block;
+            }
         }
 
         &__header{

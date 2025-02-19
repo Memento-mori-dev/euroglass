@@ -24,9 +24,17 @@
     }
 
     &__phone-menu{
-        top: 72px;
+        top: 71px;
 
         padding: 0 20px;
+
+        background-color: var(--white);
+
+        height: 0;
+        overflow: hidden;
+        z-index: 100;
+
+        transition: all .3s;
     }
 
     &__logo{
@@ -77,21 +85,38 @@
         }
     }
 
-    &-phone-menu__menu > li > a{
-        padding: 12px 0;
 
-        &::after{
-            top: 13.5px;
+
+    &-phone-menu__menu > li{
+
+        position: relative;
+        
+        & > a{
+            padding: 12px 0;
+    
+            &::after{
+                top: 13.5px;
+                right: 0;
+            }
+    
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: -0.01em;
         }
+    }
 
-        font-weight: 400;
-        font-size: 16px;
-        letter-spacing: -0.01em;
+    &-phone-menu{
+        &__sub-menu{
+            height: 0;
+            overflow: hidden;
+
+            transition: all .3s;
+        }
     }
 
     &-phone-menu-sub-menu__content{
-        margin-top: 4px;
-        margin-bottom: 16px;
+        padding-top: 4px;
+        padding-bottom: 16px;
 
         & > li{
             margin-top: 16px;
@@ -109,6 +134,14 @@
 
     &__phone-next{
         top: 72px;
+
+        left: calc(100% + 20px);
+
+        transition: all .3s;
+
+        &.active{
+            left: -20px;
+        }
     }
 
     &-phone-next__header{
