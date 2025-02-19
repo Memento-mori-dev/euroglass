@@ -37,10 +37,19 @@
 
     &__phone-menu{
         top: 74px;
+
+        height: 0;
+        overflow: hidden;
+
+        z-index: 100;
     }
     &-phone-menu{
         &__content{
             padding: 0 20px 4px 20px;
+
+            background-color: var(--white);
+
+            z-index: 100;
         }
 
         &__menu{

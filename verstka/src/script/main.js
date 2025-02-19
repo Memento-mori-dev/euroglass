@@ -1,3 +1,62 @@
+// header
+let pcMenus = document.querySelectorAll('.menu-pc'),
+    pcSubMenu = document.querySelectorAll('.sub-menu'),
+    pcContentMenu = document.querySelector('.header__sub-menu');
+
+pcMenus.forEach((menu, index) => {
+  menu.onmouseover = function () {
+    pcSubMenu[index].classList.add('active');
+    
+    pcContentMenu.classList.add('active');
+  }
+  
+  pcSubMenu[index].onmouseleave = function () {
+    pcContentMenu.classList.remove('active');
+    
+    setTimeout(() => {
+      pcSubMenu[index].classList.remove('active');
+    }, 300);
+  }
+})
+
+let pcListMenu = document.querySelectorAll('.header-sub-menu__list li'),
+    pcDetailMenu = document.querySelectorAll('.detail-menu');
+
+pcListMenu.forEach((li, index) => {
+  li.onclick = function () {
+    let liActive = document.querySelector('.header-sub-menu__list .active');
+    
+    if (li == liActive) return;
+
+    let detailActive = document.querySelector('.detail-menu.active'),
+        nextDetail = pcDetailMenu[index],
+        activeHeight = nextDetail.offsetHeight,
+        nextHeight = ((activeHeight <= 208) ? 286 : activeHeight + 80) + 'px';
+
+    liActive.classList.remove('active');
+    li.classList.add('active');
+
+    detailActive.classList.remove('active');
+    nextDetail.classList.add('active');
+
+    document.querySelector('.sub-menu.active').style.height = nextHeight;
+  }
+})
+
+// header
+
+// header phone
+let btnPhoneMenu = document.querySelector('.header__btn-menu');
+
+btnPhoneMenu.onclick = function () {
+  if (btnPhoneMenu.classList.contains('active')) {
+    btnPhoneMenu.classList.add('active');
+  }else{
+    btnPhoneMenu.classList.remove('active');
+  }
+}
+// header phone
+
 if (document.querySelector('.swiper-certificates')) {
 
 const swiperCertificates = new Swiper('.swiper-certificates', {

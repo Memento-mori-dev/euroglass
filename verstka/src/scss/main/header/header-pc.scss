@@ -44,9 +44,26 @@
 
     &__sub-menu{
         position: absolute;
+        top: 100px;
         left: 0;
 
         width: 100%;
+
+        z-index: 100;
+
+        background-color: var(--white);
+
+        pointer-events: none;
+        opacity: 0;
+
+        transition: all .3s;
+
+        &.active{
+            top: 78px;
+
+            pointer-events: auto;
+            opacity: 1;
+        }
     }
     &-sub-menu{
         &__content{
@@ -54,6 +71,14 @@
 
             display: flex;
             justify-content: space-between;
+
+            display: none;
+
+            transition: all .3s;
+
+            &.active{
+                display: flex;
+            }
         }
         &__list{
             width: 432px;
@@ -64,6 +89,14 @@
                 margin-top: 24px;
                 &:first-child{
                     margin-top: 0;
+                }
+
+                &.active a{
+                    color: var(--orange);
+
+                    &::after{
+                        background-image: url(/src/img/svg/menu-arrow-o.svg);
+                    }
                 }
             }
 
@@ -92,24 +125,35 @@
                     background-position: center;
                     background-repeat: no-repeat;
                 }
-
-                &.active{
-                    color: var(--orange);
-
-                    &::after{
-                        background-image: url(/src/img/svg/menu-arrow-o.svg);
-                    }
-                }
             }
         }
 
         &__detail{
             width: calc(100% - 448px);
 
+            position: relative;
+        }
+        &-detail__item{
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            width: 100%;
+
             display: flex;
             flex-wrap: wrap;
 
             justify-content: space-between;
+
+            pointer-events: none;
+            opacity: 0;
+
+            transition: all .3s;
+
+            &.active{
+                pointer-events: auto;
+                opacity: 1; 
+            }
         }
         &__item{
             &:nth-child(n + 3){
