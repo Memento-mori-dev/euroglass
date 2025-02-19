@@ -1,134 +1,136 @@
-// header
-let pcMenus = document.querySelectorAll('.menu-pc'),
+if (document.querySelector('.header')) {
+  // header
+  let pcMenus = document.querySelectorAll('.menu-pc'),
     pcSubMenu = document.querySelectorAll('.sub-menu'),
     pcContentMenu = document.querySelector('.header__sub-menu');
 
-pcMenus.forEach((menu, index) => {
-  menu.onmouseover = function () {
-    pcSubMenu[index].classList.add('active');
-    
-    pcContentMenu.classList.add('active');
-  }
-  
-  pcSubMenu[index].onmouseleave = function () {
-    pcContentMenu.classList.remove('active');
-    
-    setTimeout(() => {
-      pcSubMenu[index].classList.remove('active');
-    }, 300);
-  }
-})
+  pcMenus.forEach((menu, index) => {
+    menu.onmouseover = function () {
+      pcSubMenu[index].classList.add('active');
 
-let pcListMenu = document.querySelectorAll('.header-sub-menu__list li'),
+      pcContentMenu.classList.add('active');
+    }
+
+    pcSubMenu[index].onmouseleave = function () {
+      pcContentMenu.classList.remove('active');
+
+      setTimeout(() => {
+        pcSubMenu[index].classList.remove('active');
+      }, 300);
+    }
+  })
+
+  let pcListMenu = document.querySelectorAll('.header-sub-menu__list li'),
     pcDetailMenu = document.querySelectorAll('.detail-menu');
 
-pcListMenu.forEach((li, index) => {
-  li.onclick = function () {
-    let liActive = document.querySelector('.header-sub-menu__list .active');
-    
-    if (li == liActive) return;
+  pcListMenu.forEach((li, index) => {
+    li.onclick = function () {
+      let liActive = document.querySelector('.header-sub-menu__list .active');
 
-    let detailActive = document.querySelector('.detail-menu.active'),
+      if (li == liActive) return;
+
+      let detailActive = document.querySelector('.detail-menu.active'),
         nextDetail = pcDetailMenu[index],
         activeHeight = nextDetail.offsetHeight,
         nextHeight = ((activeHeight <= 208) ? 286 : activeHeight + 80) + 'px';
 
-    liActive.classList.remove('active');
-    li.classList.add('active');
+      liActive.classList.remove('active');
+      li.classList.add('active');
 
-    detailActive.classList.remove('active');
-    nextDetail.classList.add('active');
+      detailActive.classList.remove('active');
+      nextDetail.classList.add('active');
 
-    document.querySelector('.sub-menu.active').style.height = nextHeight;
-  }
-})
+      document.querySelector('.sub-menu.active').style.height = nextHeight;
+    }
+  })
 
-// header
+  // header
 
-// header phone
-let btnPhoneMenu = document.querySelector('.header__btn-menu'),
+  // header phone
+  let btnPhoneMenu = document.querySelector('.header__btn-menu'),
     phoneContentMenu = document.querySelector('.header-phone-menu__content'),
     phoneBlockMenu = document.querySelector('.header__phone-menu');
 
-btnPhoneMenu.onclick = function () {
-  let newHeight = phoneContentMenu.offsetHeight + 'px';
+  btnPhoneMenu.onclick = function () {
+    let newHeight = phoneContentMenu.offsetHeight + 'px';
 
-  if (!btnPhoneMenu.classList.contains('active')) {
-    btnPhoneMenu.classList.add('active');
-    phoneBlockMenu.style.height = newHeight;
+    if (!btnPhoneMenu.classList.contains('active')) {
+      btnPhoneMenu.classList.add('active');
+      phoneBlockMenu.style.height = newHeight;
 
-    setTimeout(() => {
-      phoneBlockMenu.style.height = 'auto';
-    }, 300);
-  }else{
-    phoneBlockMenu.style.height = newHeight;
-    btnPhoneMenu.classList.remove('active');
+      setTimeout(() => {
+        phoneBlockMenu.style.height = 'auto';
+      }, 300);
+    } else {
+      phoneBlockMenu.style.height = newHeight;
+      btnPhoneMenu.classList.remove('active');
 
-    setTimeout(() => {
-      phoneBlockMenu.style.height = 0;
-    }, 0);
+      setTimeout(() => {
+        phoneBlockMenu.style.height = 0;
+      }, 0);
+    }
   }
-}
 
-let liPhone = document.querySelectorAll('.header-phone-menu__menu > li');
+  let liPhone = document.querySelectorAll('.header-phone-menu__menu > li');
 
-liPhone.forEach(li => {
-  let liLink = li.querySelector('a'),
+  liPhone.forEach(li => {
+    let liLink = li.querySelector('a'),
       liBlock = li.querySelector('.header-phone-menu__sub-menu'),
       liContent = li.querySelector('.header-phone-menu-sub-menu__content');
 
-  liLink.onclick = function () {
-   let liHeight = liContent.offsetHeight + 'px';
+    liLink.onclick = function () {
+      let liHeight = liContent.offsetHeight + 'px';
 
-   if (!li.classList.contains('active')) {
-    li.classList.add('active');
-    liBlock.style.height = liHeight;
+      if (!li.classList.contains('active')) {
+        li.classList.add('active');
+        liBlock.style.height = liHeight;
 
-    setTimeout(() => {
-      liBlock.style.height = 'auto';
-    }, 300);
-   } else {
-    li.classList.remove('active');
-    liBlock.style.height = liHeight;
+        setTimeout(() => {
+          liBlock.style.height = 'auto';
+        }, 300);
+      } else {
+        li.classList.remove('active');
+        liBlock.style.height = liHeight;
 
-    setTimeout(() => {
-      liBlock.style.height = 0;
-    }, 0);
-   }
-  }
-});
+        setTimeout(() => {
+          liBlock.style.height = 0;
+        }, 0);
+      }
+    }
+  });
 
-let phoneBtnNext = document.querySelectorAll('.phone-next'),
+  let phoneBtnNext = document.querySelectorAll('.phone-next'),
     phoneNextContent = document.querySelector('.header__phone-next'),
     phoneNextItems = document.querySelectorAll('.header-phone-next__item');
 
-phoneBtnNext.forEach((next, index) => {
-  next.onclick = function () {
-    phoneNextItems[index].classList.add('active');
-    phoneNextContent.classList.add('active');
-  }
-})
+  phoneBtnNext.forEach((next, index) => {
+    next.onclick = function () {
+      phoneNextItems[index].classList.add('active');
+      phoneNextContent.classList.add('active');
+    }
+  })
 
-let exitPhoneNext = document.querySelectorAll('.header-phone-next__item');
+  let exitPhoneNext = document.querySelectorAll('.header-phone-next__item');
 
-exitPhoneNext.forEach((exitPhone, index) => {
-  let btnExit = exitPhone.querySelector('.header-phone-next__close');
+  exitPhoneNext.forEach((exitPhone, index) => {
+    let btnExit = exitPhone.querySelector('.header-phone-next__close');
 
-  btnExit.onclick = function () {
-    document.querySelector('.header__phone-next.active').classList.remove('active');
-    
-    setTimeout(() => {
-      document.querySelector('.header-phone-next__item.active').classList.remove('active');
-    }, 300);
-  }
-})
+    btnExit.onclick = function () {
+      document.querySelector('.header__phone-next.active').classList.remove('active');
+
+      setTimeout(() => {
+        document.querySelector('.header-phone-next__item.active').classList.remove('active');
+      }, 300);
+    }
+  })
 
 
-// header phone
+  // header phone 
+}
 
 if (document.querySelector('.swiper-certificates')) {
 
-const swiperCertificates = new Swiper('.swiper-certificates', {
+  const swiperCertificates = new Swiper('.swiper-certificates', {
     // Optional parameters
     direction: 'horizontal',
     slidesPerView: 5.8,
@@ -137,7 +139,7 @@ const swiperCertificates = new Swiper('.swiper-certificates', {
     pagination: {
       el: '.swiper-pagination',
     },
-  
+
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
@@ -161,44 +163,44 @@ const swiperCertificates = new Swiper('.swiper-certificates', {
         slidesPerView: 5.8,
       },
     }
-});
+  });
 
 }
 
 
 if (document.querySelector('.swiper-works')) {
 
-const swiperWorks = new Swiper('.swiper-works', {
-  // Optional parameters
-  direction: 'horizontal',
-  spaceBetween: 16,
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
+  const swiperWorks = new Swiper('.swiper-works', {
+    // Optional parameters
+    direction: 'horizontal',
+    spaceBetween: 16,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
 
-  breakpoints: {
-    0: {
-      slidesPerView: 1.06,
-      spaceBetween: 12,
-    },
-    660: {
-      slidesPerView: 2,
-    },
-    900: {
-      slidesPerView: 3,
-    },
-    1400: {
-      slidesPerView: 4,
-    },
-  }
-});
+    breakpoints: {
+      0: {
+        slidesPerView: 1.06,
+        spaceBetween: 12,
+      },
+      660: {
+        slidesPerView: 2,
+      },
+      900: {
+        slidesPerView: 3,
+      },
+      1400: {
+        slidesPerView: 4,
+      },
+    }
+  });
 
 }
 
@@ -206,59 +208,59 @@ const swiperWorks = new Swiper('.swiper-works', {
 // Production
 if (document.querySelector('.swiper-production')) {
 
-const swiperProduction = new Swiper('.swiper-production', {
-  // Optional parameters
-  direction: 'vertical',
-  slidesPerView: 5,
-  spaceBetween: 16,
+  const swiperProduction = new Swiper('.swiper-production', {
+    // Optional parameters
+    direction: 'vertical',
+    slidesPerView: 5,
+    spaceBetween: 16,
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },breakpoints: {
-    0: {
-      slidesPerView: 3,
-      spaceBetween: 12,
-      direction: 'horizontal',
-    },
-    600: {
-      slidesPerView: 2,
-      direction: 'horizontal',
-    },
-    1400: {
-      slidesPerView: 5,
-    },
-  }
-});
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    }, breakpoints: {
+      0: {
+        slidesPerView: 3,
+        spaceBetween: 12,
+        direction: 'horizontal',
+      },
+      600: {
+        slidesPerView: 2,
+        direction: 'horizontal',
+      },
+      1400: {
+        slidesPerView: 5,
+      },
+    }
+  });
 
-let buttonsProduction = document.querySelectorAll('.production__img'),
+  let buttonsProduction = document.querySelectorAll('.production__img'),
     imgProduction = document.querySelector('.production__big-img');
 
-buttonsProduction.forEach(button => {
-  button.onclick = function () {
-    let active = document.querySelector('.production__img.active');
-        
-    active.classList.remove('active');
-    button.classList.add('active');
+  buttonsProduction.forEach(button => {
+    button.onclick = function () {
+      let active = document.querySelector('.production__img.active');
+
+      active.classList.remove('active');
+      button.classList.add('active');
 
 
-    let newImg = button.style.backgroundImage,
+      let newImg = button.style.backgroundImage,
         newText = button.textContent,
         marker = imgProduction.classList.contains('transition');
 
-    imgProduction.style.backgroundImage = newImg;
-    imgProduction.textContent = newText;
+      imgProduction.style.backgroundImage = newImg;
+      imgProduction.textContent = newText;
 
-    if (!marker) {
-      imgProduction.classList.add('transition');
+      if (!marker) {
+        imgProduction.classList.add('transition');
 
-      setTimeout(() => {
-        imgProduction.classList.remove('transition');
-      }, 300);
+        setTimeout(() => {
+          imgProduction.classList.remove('transition');
+        }, 300);
+      }
+
     }
-    
-  }
-})
+  })
 
 }
 // Production
@@ -266,53 +268,53 @@ buttonsProduction.forEach(button => {
 // tag
 if (document.querySelector('.tag')) {
 
-let tagButtons = document.querySelectorAll('.tag__item');
+  let tagButtons = document.querySelectorAll('.tag__item');
 
-tagButtons.forEach(button => {
-  button.onclick = function () {
-    let active = document.querySelector('.tag__item.active');
+  tagButtons.forEach(button => {
+    button.onclick = function () {
+      let active = document.querySelector('.tag__item.active');
 
-    if (button == active) return;
+      if (button == active) return;
 
-    active.classList.remove('active');
-    button.classList.add('active');
-  }
-});
+      active.classList.remove('active');
+      button.classList.add('active');
+    }
+  });
 }
 // tag
 
 // select
 if (document.querySelector('.select')) {
 
-let selects = document.querySelectorAll('.select');
+  let selects = document.querySelectorAll('.select');
 
-selects.forEach(select => {
-  let selectOpen = select.querySelector('.select__value'),
+  selects.forEach(select => {
+    let selectOpen = select.querySelector('.select__value'),
       selectBlock = select.querySelector('.select__block'),
       selectContent = select.querySelector('.select__list');
 
-  selectOpen.onclick = function () {
-    let newHeight = selectContent.offsetHeight + 'px';
-    
+    selectOpen.onclick = function () {
+      let newHeight = selectContent.offsetHeight + 'px';
 
-    if (!selectOpen.classList.contains('active')) {
-      selectOpen.classList.add('active');
 
-      selectBlock.style.height = newHeight;
+      if (!selectOpen.classList.contains('active')) {
+        selectOpen.classList.add('active');
 
-      setTimeout(() => {
-        selectBlock.style.height = 'auto';
-      }, 300);
-    }else{
-      selectOpen.classList.remove('active');
-      selectBlock.style.height = newHeight;
+        selectBlock.style.height = newHeight;
 
-      setTimeout(() => {
-        selectBlock.style.height = 0;
-      }, 0);
+        setTimeout(() => {
+          selectBlock.style.height = 'auto';
+        }, 300);
+      } else {
+        selectOpen.classList.remove('active');
+        selectBlock.style.height = newHeight;
+
+        setTimeout(() => {
+          selectBlock.style.height = 0;
+        }, 0);
+      }
     }
-  }
-});
+  });
 
 }
 // select
@@ -320,18 +322,18 @@ selects.forEach(select => {
 // pagination
 if (document.querySelector('.pagination')) {
 
-let paginations = document.querySelectorAll('.pagination__item');
+  let paginations = document.querySelectorAll('.pagination__item');
 
-paginations.forEach(pagination => {
-  pagination.onclick = function () {
-    let active = document.querySelector('.pagination__item.active');
+  paginations.forEach(pagination => {
+    pagination.onclick = function () {
+      let active = document.querySelector('.pagination__item.active');
 
-    if (pagination == active) return;
+      if (pagination == active) return;
 
-    active.classList.remove('active');
-    pagination.classList.add('active');
-  }
-});
+      active.classList.remove('active');
+      pagination.classList.add('active');
+    }
+  });
 
 }
 // pagination
@@ -339,57 +341,57 @@ paginations.forEach(pagination => {
 // input-checkbox
 if (document.querySelector('.input-checkbox')) {
 
-let inputCheckbox = document.querySelectorAll('.input-checkbox');
+  let inputCheckbox = document.querySelectorAll('.input-checkbox');
 
-inputCheckbox.forEach(checkbox => {
-  let input = checkbox.querySelector('input');
+  inputCheckbox.forEach(checkbox => {
+    let input = checkbox.querySelector('input');
 
-  checkbox.onclick = function (event) {
-    if (!checkbox.classList.contains('active')) {
-      checkbox.classList.add('active');
-      input.checked = 1;
-    }else{
-      checkbox.classList.remove('active');
-      input.checked = 0;
+    checkbox.onclick = function (event) {
+      if (!checkbox.classList.contains('active')) {
+        checkbox.classList.add('active');
+        input.checked = 1;
+      } else {
+        checkbox.classList.remove('active');
+        input.checked = 0;
+      }
     }
-  }
-});
+  });
 }
 // input-checkbox
 
 // card__description
 if (document.querySelector('.card__description')) {
-  
-let buttonsDescription = document.querySelectorAll('.card-description-control__item'),
+
+  let buttonsDescription = document.querySelectorAll('.card-description-control__item'),
     contentDescription = document.querySelector('.card-description__content'),
     itemsDescription = document.querySelectorAll('.card-description__item');
 
-buttonsDescription.forEach((button, index) =>{
+  buttonsDescription.forEach((button, index) => {
     button.onclick = function () {
-        let activeButton = document.querySelector('.card-description-control__item.active');
+      let activeButton = document.querySelector('.card-description-control__item.active');
 
-        if (activeButton == button) return;
+      if (activeButton == button) return;
 
-        activeButton.classList.remove('active');
-        button.classList.add('active');
-        
-        let activeItem = document.querySelector('.card-description__item.active'),
-            newItem = itemsDescription[index],
-            activeHeight = activeItem.offsetHeight;
+      activeButton.classList.remove('active');
+      button.classList.add('active');
 
-        contentDescription.style.height = `${activeHeight}px`;
-        newItem.classList.add('active');
-        
-        let newHeight = newItem.offsetHeight;
+      let activeItem = document.querySelector('.card-description__item.active'),
+        newItem = itemsDescription[index],
+        activeHeight = activeItem.offsetHeight;
 
-        activeItem.classList.remove('active');
-        contentDescription.style.height = `${newHeight}px`;
+      contentDescription.style.height = `${activeHeight}px`;
+      newItem.classList.add('active');
 
-        setTimeout(() => {
-            contentDescription.style.height = 'auto';
-        }, 300);
+      let newHeight = newItem.offsetHeight;
+
+      activeItem.classList.remove('active');
+      contentDescription.style.height = `${newHeight}px`;
+
+      setTimeout(() => {
+        contentDescription.style.height = 'auto';
+      }, 300);
     }
-});
+  });
 
 }
 // card__description
@@ -397,16 +399,16 @@ buttonsDescription.forEach((button, index) =>{
 // file
 if (document.querySelector('.file')) {
 
-let files = document.querySelectorAll('.file');
+  let files = document.querySelectorAll('.file');
 
-files.forEach(file => {
-  let inputFile = file.querySelector('input'),
+  files.forEach(file => {
+    let inputFile = file.querySelector('input'),
       nameFile = file.querySelector('.file__name');
-      
-  inputFile.addEventListener('change', (e) => {
-    nameFile.textContent = e.target.files[0].name;
+
+    inputFile.addEventListener('change', (e) => {
+      nameFile.textContent = e.target.files[0].name;
+    });
   });
-});
 
 }
 // file
@@ -414,63 +416,63 @@ files.forEach(file => {
 // questions
 if (document.querySelector('.questions')) {
 
-let questions = document.querySelectorAll('.questions__item');
+  let questions = document.querySelectorAll('.questions__item');
 
-questions.forEach(question => {
-  let btn = question.querySelector('.questions__title');
+  questions.forEach(question => {
+    let btn = question.querySelector('.questions__title');
 
-  btn.onclick = function () {
-    let block = question.querySelector('.questions__content'),
+    btn.onclick = function () {
+      let block = question.querySelector('.questions__content'),
         content = question.querySelector('.questions__text'),
         newHeight = content.offsetHeight + 'px';
 
-    if (!question.classList.contains('active')) {
-      question.classList.add('active');
-      block.style.height = newHeight;
-
-      setTimeout(() => {
-        block.style.height = 'auto';
-      }, 300);
-    }else{
-      if (block.style.height == 'auto') {
+      if (!question.classList.contains('active')) {
+        question.classList.add('active');
         block.style.height = newHeight;
 
         setTimeout(() => {
-          block.style.height = 0;
-          question.classList.remove('active');
-        }, 0);
+          block.style.height = 'auto';
+        }, 300);
+      } else {
+        if (block.style.height == 'auto') {
+          block.style.height = newHeight;
+
+          setTimeout(() => {
+            block.style.height = 0;
+            question.classList.remove('active');
+          }, 0);
+        }
       }
+
+
     }
 
 
-  }
-  
-  
-});
+  });
 }
 // questions
 
 // tests
 if (document.querySelector('.tests')) {
-  
-let tests = document.querySelectorAll('.tests__item');
 
-tests.forEach(test => {
-  let video = test.querySelector('.tests-item__video'),
+  let tests = document.querySelectorAll('.tests__item');
+
+  tests.forEach(test => {
+    let video = test.querySelector('.tests-item__video'),
       window = video.querySelector('video');
 
-  video.onclick = function () {
-    if (!video.classList.contains('active')) {
-      video.classList.add('active');
-      window.controls = true;
+    video.onclick = function () {
+      if (!video.classList.contains('active')) {
+        video.classList.add('active');
+        window.controls = true;
+      }
     }
-  }
 
-  window.addEventListener("pause", (event) => {
-    video.classList.remove('active');
-    window.controls = false;
+    window.addEventListener("pause", (event) => {
+      video.classList.remove('active');
+      window.controls = false;
+    });
   });
-});
 
 }
 // tests
@@ -479,32 +481,32 @@ tests.forEach(test => {
 // input-radio
 if (document.querySelector('.input-radio')) {
 
-let inputRadios = document.querySelectorAll('.input-radio');
+  let inputRadios = document.querySelectorAll('.input-radio');
 
-inputRadios.forEach(radio => {
-  let btns = radio.querySelectorAll('button'),
+  inputRadios.forEach(radio => {
+    let btns = radio.querySelectorAll('button'),
       input = radio.querySelector('input');
 
-  btns.forEach(btn => {
-    btn.onclick = function (event) {
-      event.preventDefault();
+    btns.forEach(btn => {
+      btn.onclick = function (event) {
+        event.preventDefault();
 
-      let active = radio.querySelector('.active');
+        let active = radio.querySelector('.active');
 
-      if (btn == active) return;
-      
-      let value = btn.textContent;
+        if (btn == active) return;
 
-      input.value = value;  
-      active.classList.remove('active');
-      btn.classList.add('active');
-    }
+        let value = btn.textContent;
+
+        input.value = value;
+        active.classList.remove('active');
+        btn.classList.add('active');
+      }
+    });
+
+
+
+
   });
-
-
-
-  
-});
 
 }
 // input-radio
