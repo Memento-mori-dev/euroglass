@@ -6,6 +6,7 @@
 // параметры type, fire, material, filling (виды, огонь, материал, заполнение)
 
 // arr страницы все остальные под типы
+
 $urlDivided = parse_url(((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 parse_str($urlDivided['query'], $query);
 
@@ -24,7 +25,6 @@ $myposts = new WP_Query([
     'posts_per_page' => -1,
 ]);
 $myposts = $myposts->posts;
-
 ?>
 
     <div class="block">
@@ -117,115 +117,7 @@ $myposts = $myposts->posts;
     </div>
 
     <div class="block">
-      <form action="" class="calculation">
-        <p class="section-title">Расчет стоимости противопожарных окон</p>
-        
-        <div class="calculation__item">
-          <input type="text" class="input" placeholder="Ширина">
-
-          <input type="text" class="input" placeholder="Высота">
-
-          <input type="text" class="input" placeholder="Кол-во позиций">
-        </div>
-
-        <div class="calculation__item">
-          <div class="calculation__element">
-            <p class="calculation-item__title">Дымогазонепроницаемость</p>
-
-            <div class="input-radio">
-              <button class="active">EIW15</button>
-  
-              <button>EIW30</button>
-
-              <button>EIW45</button>
-
-              <button>EIW60</button>
-
-              <button>EIW90</button>
-
-              <input type="text">
-            </div>
-          </div>
-
-          <div class="calculation__element">
-            <p class="calculation-item__title">Дымогазонепроницаемость</p>
-
-            <div class="input-radio">
-              <button class="active">EIW15</button>
-  
-              <button>EIWS15</button>
-
-              <button>EIWS30</button>
-
-              <button>EIWS45</button>
-
-              <button>EIWS60</button>
-              <button>EIWS90</button>
-
-              <input type="text">
-            </div>
-          </div>
-        </div>
-
-        <div class="calculation__item">
-          <div class="calculation__element">
-            <p class="calculation-item__title">Расположение окон</p>
-
-            <div class="input-radio">
-              <button class="active">Внешнее</button>
-  
-              <button>Внутренее</button>
-
-              <input type="text">
-            </div>
-          </div>
-
-          <div class="calculation__element">
-            <p class="calculation-item__title">Количество полотен</p>
-
-            <div class="input-radio">
-              <button class="active">Однопольная</button>
-  
-              <button>Двупольная</button>
-
-              <input type="text">
-            </div>
-          </div>
-
-          <div class="calculation__element">
-            <p class="calculation-item__title">Тип открывания</p>
-
-            <div class="input-radio">
-              <button class="active">Распашная</button>
-  
-              <button>Раздвижная</button>
-
-              <button>Маятниковая</button>
-
-              <input type="text">
-            </div>
-          </div>
-        </div>
-
-        <div class="calculation__item calculation__add">
-          <p class="calculation-add__title">Введите ваши контакты</p>
-
-          <input type="text" class="input" placeholder="Имя">
-
-          <input type="text" class="input" placeholder="Ваш телефон">
-
-          <button class="file file_orange">
-              <p class="file__name">Прикрепить</p>
-              <p class="file__description">*docx, pdf, zip, rar</p>
-              <input type="file" name="" id="">
-          </button>
-
-          <a href="#" class="btn btn__transparent">Оставить заявку</a>
-
-          <p class="card-form__conditions">Я даю согласие на обработку своих персональных данных
-              в соответствии с <a href="#">политикой конфиденциальности</a>.</p>
-        </div>
-      </form>
+      <?=get_template_part('/php-content/catalog/calculation');?>
     </div>
 
     <div class="block">
@@ -273,46 +165,12 @@ $myposts = $myposts->posts;
       </div>
 
       <div class="description__certificates">
-        certificates
+        <?=get_template_part('/php-content/main/certificates');?>
       </div>
     </div>
 
     <div class="block">
-      <div class="form-prod">
-        <div class="form-prod__content">
-          <div class="form-prod-content__header">
-            <p class="form-prod-content__title">Остались вопросы?</p>
-            <p class="form-prod-content__text">Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.</p>
-          </div>
-          <div class="form-prod-content__footer">
-            <form action="" class="form-prod-content__fill">
-              <input type="text" class="input" placeholder="Имя">
-              <input type="text" class="input" placeholder="Ваш телефон">
-              <a href="#" class="btn btn__transparent-white">Оставить заявку</a>
-              <p class="card-form__conditions">Я даю согласие на обработку своих персональных данных
-                в соответствии с <a href="#">политикой конфиденциальности</a>.</p>
-            </form>
-          </div>
-        </div>
-
-        <div class="form-prod__card">
-          <div class="form-prod__header">
-            <img src="<?= get_template_directory_uri();?>/assets/img/page/products/people.png" alt="" class="form-prod__img">
-
-            <div class="form-prod-header__content">
-              <p class="form-prod__title">Дмитрий Дмитриевич</p>
-
-              <p class="form-prod__post">Должность</p>
-            </div>
-          </div>
-
-          <div class="form-prod__footer">
-            <a href="tel:" class="form-prod__phone">+7-922-002-66-62</a>
-
-            <a href="malto:" class="form-prod__mail">fc@uralglass.com</a>
-          </div>
-        </div>
-      </div>
+      <?=get_template_part('/php-content/catalog/form');?>
     </div>
 
     <div class="block">
