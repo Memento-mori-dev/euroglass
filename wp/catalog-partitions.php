@@ -110,6 +110,10 @@ $myposts = $myposts->posts;
             </div>
             <?wp_reset_postdata();?>
         <?endforeach;?>
+
+        <? if (!$myposts):?>
+          <p style="text-align: center;" class="section-title">Товар не найден</p>
+        <? endif;?>
     </div>
 
     <div class="block">
