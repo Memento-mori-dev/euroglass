@@ -1,8 +1,4 @@
 <? 
-// для меню
-// include 'php-content/my_posts.php';
-// $arr = getHeadings(array(13))[0];
-
 // параметры type, fire, material, filling (виды, огонь, материал, заполнение)
 
 // arr страницы все остальные под типы

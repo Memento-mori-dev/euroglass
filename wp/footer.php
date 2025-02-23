@@ -1,4 +1,9 @@
-  </main>
+<?
+  $mainMenuArr = wp_get_nav_menu_items('footer-menu');
+  $productsMenuArr = wp_get_nav_menu_items('products-footer'); 
+?>
+
+</main>
 
   <footer class="footer">
     <div class="footer__content">
@@ -13,66 +18,18 @@
           <div class="footer-content-menu__item">
             <a href="#" class="footer-content-menu__title">Продукция</a>
             <ul class="footer-content-menu__list">
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарный междуэтажный пояс</a>
-              </li>
-
-              <li>
-                <a href="#">Оборудование для контроля выпускаемой продукции</a>
-              </li>
+              <? foreach ($productsMenuArr as $key => $value):?>
+                <li> <a href="<?=$value->url;?>"><?=$value->title;?></a> </li>
+              <? endforeach;?>
             </ul>
           </div>
 
           <div class="footer-content-menu__item">
-            <a href="#" class="footer-content-menu__title">Продукция</a>
+            <a href="#" class="footer-content-menu__title">О нас</a>
             <ul class="footer-content-menu__list">
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарные окна</a>
-              </li>
-
-              <li>
-                <a href="#">Противопожарный междуэтажный пояс</a>
-              </li>
-
-              <li>
-                <a href="#">Оборудование для контроля выпускаемой продукции</a>
-              </li>
+              <? foreach ($mainMenuArr as $key => $value):?>
+                <li> <a href="<?=$value->url;?>"><?=$value->title;?></a> </li>
+              <? endforeach;?>
             </ul>
           </div>
         </div>

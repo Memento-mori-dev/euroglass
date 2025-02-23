@@ -1,3 +1,16 @@
+<?
+  $mainMenuArr = wp_get_nav_menu_items('header-menu');
+
+// для меню
+include 'php-content/my_posts.php';
+$arr = getHeadings(array(13))[0];
+
+echo '<pre>';
+print_r($arr);
+echo '</pre>';
+
+?>
+
 <!doctype html>
 <html lang="ru">
 
@@ -8,7 +21,6 @@
 
   <? wp_head();?>
 </head>
-
 <body>
   <header class="header">
     <div class="header__pre">
@@ -21,16 +33,17 @@
 
     <div class="wrapper">
       <div class="header__wrapper">
-        <a href="#" class="header__logo">
+        <a href="/" class="header__logo">
           <img src="<?= get_template_directory_uri();?>/assets/img/page/main/logo.svg" alt="">
         </a>
 
         <ul class="header__menu">
           <li><a href="#" class="menu-pc">Продукция</a></li>
-          <li><a href="#">Огнестойкое стекло</a></li>
-          <li><a href="#">О нас</a></li>
-          <li><a href="#">Документация</a></li>
-          <li><a href="#">Наши работы</a></li>
+
+          <? foreach ($mainMenuArr as $key => $value):?>
+            <li><a href="<?=$value->url;?>"><?=$value->title;?></a></li>
+          <? endforeach;?>
+          
         </ul>
 
         <div class="header__additionally">

@@ -23,6 +23,12 @@ function euroglass_scripts() {
 }
 
 
-
+add_action( 'after_setup_theme', function(){
+	register_nav_menus( [
+		'header_menu' => 'Меню в шапке',
+		'footer_menu' => 'Меню в подвале',
+        'footer_menu_catalog' => 'Продукция в подвале',
+	] );
+} );
 
 ?>
