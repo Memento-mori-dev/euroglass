@@ -6,8 +6,6 @@ get_header();
 ?>
 
 <?
-include 'php-content/my_posts.php';
-
 $allHeading = getHeadings(array(17));
 
 $allTags = $allHeading[0];
@@ -18,14 +16,6 @@ foreach ($allTags as $key => $value) {
     array_push($allTagsId, $value->term_id);
     array_push($allTagsName, $value->description);
 }
-
-
-
-
-
-
-
-
 
 
 

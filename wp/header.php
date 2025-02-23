@@ -5,10 +5,15 @@
 include 'php-content/my_posts.php';
 $arr = getHeadings(array(13))[0];
 
-echo '<pre>';
-print_r($arr);
-echo '</pre>';
+$allPar = array();
 
+foreach ($arr as $key => $value) {
+  if ($value->slug != 'types') {
+    array_push($allPar, array($value->term_id, $value->name));
+  }
+}
+
+$typesArr = getHeadings(array(17))[0];
 ?>
 
 <!doctype html>
@@ -67,71 +72,76 @@ echo '</pre>';
 
       <div class="header__sub-menu">
         <div class="header-sub-menu__content sub-menu" style="height: 362px;">
+
           <ul class="header-sub-menu__list">
-            <li class="active"><a href="#">Противопожарные окна</a></li>
-            <li><a href="#">Противопожарные двери</a></li>
-            <li><a href="#">Противопожарные перегородки</a></li>
-            <li><a href="#">Противопожарные фасады</a></li>
-            <li><a href="#">Противопожарный междуэтажный пояс</a></li>
+            <? foreach ($typesArr as $key => $value):?>
+              <li class="<? if($key == 0){echo 'active';}?>"> <a href="#"><?=$value->name;?></a></li>
+            <?endforeach;?>
           </ul>
 
           <div class="header-sub-menu__detail">
-            <div class="header-sub-menu-detail__item detail-menu active">
-              <div class="header-sub-menu__item">
-                <p class="header-sub-menu__title">По огнестойкости</p>
-  
-                <ul class="header-sub-menu-item__list">
-                  <li><a href="#">E 90</a></li>
-                  <li><a href="#">E 15</a></li>
-                  <li><a href="#">E 30</a></li>
-                  <li><a href="#">E 45</a></li>
-                  <li><a href="#">E 60</a></li>
-                </ul>
-              </div>
-  
-              <div class="header-sub-menu__item">
-                <p class="header-sub-menu__title">По типу заполнения</p>
-  
-                <ul class="header-sub-menu-item__list">
-                  <li><a href="#">1 тип</a></li>
-                  <li><a href="#">2 тип</a></li>
-                  <li><a href="#">3 тип</a></li>
-                </ul>
-              </div>
-  
-              <div class="header-sub-menu__item">
-                <p class="header-sub-menu__title">По материалу</p>
-  
-                <ul class="header-sub-menu-item__list">
-                  <li><a href="#">Алюминиевый профиль</a></li>
-                  <li><a href="#">Профиль из нержавеющей стали</a></li>
-                </ul>
-              </div>
-            </div>
+            <? foreach ($typesArr as $key => $value):?>
+              <?
+                $idType = $value->term_id;
+              ?>
 
-            <div class="header-sub-menu-detail__item detail-menu">
-              <div class="header-sub-menu__item">
-                <p class="header-sub-menu__title">По огнестойкости 2</p>
-  
-                <ul class="header-sub-menu-item__list">
-                  <li><a href="#">E 90</a></li>
-                  <li><a href="#">E 15</a></li>
-                  <li><a href="#">E 30</a></li>
-                  <li><a href="#">E 45</a></li>
-                  <li><a href="#">E 60</a></li>
-                </ul>
+              <div class="header-sub-menu-detail__item detail-menu <? if($key == 0){echo 'active';}?>">
+                <? foreach ($allPar as $key => $value):?>
+                  <?
+                    $id = $value[0];
+                    $name = $value[1];
+                    ?>
+                    <? if ($id == '16'): ?>
+                      <div class="header-sub-menu__item">
+                        <p class="header-sub-menu__title"><?=$name;?></p>
+          
+                        <ul class="header-sub-menu-item__list">
+                        
+                          <? foreach (getHeadings(array($id))[0] as $key => $value):?>
+                            <?
+                              $id = $value->term_id;
+                              $name = $value->name;
+
+                              $myposts = new WP_Query([
+                                  'category_name' => 'сatalog',
+                                  'category__and' => array($id,$idType),
+                                  'post_status' => 'publish',
+                                  'order' => 'ASC',
+                                  'posts_per_page' => -1,
+                              ]);
+                              $myposts = $myposts->posts;
+
+                              $idPost = $myposts[0]->ID;
+                              ?>
+
+                              <? if($idPost):?>
+                                <li><a href="<?=get_permalink($idPost);?>"><?=$name;?></a></li>
+                              <?endif;?>
+                          <?endforeach;?>
+                        </ul>
+                      </div>
+                    <? else: ?>
+                      <div class="header-sub-menu__item">
+                        <p class="header-sub-menu__title"><?=$name;?></p>
+          
+                        <ul class="header-sub-menu-item__list">
+                        
+                          <? foreach (getHeadings(array($id))[0] as $key => $value):?>
+                            <?
+                              $id = $value->term_id;
+                              $name = $value->name;
+                              ?>
+
+                              <li><a href="/catalog/?type=<?=$idType;?>&add=<?=$id;?>"><?=$name;?></a></li>
+                          <?endforeach;?>
+                        </ul>
+                      </div>
+                    <? endif; ?>
+                    
+                <?endforeach;?>
               </div>
-  
-              <div class="header-sub-menu__item">
-                <p class="header-sub-menu__title">По типу заполнения</p>
-  
-                <ul class="header-sub-menu-item__list">
-                  <li><a href="#">1 тип</a></li>
-                  <li><a href="#">2 тип</a></li>
-                  <li><a href="#">3 тип</a></li>
-                </ul>
-              </div>
-            </div>
+
+            <?endforeach;?>
           </div>
         </div>
       </div>

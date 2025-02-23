@@ -5,7 +5,6 @@
 ?>
 
 <? 
-include 'php-content/my_posts.php';
 get_header();?>
 <?  
     $maElPage = 12;
