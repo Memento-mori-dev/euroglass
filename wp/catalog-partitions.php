@@ -1,20 +1,34 @@
 <? 
-/* 
-    Template Name: test1
-*/
-get_header();
+// для меню
+// include 'php-content/my_posts.php';
+// $arr = getHeadings(array(13))[0];
 
-
-include 'php-content/my_posts.php';
-
-$arr = getHeadings(array(13))[0];
+// параметры type, fire, material, filling (виды, огонь, материал, заполнение)
 
 // arr страницы все остальные под типы
+$urlDivided = parse_url(((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+parse_str($urlDivided['query'], $query);
+
+// получение всех подкатегорий
+$arrCategory = array();
+foreach ($query as $key => $value) {
+    array_push($arrCategory, $value);
+}
+
+// сatalog
+$myposts = new WP_Query([
+    'category_name' => 'сatalog',
+    'category__and' => $arrCategory,
+    'post_status' => 'publish',
+    'order' => 'ASC',
+    'posts_per_page' => -1,
+]);
+$myposts = $myposts->posts;
 
 ?>
 
     <div class="block">
-      <p class="section-title">Противопожарные окна</p>
+      <p class="section-title">Противопожарные перегоротки</p>
 
       <p class="text">
         Мы создаём окна, которые обеспечивают защиту от огня. Они могут быть разных размеров и форм. В соответствии с требованиями Федерального закона №123, такие окна могут быть глухими или иметь специальные люки, которые автоматически закрываются при пожаре. По желанию заказчика мы можем изготовить окна с открывающимися створками, фрамугами или форточками.
@@ -72,164 +86,34 @@ $arr = getHeadings(array(13))[0];
     </div>
 
     <div class="block">
-      <div class="products">
-        <img src="<?= get_template_directory_uri();?>/assets/img/page/card/card.png" alt="" class="products__img">
+        <? foreach($myposts as $post):?>
+            <?
+                setup_postdata( $post );
 
-        <div class="products__content">
-          <p class="products-content__title">Противопожарное окно Е 60</p>
-          <p class="products-content__text">Огнестойкость E 60 мин. Каркас — алюминиевая профильная система СИАЛ КПТ 78EI в противопожарном исполнении с применением стекла FIRECLASS 60</p>
-          
-          <div class="products-content__description">
-            <div class="products-content-description__item">
-              <p>Система</p>
+                $id = $post->ID;
+                $images = get_field('images', $id);
+                $imagesUrl = $images['url'];
+                ?>
+            <div class="products">
+                <img src="<?=$imagesUrl;?>" alt="" class="products__img">
 
-              <p>СИАЛ КПТ 74 в противопожарном исполнении</p>
+                <div class="products__content">
+                    <a href="<?=the_permalink();?>" class="products-content__title"><?=the_title();?></a>
+                    <p class="products-content__text"><?=get_field('description_card', $id);?></p>
+                    
+                    <div class="products-content__description">
+                        <?=get_field('characteristics', $id);?>
+                    </div>
+
+                    <div class="products-content__price">
+                        <p class="products-content-price__name">Цена за м <sup>2</sup></p>
+
+                        <p class="products-content-price__value"><?=get_field('price', $id);?></p>
+                    </div>
+                </div>
             </div>
-
-            <div class="products-content-description__item">
-              <p>Ширина x Высота, мм</p>
-
-              <p>1200 х 1600</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Светопрозрачное заполнение</p>
-
-              <p>6 FC 60-22-4М1 (СПО32)</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Текстура</p>
-
-              <p>Цвет RAL по выбору</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Площадь изделия</p>
-
-              <p>1,92 кв.м.</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Масса изделия	</p>
-
-              <p>57,91 кг.</p>
-            </div>
-          </div>
-
-          <div class="products-content__price">
-            <p class="products-content-price__name">Цена за м <sup>2</sup></p>
-
-            <p class="products-content-price__value">15 500</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="products">
-        <img src="<?= get_template_directory_uri();?>/assets/img/page/card/card.png" alt="" class="products__img">
-
-        <div class="products__content">
-          <p class="products-content__title">Противопожарное окно Е 60</p>
-          <p class="products-content__text">Огнестойкость E 60 мин. Каркас — алюминиевая профильная система СИАЛ КПТ 78EI в противопожарном исполнении с применением стекла FIRECLASS 60</p>
-          
-          <div class="products-content__description">
-            <div class="products-content-description__item">
-              <p>Система</p>
-
-              <p>СИАЛ КПТ 74 в противопожарном исполнении</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Ширина x Высота, мм</p>
-
-              <p>1200 х 1600</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Светопрозрачное заполнение</p>
-
-              <p>6 FC 60-22-4М1 (СПО32)</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Текстура</p>
-
-              <p>Цвет RAL по выбору</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Площадь изделия</p>
-
-              <p>1,92 кв.м.</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Масса изделия	</p>
-
-              <p>57,91 кг.</p>
-            </div>
-          </div>
-
-          <div class="products-content__price">
-            <p class="products-content-price__name">Цена за м <sup>2</sup></p>
-
-            <p class="products-content-price__value">15 500</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="products">
-        <img src="<?= get_template_directory_uri();?>/assets/img/page/card/card.png" alt="" class="products__img">
-
-        <div class="products__content">
-          <p class="products-content__title">Противопожарное окно Е 60</p>
-          <p class="products-content__text">Огнестойкость E 60 мин. Каркас — алюминиевая профильная система СИАЛ КПТ 78EI в противопожарном исполнении с применением стекла FIRECLASS 60</p>
-          
-          <div class="products-content__description">
-            <div class="products-content-description__item">
-              <p>Система</p>
-
-              <p>СИАЛ КПТ 74 в противопожарном исполнении</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Ширина x Высота, мм</p>
-
-              <p>1200 х 1600</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Светопрозрачное заполнение</p>
-
-              <p>6 FC 60-22-4М1 (СПО32)</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Текстура</p>
-
-              <p>Цвет RAL по выбору</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Площадь изделия</p>
-
-              <p>1,92 кв.м.</p>
-            </div>
-
-            <div class="products-content-description__item">
-              <p>Масса изделия	</p>
-
-              <p>57,91 кг.</p>
-            </div>
-          </div>
-
-          <div class="products-content__price">
-            <p class="products-content-price__name">Цена за м <sup>2</sup></p>
-
-            <p class="products-content-price__value">15 500</p>
-          </div>
-        </div>
-      </div>
+            <?wp_reset_postdata();?>
+        <?endforeach;?>
     </div>
 
     <div class="block">
@@ -506,6 +390,3 @@ $arr = getHeadings(array(13))[0];
         </div>
       </div>
     </div>
-
-
- <? get_footer();?>

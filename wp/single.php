@@ -15,5 +15,9 @@ if (in_category(12, $id)) {
 }
 
 
+if (in_category(13, $id)) {
+    get_template_part('single-catalog');
+}
+
 
 get_footer();?>
