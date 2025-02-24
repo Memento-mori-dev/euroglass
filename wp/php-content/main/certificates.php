@@ -1,7 +1,7 @@
 <div class="block__header certificates__header">
-    <p class="section-title">Примеры выполненных работ</p>
+    <p class="section-title">Сертификаты и лецензии</p>
 
-    <a href="/certificates/" class="btn btn__transparent certificates__btn-pc">Все работы</a>
+    <a href="/certificates/" class="btn btn__transparent certificates__btn-pc">Все сертификаты</a>
 </div>
 
 <?

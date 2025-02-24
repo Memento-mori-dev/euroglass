@@ -6150,3 +6150,236 @@ button {
         width: calc(50% - 16px)
     }
 }
+
+
+.art {
+    margin: auto;
+  }
+  .art h1, .art h2, .art h3 {
+    font-family: var(--second-family);
+    color: var(--black);
+  }
+  .art > p {
+    margin-top: 8px;
+    font-family: var(--font-family);
+    color: var(--grey-t);
+  }
+  .art ul {
+    list-style: none;
+  }
+  .art ul li {
+    margin-top: 8px;
+    padding-left: 12px;
+    position: relative;
+  }
+  .art ul li:first-child {
+    margin-top: 0;
+  }
+  .art ul li::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 6px;
+    aspect-ratio: 1;
+    background-color: var(--orange);
+  }
+  .art ol {
+    margin-top: 16px;
+    list-style-type: none;
+    counter-reset: my-counter;
+  }
+  .art ol li {
+    margin-top: 8px;
+    padding-left: 22px;
+    font-family: var(--font-family);
+    color: var(--grey-t);
+    position: relative;
+  }
+  .art ol li:first-child {
+    margin-top: 0;
+  }
+  .art ol li::before {
+    content: counter(my-counter) ".";
+    counter-increment: my-counter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+    color: var(--orange);
+  }
+  .art__card {
+    background-color: var(--orange);
+    background-image: url(icon.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  .art-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .art-card__title {
+    font-family: var(--font-family);
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .art-card__text {
+    font-family: var(--font-family);
+    color: var(--white);
+  }
+  
+  @media (min-width: 860px) {
+    .art {
+      max-width: 880px;
+    }
+    .art h1 {
+      font-weight: 600;
+      font-size: 38px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .art h2 {
+      font-weight: 600;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .art h3 {
+      font-weight: 500;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+    }
+    .art p {
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .art ul {
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .art ol {
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .art__block {
+      margin-top: 60px;
+    }
+    .art__card {
+      padding: 40px;
+    }
+    .art-card__icon {
+      width: 30px;
+    }
+    .art-card__title {
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .art-card__text {
+      margin-top: 16px;
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+  }
+  @media (max-width: 1400px) and (min-width: 860px) {
+    .art h1 {
+      font-weight: 600;
+      font-size: 38px;
+      letter-spacing: -0.02em;
+    }
+    .art h2 {
+      font-weight: 600;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+    }
+    .art h3 {
+      font-weight: 500;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+    }
+    .art p {
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .art ul {
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .art ol {
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .art__card {
+      padding: 32px;
+    }
+    .art-card__title {
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .art-card__text {
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+  }
+  @media (max-width: 860px) {
+    .art h1 {
+      font-weight: 600;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+    }
+    .art h2 {
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+    .art h3 {
+      font-weight: 500;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .art p {
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .art ul {
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .art ol {
+      margin-top: 12px;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .art__block {
+      margin-top: 40px;
+    }
+    .art__card {
+      padding: 24px;
+    }
+    .art-card__icon {
+      width: 25px;
+    }
+    .art-card__title {
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+    }
+    .art-card__text {
+      margin-top: 16px;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+  }

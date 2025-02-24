@@ -59,9 +59,9 @@ $typesArr = getHeadings(array(17))[0];
           </div>
           
           <div class="header__buttons">
-            <button class="btn btn__orange header__btn-pc">Заявка на расчет</button>
+            <button class="btn btn__orange header__btn-pc open-modal" data-modal="call">Заявка на расчет</button>
 
-            <button class="btn btn__transparent header__btn-ph">Заявка на расчет</button>
+            <button class="btn btn__transparent header__btn-ph open-modal" data-modal="call">Заявка на расчет</button>
 
             <button class="header__btn-menu header__btn-ph">
               

@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #EC503C;
+  --white-t-08: rgba(255, 255, 255, .8);
+  --white: #fff;
+  --grey-t: #504f5e;
+  --black: #111;
+  --blue: #F2F6F8;
+  --grey-white: #F7F7F7;
+  --input: #a4a3ad;
+  --font-family: "Quarion", sans-serif;
+  --second-family: "Montserrat", sans-serif;
+  --third-family: "Tektur", sans-serif ;
+}/*# sourceMappingURL=style.css.map */
