@@ -24,7 +24,7 @@ if (document.querySelector('.header')) {
     pcDetailMenu = document.querySelectorAll('.detail-menu');
 
   pcListMenu.forEach((li, index) => {
-    li.onclick = function () {
+    li.onmouseover = function () {
       let liActive = document.querySelector('.header-sub-menu__list .active');
 
       if (li == liActive) return;

@@ -75,7 +75,7 @@ $typesArr = getHeadings(array(17))[0];
 
           <ul class="header-sub-menu__list">
             <? foreach ($typesArr as $key => $value):?>
-              <li class="<? if($key == 0){echo 'active';}?>"> <a href="#"><?=$value->name;?></a></li>
+              <li class="<? if($key == 0){echo 'active';}?>"> <a href="/catalog/?type=<?=$value->term_id;?>"><?=$value->name;?></a></li>
             <?endforeach;?>
           </ul>
 
@@ -179,9 +179,9 @@ $typesArr = getHeadings(array(17))[0];
               <button class="header-phone-next__close">
               </button>
 
-              <p class="header-phone-next__name">
+              <a href="/catalog/?type=<?=$idType;?>" class="header-phone-next__name">
                 <?=$value->name;?>
-              </p>
+              </a>
             </div>
 
             <div class="header-phone-next__content">
