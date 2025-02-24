@@ -63,7 +63,10 @@ if (document.querySelector('.header')) {
       }, 300);
     } else {
       if (document.querySelector('.header-phone-next__item.active')) {
-        document.querySelector('.header-phone-next__item.active').classList.remove('active');
+        document.querySelector('.header__phone-next.active').classList.remove('active');
+        setTimeout(() => {
+          document.querySelector('.header-phone-next__item.active').classList.remove('active');
+        }, 300);
       }
 
       phoneBlockMenu.style.height = newHeight;
