@@ -14,6 +14,7 @@ foreach ($query as $key => $value) {
 
 // сatalog
 $myposts = new WP_Query([
+    'cat' => -29,
     'category_name' => 'сatalog',
     'category__and' => $arrCategory,
     'post_status' => 'publish',
