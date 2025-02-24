@@ -90,13 +90,12 @@ get_header();?>
         <div class="catalog-gal__catalog">
             <?php
                 if( $redyPosts){
-                    foreach( $redyPosts as $post ){
+                    foreach( $redyPosts as $key => $post ){
                         setup_postdata( $post );
 
                         $id = $post->ID;
                         $images = get_field('images', $id);
                         $imagesUrl = $images['url'];
-
                         ?>
                         
                         <a href="<?=the_permalink();?>" class="catalog-gal__item" data-id="<?=$id;?>">
