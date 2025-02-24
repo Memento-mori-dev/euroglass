@@ -4104,15 +4104,19 @@ button {
     }
 
     .form-prod-content__fill .input {
+        width: 314px
+    }
+
+    .form-prod-content__fill span {
         margin-left: 16px;
         width: 314px
     }
 
-    .form-prod-content__fill .input:first-child {
+    .form-prod-content__fill span:first-child {
         margin-left: 0
     }
 
-    .form-prod-content__fill .input:nth-child(2) {
+    .form-prod-content__fill span:nth-child(2) {
         margin-right: calc(100% - 648px)
     }
 
@@ -4454,16 +4458,20 @@ button {
     }
 
     .form-prod-content__fill .input {
+        width: 100%
+    }
+
+    .form-prod-content__fill span {
         margin-top: 16px;
         margin-left: 0;
         width: 100%
     }
 
-    .form-prod-content__fill .input:first-child {
+    .form-prod-content__fill span:first-child {
         margin-top: 0
     }
 
-    .form-prod-content__fill .input:nth-child(2) {
+    .form-prod-content__fill span:nth-child(2) {
         margin-right: 0
     }
 
@@ -4784,11 +4792,15 @@ button {
     }
 
     .form-prod-content__fill .input {
+        width: 100%
+    }
+
+    .form-prod-content__fill span {
         margin-top: 12px;
         width: 100%
     }
 
-    .form-prod-content__fill .input:first-child {
+    .form-prod-content__fill span:first-child {
         margin-top: 0
     }
 
