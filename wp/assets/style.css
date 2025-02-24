@@ -5921,6 +5921,8 @@ button {
 }
 
 .gallery-banner-footer__next {
+    margin-left: auto;
+
     font-family: var(--font-family);
     color: var(--orange);
     text-decoration: none
