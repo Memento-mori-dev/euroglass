@@ -1326,6 +1326,14 @@ template {
     background-position: center left;
     position: relative
 }
+.file .wpcf7-form-control-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
 
 .file__name {
     margin-left: -11px;
@@ -1413,6 +1421,7 @@ template {
     border: 1px solid var(--orange);
 
     font-size: 0;
+    pointer-events: none;
 }
 
  .wpcf7 form .wpcf7-response-output{
@@ -3537,7 +3546,7 @@ button {
     color: var(--grey-t)
 }
 
-.certif__item.hide {
+.tag-swap__item.hide {
     display: none
 }
 
@@ -3960,11 +3969,14 @@ button {
     }
 
     .calculation__item .input {
-        margin-left: 16px;
         width: 320px
+
+    }
+    .calculation__item > span {
+        margin-left: 16px;
     }
 
-    .calculation__item .input:first-child {
+    .calculation__item > span:first-child {
         margin-left: 0
     }
 
@@ -3987,11 +3999,13 @@ button {
     }
 
     .calculation__add .input {
-        margin-left: 16px;
         width: 314px
     }
+    .calculation__add > span {
+        margin-left: 16px;
+    }
 
-    .calculation__add .input:nth-child(2) {
+    .calculation__add > span:nth-child(2) {
         margin-left: 0
     }
 
@@ -4321,6 +4335,10 @@ button {
     }
 
     .calculation__item .input {
+        width: 100%;
+    }
+
+    .calculation__item span {
         margin-left: 0;
         width: calc(33.3% - 10.66px)
     }
@@ -4339,6 +4357,10 @@ button {
     }
 
     .calculation__add .input {
+        width: 100%;
+    }
+
+    .calculation__add span{
         margin-left: 0;
         width: calc(50% - 8px)
     }
@@ -4655,10 +4677,14 @@ button {
     }
 
     .calculation__item .input {
+       width: 100%;
+    }
+
+    .calculation__item span {
         margin-top: 12px
     }
 
-    .calculation__item .input:first-child {
+    .calculation__item span:first-child {
         margin-top: 0
     }
 

@@ -5,13 +5,7 @@
         <p class="form-prod-content__text">Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.</p>
         </div>
         <div class="form-prod-content__footer">
-        <form action="" class="form-prod-content__fill">
-            <input type="text" class="input" placeholder="Имя">
-            <input type="text" class="input" placeholder="Ваш телефон">
-            <a href="#" class="btn btn__transparent-white">Оставить заявку</a>
-            <p class="card-form__conditions">Я даю согласие на обработку своих персональных данных
-            в соответствии с <a href="#">политикой конфиденциальности</a>.</p>
-        </form>
+            <?=do_shortcode('[contact-form-7 id="89ad8a9" title="Остались вопросы"]');?>
         </div>
     </div>
 
