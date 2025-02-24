@@ -5,13 +5,18 @@
 </div>
 
 <?
-$certificateArray = get_posts([
-    'post_type' => 'certificate',
+$certificateArray = new WP_Query([
+    'category_name' => 'certificate',
+    'category__and' => $args[0],
     'post_status' => 'publish',
-    'numberposts' => 100,
+    'order' => 'ASC',
+    'posts_per_page' => 20,
 ]);
+
+$certificateArray = $certificateArray->posts;
 ?>
 
+<? if (count($certificateArray) > 0):?>
 <section class="certificates">
     <div class="swiper swiper-certificates">
         <div class="swiper-wrapper">
@@ -40,3 +45,4 @@ $certificateArray = get_posts([
 <div class="certificates__btn-tb">
     <a href="/certificates/" class="btn btn__transparent">Все сертификаты</a>
 </div>
+<? endif;?>

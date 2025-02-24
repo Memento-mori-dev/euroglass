@@ -17,8 +17,6 @@ foreach ($allTags as $key => $value) {
     array_push($allTagsName, $value->description);
 }
 
-
-
 // 
 
 ?>
@@ -87,6 +85,7 @@ foreach ($allTags as $key => $value) {
             <? foreach ($allTagsId as $key => $value):?>
                 <?
                     $myposts = new WP_Query([
+                        'cat' => -29,
                         'category_name' => 'types',
                         'category__and' => $value,
                         'post_status' => 'publish',

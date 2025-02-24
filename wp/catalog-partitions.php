@@ -166,7 +166,7 @@ $myposts = $myposts->posts;
       </div>
 
       <div class="description__certificates">
-        <?=get_template_part('/php-content/main/certificates');?>
+        <?=get_template_part('/php-content/main/certificates', null, $arrCategory);?>
       </div>
     </div>
 
