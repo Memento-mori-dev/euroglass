@@ -2,17 +2,31 @@
 /* 
     Template Name: certificates
 */
+get_header();?>
 
-        get_header();
+<?
+// $certificateArray = new WP_Query([
+//     'category_name' => 'certificate',
+//     // 'category__and' => $args[0],
+//     'post_status' => 'publish',
+//     'order' => 'ASC',
+//     'posts_per_page' => -1,
+// ]);
 
-        $certificateArray = get_posts([
-            'post_type' => 'certificate',
-            'post_status' => 'publish',
-            'numberposts' => 100,
-        ]);
+$certificateArray = $certificateArray->posts;
 
-        $firstId = $certificateArray[0]->ID;
-        $allTags = get_field_object('type', 21)['choices'];
+
+$allHeading = getHeadings(array(17));
+$allTags = $allHeading[0];
+$allTagsId = array();
+$allTagsName = array();
+
+foreach ($allTags as $key => $value) {
+    array_push($allTagsId, $value->term_id);
+    array_push($allTagsName, $value->description);
+}
+
+
 ?>
 
     <div class="block">
@@ -24,30 +38,43 @@
                     Все
                 </button>
 
-                <? foreach ($allTags as $value): ?>
-                    <button class="tag__item" data-teg="<?=$value;?>">
-                        <?=$value;?>
+                <? foreach ($allTagsId as $key => $value):?>
+                    <button class="tag__item" data-teg="<?=$value?>">
+                        <?=$allTagsName[$key];?>
                     </button>
                 <? endforeach;?>
             </div>
 
             <div class="certif__content">
-                <? foreach ($certificateArray as $value): ?>
+                <? foreach ($allTagsId as $key => $value):?>
                     <?
-                        $id = $value->ID;
-                        $tag = get_field('type', $id);
-                        $images = get_field('images', $id);
-                        $imagesUrl = $images['url'];
-                        $text = $value->post_content;
+                        $myposts = new WP_Query([
+                            'category_name' => 'certificate',
+                            'category__and' => $value,
+                            'post_status' => 'publish',
+                            'order' => 'ASC',
+                            'posts_per_page' => -1,
+                        ]);
+                        
+                        $myposts = $myposts->posts;
                     ?>
+                    <? foreach ($myposts as $post):?>
+                        <?
+                            setup_postdata( $post );
+                            
+                            $id = $post->ID;
+                            $images = get_field('images', $id);
+                            $imagesUrl = $images['url'];
 
-                    <div class="certif__item tag-swap__item" data-teg="<?=$tag;?>">
-                        <img src="<?=$imagesUrl;?>" alt="" class="certif__img">
+                            ?>
+                            <div class="certif__item tag-swap__item" data-teg="<?=$value?>">
+                                <img src="<?=$imagesUrl;?>" alt="" class="certif__img">
 
-                        <p class="certif__text">
-                            <?=$text;?>
-                        </p>
-                    </div>
+                                <p class="certif__text">
+                                    <?=the_title();?>
+                                </p>
+                            </div>
+                    <? endforeach;?>
                 <? endforeach;?>
             </div>
         </div>
