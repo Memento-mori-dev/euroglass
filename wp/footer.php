@@ -11,7 +11,7 @@
         <div class="footer-content__logo">
           <img src="<?= get_template_directory_uri();?>/assets/img/svg/logo-footer.svg" alt="" class="footer-content-logo__img">
 
-          <button class="btn btn__orange">Бесплатная консультация</button>
+          <button class="btn btn__orange open-modal" data-modal="call">Бесплатная консультация</button>
         </div>
 
         <div class="footer-content__menu">

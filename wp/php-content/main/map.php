@@ -33,7 +33,7 @@
         </div>
 
         <div class="contacts__block">
-            <button class="btn btn__transparent btn__100-per">Написать нам</button>
+            <button class="btn btn__transparent btn__100-per open-modal" data-modal="call">Написать нам</button>
         </div>
         </div>
 
