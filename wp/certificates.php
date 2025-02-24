@@ -26,7 +26,7 @@ foreach ($allTags as $key => $value) {
     array_push($allTagsName, $value->description);
 }
 
-
+$urlImgArr = array();
 ?>
 
     <div class="block">
@@ -58,7 +58,7 @@ foreach ($allTags as $key => $value) {
                         
                         $myposts = $myposts->posts;
                     ?>
-                    <? foreach ($myposts as $post):?>
+                    <? foreach ($myposts as $in => $post):?>
                         <?
                             setup_postdata( $post );
                             
@@ -66,8 +66,10 @@ foreach ($allTags as $key => $value) {
                             $images = get_field('images', $id);
                             $imagesUrl = $images['url'];
 
+                            array_push($urlImgArr, $imagesUrl);
+
                             ?>
-                            <div class="certif__item tag-swap__item" data-teg="<?=$value?>">
+                            <div class="certif__item tag-swap__item" data-teg="<?=$value?>" data-index="<?=$in;?>">
                                 <img src="<?=$imagesUrl;?>" alt="" class="certif__img">
 
                                 <p class="certif__text">
@@ -81,4 +83,23 @@ foreach ($allTags as $key => $value) {
     </div>
 
 
+
+    <script>
+        let gallery = [
+             <?foreach ($urlImgArr as $key => $value):?>
+                {src: '<?=$value;?>'},
+             <?endforeach;?>
+         ];
+         
+ 
+         document.querySelectorAll('.certif__item').forEach((btn, index) => {
+             btn.onclick = function (e) { 
+                 e.preventDefault();
+                 const startIndex = Number(index || 0)
+                 Fancybox.show(gallery, {
+                 startIndex
+                 });
+             }
+         });
+    </script>
 <? get_footer();?>

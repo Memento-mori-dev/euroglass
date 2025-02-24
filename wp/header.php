@@ -1,5 +1,5 @@
 <?
-  $mainMenuArr = wp_get_nav_menu_items('header-menu');
+$mainMenuArr = wp_get_nav_menu_items('header-menu');
 
 // для меню
 include 'php-content/my_posts.php';
@@ -24,47 +24,51 @@ $typesArr = getHeadings(array(17))[0];
   <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <? wp_head();?>
+  <? wp_head(); ?>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 </head>
+
 <body>
   <header class="header">
     <div class="header__pre">
       <div class="wrapper">
-        <a href="tel:<?=preg_replace('/[^0-9]/', '', get_field('phone', 39));?>" class="header-pre__phone">+<?=get_field('phone', 39);?></a>
+        <a href="tel:<?= preg_replace('/[^0-9]/', '', get_field('phone', 39)); ?>" class="header-pre__phone">+<?= get_field('phone', 39); ?></a>
 
-        <a href="malto:<?=get_field('email', 39);?>" class="header-pre__mail"><?=get_field('email', 39);?></a>
+        <a href="malto:<?= get_field('email', 39); ?>" class="header-pre__mail"><?= get_field('email', 39); ?></a>
       </div>
     </div>
 
     <div class="wrapper">
       <div class="header__wrapper">
         <a href="/" class="header__logo">
-          <img src="<?= get_template_directory_uri();?>/assets/img/page/main/logo.svg" alt="">
+          <img src="<?= get_template_directory_uri(); ?>/assets/img/page/main/logo.svg" alt="">
         </a>
 
         <ul class="header__menu">
           <li><a href="#" class="menu-pc">Продукция</a></li>
 
-          <? foreach ($mainMenuArr as $key => $value):?>
-            <li><a href="<?=$value->url;?>"><?=$value->title;?></a></li>
-          <? endforeach;?>
-          
+          <? foreach ($mainMenuArr as $key => $value): ?>
+            <li><a href="<?= $value->url; ?>"><?= $value->title; ?></a></li>
+          <? endforeach; ?>
+
         </ul>
 
         <div class="header__additionally">
           <div class="header__contact">
-            <a href="tel:<?=preg_replace('/[^0-9]/', '', get_field('phone', 39));?>" class="header__phone">+<?=get_field('phone', 39);?></a>
+            <a href="tel:<?= preg_replace('/[^0-9]/', '', get_field('phone', 39)); ?>" class="header__phone">+<?= get_field('phone', 39); ?></a>
 
-            <a href="malto:<?=get_field('email', 39);?>" class="header__mail"><?=get_field('email', 39);?></a>
+            <a href="malto:<?= get_field('email', 39); ?>" class="header__mail"><?= get_field('email', 39); ?></a>
           </div>
-          
+
           <div class="header__buttons">
             <button class="btn btn__orange header__btn-pc open-modal" data-modal="call">Заявка на расчет</button>
 
             <button class="btn btn__transparent header__btn-ph open-modal" data-modal="call">Заявка на расчет</button>
 
             <button class="header__btn-menu header__btn-ph">
-              
+
             </button>
           </div>
         </div>
@@ -74,74 +78,78 @@ $typesArr = getHeadings(array(17))[0];
         <div class="header-sub-menu__content sub-menu" style="height: 362px;">
 
           <ul class="header-sub-menu__list">
-            <? foreach ($typesArr as $key => $value):?>
-              <li class="<? if($key == 0){echo 'active';}?>"> <a href="/catalog/?type=<?=$value->term_id;?>"><?=$value->name;?></a></li>
-            <?endforeach;?>
+            <? foreach ($typesArr as $key => $value): ?>
+              <li class="<? if ($key == 0) {
+                            echo 'active';
+                          } ?>"> <a href="/catalog/?type=<?= $value->term_id; ?>"><?= $value->name; ?></a></li>
+            <? endforeach; ?>
           </ul>
 
           <div class="header-sub-menu__detail">
-            <? foreach ($typesArr as $key => $value):?>
+            <? foreach ($typesArr as $key => $value): ?>
               <?
-                $idType = $value->term_id;
+              $idType = $value->term_id;
               ?>
 
-              <div class="header-sub-menu-detail__item detail-menu <? if($key == 0){echo 'active';}?>">
-                <? foreach ($allPar as $key => $value):?>
+              <div class="header-sub-menu-detail__item detail-menu <? if ($key == 0) {
+                                                                      echo 'active';
+                                                                    } ?>">
+                <? foreach ($allPar as $key => $value): ?>
                   <?
-                    $id = $value[0];
-                    $name = $value[1];
-                    ?>
-                    <? if ($id == '16'): ?>
-                      <div class="header-sub-menu__item">
-                        <p class="header-sub-menu__title"><?=$name;?></p>
-          
-                        <ul class="header-sub-menu-item__list">
-                        
-                          <? foreach (getHeadings(array($id))[0] as $key => $value):?>
-                            <?
-                              $id = $value->term_id;
-                              $name = $value->name;
+                  $id = $value[0];
+                  $name = $value[1];
+                  ?>
+                  <? if ($id == '16'): ?>
+                    <div class="header-sub-menu__item">
+                      <p class="header-sub-menu__title"><?= $name; ?></p>
 
-                              $myposts = new WP_Query([
-                                  'category_name' => 'сatalog',
-                                  'category__and' => array($id,$idType),
-                                  'post_status' => 'publish',
-                                  'order' => 'ASC',
-                                  'posts_per_page' => -1,
-                              ]);
-                              $myposts = $myposts->posts;
+                      <ul class="header-sub-menu-item__list">
 
-                              $idPost = $myposts[0]->ID;
-                              ?>
+                        <? foreach (getHeadings(array($id))[0] as $key => $value): ?>
+                          <?
+                          $id = $value->term_id;
+                          $name = $value->name;
 
-                              <? if($idPost):?>
-                                <li><a href="<?=get_permalink($idPost);?>"><?=$name;?></a></li>
-                              <?endif;?>
-                          <?endforeach;?>
-                        </ul>
-                      </div>
-                    <? else: ?>
-                      <div class="header-sub-menu__item">
-                        <p class="header-sub-menu__title"><?=$name;?></p>
-          
-                        <ul class="header-sub-menu-item__list">
-                        
-                          <? foreach (getHeadings(array($id))[0] as $key => $value):?>
-                            <?
-                              $id = $value->term_id;
-                              $name = $value->name;
-                              ?>
+                          $myposts = new WP_Query([
+                            'category_name' => 'сatalog',
+                            'category__and' => array($id, $idType),
+                            'post_status' => 'publish',
+                            'order' => 'ASC',
+                            'posts_per_page' => -1,
+                          ]);
+                          $myposts = $myposts->posts;
 
-                              <li><a href="/catalog/?type=<?=$idType;?>&add=<?=$id;?>"><?=$name;?></a></li>
-                          <?endforeach;?>
-                        </ul>
-                      </div>
-                    <? endif; ?>
-                    
-                <?endforeach;?>
+                          $idPost = $myposts[0]->ID;
+                          ?>
+
+                          <? if ($idPost): ?>
+                            <li><a href="<?= get_permalink($idPost); ?>"><?= $name; ?></a></li>
+                          <? endif; ?>
+                        <? endforeach; ?>
+                      </ul>
+                    </div>
+                  <? else: ?>
+                    <div class="header-sub-menu__item">
+                      <p class="header-sub-menu__title"><?= $name; ?></p>
+
+                      <ul class="header-sub-menu-item__list">
+
+                        <? foreach (getHeadings(array($id))[0] as $key => $value): ?>
+                          <?
+                          $id = $value->term_id;
+                          $name = $value->name;
+                          ?>
+
+                          <li><a href="/catalog/?type=<?= $idType; ?>&add=<?= $id; ?>"><?= $name; ?></a></li>
+                        <? endforeach; ?>
+                      </ul>
+                    </div>
+                  <? endif; ?>
+
+                <? endforeach; ?>
               </div>
 
-            <?endforeach;?>
+            <? endforeach; ?>
           </div>
         </div>
       </div>
@@ -153,94 +161,94 @@ $typesArr = getHeadings(array(17))[0];
               <a href="#">Продукция</a>
               <div class="header-phone-menu__sub-menu">
                 <ul class="header-phone-menu-sub-menu__content">
-                  <? foreach ($typesArr as $key => $value):?>
+                  <? foreach ($typesArr as $key => $value): ?>
                     <li>
-                      <a href="#" class="phone-next"><?=$value->name;?></a>
+                      <a href="#" class="phone-next"><?= $value->name; ?></a>
                     </li>
-                  <? endforeach;?>
+                  <? endforeach; ?>
                 </ul>
               </div>
             </li>
-            
-            <? foreach ($mainMenuArr as $key => $value):?>
-              <li><a href="<?=$value->url;?>"><?=$value->title;?></a></li>
-            <? endforeach;?>
-          </ul> 
+
+            <? foreach ($mainMenuArr as $key => $value): ?>
+              <li><a href="<?= $value->url; ?>"><?= $value->title; ?></a></li>
+            <? endforeach; ?>
+          </ul>
         </div>
       </div>
 
       <div class="header__phone-next">
-        <? foreach ($typesArr as $key => $value):?>
+        <? foreach ($typesArr as $key => $value): ?>
           <?
-              $idType = $value->term_id;
-            ?>
+          $idType = $value->term_id;
+          ?>
           <div class="header-phone-next__item">
             <div class="header-phone-next__header">
               <button class="header-phone-next__close">
               </button>
 
-              <a href="/catalog/?type=<?=$idType;?>" class="header-phone-next__name">
-                <?=$value->name;?>
+              <a href="/catalog/?type=<?= $idType; ?>" class="header-phone-next__name">
+                <?= $value->name; ?>
               </a>
             </div>
 
             <div class="header-phone-next__content">
-                <? foreach ($allPar as $key => $value):?>
-                  <?
-                    $id = $value[0];
-                    $name = $value[1];
-                    ?>
-                    <? if ($id == '16'): ?>
-                      <div class="header-phone-next__element">
-                        <p class="header-phone-next__title"><?=$name;?></p>
-          
-                        <ul class="header-phone-next__list">
-                        
-                          <? foreach (getHeadings(array($id))[0] as $key => $value):?>
-                            <?
-                              $id = $value->term_id;
-                              $name = $value->name;
+              <? foreach ($allPar as $key => $value): ?>
+                <?
+                $id = $value[0];
+                $name = $value[1];
+                ?>
+                <? if ($id == '16'): ?>
+                  <div class="header-phone-next__element">
+                    <p class="header-phone-next__title"><?= $name; ?></p>
 
-                              $myposts = new WP_Query([
-                                  'category_name' => 'сatalog',
-                                  'category__and' => array($id,$idType),
-                                  'post_status' => 'publish',
-                                  'order' => 'ASC',
-                                  'posts_per_page' => -1,
-                              ]);
-                              $myposts = $myposts->posts;
+                    <ul class="header-phone-next__list">
 
-                              $idPost = $myposts[0]->ID;
-                              ?>
+                      <? foreach (getHeadings(array($id))[0] as $key => $value): ?>
+                        <?
+                        $id = $value->term_id;
+                        $name = $value->name;
 
-                              <? if($idPost):?>
-                                <li><a href="<?=get_permalink($idPost);?>"><?=$name;?></a></li>
-                              <?endif;?>
-                          <?endforeach;?>
-                        </ul>
-                      </div>
-                    <? else: ?>
-                      <div class="header-phone-next__element">
-                        <p class="header-phone-next__title"><?=$name;?></p>
-          
-                        <ul class="header-phone-next__list">
-                        
-                          <? foreach (getHeadings(array($id))[0] as $key => $value):?>
-                            <?
-                              $id = $value->term_id;
-                              $name = $value->name;
-                              ?>
+                        $myposts = new WP_Query([
+                          'category_name' => 'сatalog',
+                          'category__and' => array($id, $idType),
+                          'post_status' => 'publish',
+                          'order' => 'ASC',
+                          'posts_per_page' => -1,
+                        ]);
+                        $myposts = $myposts->posts;
 
-                              <li><a href="/catalog/?type=<?=$idType;?>&add=<?=$id;?>"><?=$name;?></a></li>
-                          <?endforeach;?>
-                        </ul>
-                      </div>
-                    <? endif; ?>
-                    
-                <?endforeach;?>
+                        $idPost = $myposts[0]->ID;
+                        ?>
+
+                        <? if ($idPost): ?>
+                          <li><a href="<?= get_permalink($idPost); ?>"><?= $name; ?></a></li>
+                        <? endif; ?>
+                      <? endforeach; ?>
+                    </ul>
+                  </div>
+                <? else: ?>
+                  <div class="header-phone-next__element">
+                    <p class="header-phone-next__title"><?= $name; ?></p>
+
+                    <ul class="header-phone-next__list">
+
+                      <? foreach (getHeadings(array($id))[0] as $key => $value): ?>
+                        <?
+                        $id = $value->term_id;
+                        $name = $value->name;
+                        ?>
+
+                        <li><a href="/catalog/?type=<?= $idType; ?>&add=<?= $id; ?>"><?= $name; ?></a></li>
+                      <? endforeach; ?>
+                    </ul>
+                  </div>
+                <? endif; ?>
+
+              <? endforeach; ?>
             </div>
           </div>
-        <? endforeach;?>
+        <? endforeach; ?>
       </div>
     </div>
   </header>
