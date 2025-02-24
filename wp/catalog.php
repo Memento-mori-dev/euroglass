@@ -20,5 +20,8 @@ get_header();
 
 ?>
 
+<?=get_template_part('/php-content/main/years');?>
+
+<?=get_template_part('/php-content/main/map');?>
 
 <? get_footer();?>

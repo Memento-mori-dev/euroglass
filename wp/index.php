@@ -1,6 +1,7 @@
 <? get_header();?>
 
   <section class="banner">
+    <img src="<?= get_template_directory_uri();?>/assets/img/page/index/banner.png" alt="" class="banner__img">
     <div class="wrapper">
       <div class="banner__content">
         <p class="banner__title">
@@ -16,8 +17,6 @@
           Читать полностью
         </a>
       </div>
-
-      <img src="<?= get_template_directory_uri();?>/assets/img/page/index/banner.png" alt="" class="banner__img">
     </div>
   </section>
 
@@ -74,7 +73,7 @@
     <div class="block__header completed-works__header">
       <p class="section-title">Примеры выполненных работ</p>
 
-      <a href="#" class="btn btn__transparent completed-works__btn-pc">Все работы</a>
+      <a href="/gallery/" class="btn btn__transparent completed-works__btn-pc">Все работы</a>
     </div>
 
     <section class="completed-works">
