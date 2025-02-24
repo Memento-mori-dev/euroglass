@@ -1506,7 +1506,7 @@ template {
 
 .select__block {
     position: absolute;
-    top: 48px;
+    top: 50px;
     left: -1px;
     width: calc(100% + 2px);
     height: 0;
@@ -1522,14 +1522,16 @@ template {
     list-style-type: none
 }
 
-.select__list button {
+.select__list a {
+    display: block;
     width: 100%;
     padding: 5px 20px;
     font-family: var(--font-family);
     color: var(--black);
     text-align: start;
     background: none;
-    border: none
+    border: none;
+    text-decoration: none;
 }
 
 button {
@@ -6065,6 +6067,10 @@ button {
         margin: 8px;
         width: calc(50% - 16px)
     }
+
+    .select__block{
+        top: 49px;
+    }
 }
 
 @media (max-width: 860px) {
@@ -6072,6 +6078,9 @@ button {
     .catalog-gal,
     .catalog-gal__controller .select {
         margin-top: 16px
+    }
+    .select__block{
+        top: 47px;
     }
 
     .catalog-gal__catalog {

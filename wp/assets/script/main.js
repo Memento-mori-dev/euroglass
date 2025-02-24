@@ -62,6 +62,10 @@ if (document.querySelector('.header')) {
         phoneBlockMenu.style.height = 'auto';
       }, 300);
     } else {
+      if (document.querySelector('.header-phone-next__item.active')) {
+        document.querySelector('.header-phone-next__item.active').classList.remove('active');
+      }
+
       phoneBlockMenu.style.height = newHeight;
       btnPhoneMenu.classList.remove('active');
 
