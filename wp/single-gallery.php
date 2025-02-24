@@ -31,6 +31,8 @@ foreach ($my_posts as $key => $value) {
     }
   }
 }
+
+$urlImgArr = array();
 ?>
 
 <div class="block">
@@ -59,8 +61,29 @@ foreach ($my_posts as $key => $value) {
         <? foreach ($gallery as $key => $value):?>
             <?
                 $imgUrl = get_post($value)->guid;
+
+                array_push($urlImgArr, $imgUrl);
                 ?>
             <img src="<?=$imgUrl;?>" alt="" class="gallery-img__item">
         <? endforeach;?>
       </div>
 </div>
+
+<script>
+    let gallery = [
+          <?foreach ($urlImgArr as $key => $value):?>
+            {src: '<?=$value;?>'},
+          <?endforeach;?>
+      ];
+      
+
+      document.querySelectorAll('.gallery-img__item').forEach((btn, index) => {
+          btn.onclick = function (e) { 
+              e.preventDefault();
+              const startIndex = Number(index || 0)
+              Fancybox.show(gallery, {
+              startIndex
+              });
+          }
+      });
+</script>
