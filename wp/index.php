@@ -69,58 +69,7 @@
 
   </div>
 
-  <div class="block">
-    <div class="block__header completed-works__header">
-      <p class="section-title">Примеры выполненных работ</p>
-
-      <a href="/gallery/" class="btn btn__transparent completed-works__btn-pc">Все работы</a>
-    </div>
-
-    <section class="completed-works">
-        <div class="swiper-works swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="completed-works__img" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/completed-works.png);">
-                <p>Здание системы организации воздушного движения аэропорта Кольцово</p>
-              </div>
-            </div> 
-            
-            <div class="swiper-slide">
-              <div class="completed-works__img" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/completed-works.png);">
-                <p>Здание системы организации воздушного движения аэропорта Кольцово</p>
-              </div>
-            </div> 
-            
-            <div class="swiper-slide">
-              <div class="completed-works__img" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/completed-works.png);">
-                <p>Здание системы организации воздушного движения аэропорта Кольцово</p>
-              </div>
-            </div> 
-
-            <div class="swiper-slide">
-              <div class="completed-works__img" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/completed-works.png);">
-                <p>Здание системы организации воздушного движения аэропорта Кольцово</p>
-              </div>
-            </div> 
-
-            <div class="swiper-slide">
-              <div class="completed-works__img" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/completed-works.png);">
-                <p>Здание системы организации воздушного движения аэропорта Кольцово</p>
-              </div>
-            </div> 
-          </div>
-
-          <div class="swiper-pagination"></div>
-
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-    </section>
-
-    <div class="completed-works__btn-ph">
-      <a href="#" class="btn btn__transparent">Все работы</a>
-    </div>
-  </div>
+  <?=get_template_part('/php-content/index/end-product');?>
 
   <?=get_template_part('/php-content/main/years');?>
 
