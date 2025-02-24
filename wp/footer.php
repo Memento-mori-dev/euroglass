@@ -72,6 +72,18 @@
 
   </footer>
   
+  <div class="modal">
+        <div class="modal__close">
+          <button class="btn btn__orange close-modal">Закрыть</button>
+        </div>
+
+        <div class="block">
+            <div class="modal__item call">
+              <?=get_template_part('/php-content/main/modal-form');?>
+            </div>
+        </div>
+    </div>
+
     <? wp_footer();?>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 </body>

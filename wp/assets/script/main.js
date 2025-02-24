@@ -552,3 +552,26 @@ tags.forEach(tag => {
 })
 }
 // tag swap
+
+
+// modal
+if (document.querySelector('.open-modal')) {
+  let modalOpens = document.querySelectorAll('.open-modal');
+
+  modalOpens.forEach(btn => {
+    btn.onclick = function () {
+      let nameModalItem = btn.dataset.modal;
+
+      document.querySelector(`.${nameModalItem}`).classList.add('active');
+
+      document.querySelector('.modal').classList.add('active');
+    }
+  })
+
+  let closeModalBtn = document.querySelector('.close-modal');
+
+  closeModalBtn.onclick = function () {
+    document.querySelector('.modal').classList.remove('active');
+    document.querySelector('.modal__item.active').classList.remove('active');
+  }
+}
