@@ -1433,8 +1433,21 @@ template {
 }
 
  .wpcf7 form .wpcf7-response-output{
-    display: none;
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
  }
+ .form-prod__content .wpcf7  form .wpcf7-response-output,
+ .card__form .wpcf7  form .wpcf7-response-output{
+    color: var(--white);
+ }
+ 
+
+
 
 .input-radio {
     display: flex;
@@ -1459,6 +1472,7 @@ template {
 }
 
 .input-checkbox {
+    flex-shrink: 0;
     width: 18px;
     aspect-ratio: 1;
     border: 1px solid var(--orange);

@@ -26,35 +26,12 @@
     
     <div class="block__first">
       <section class="our-products">
-        <a href="#" class="our-products__item" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-          <p class="our-products__title">Противопожарные окна</p>
-          <p class="our-products__text">Lorem ipsum dolor sit amet consectetur. Velit elit vestibulum faucibus vitae.</p>
-        </a>
-
-        <a href="#"  class="our-products__item" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-          <p class="our-products__title">Противопожарные окна</p>
-          <p class="our-products__text">Lorem ipsum dolor sit amet consectetur. Velit elit vestibulum faucibus vitae.</p>
-        </a>
-
-        <a href="#"  class="our-products__item" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-          <p class="our-products__title">Противопожарные окна</p>
-          <p class="our-products__text">Lorem ipsum dolor sit amet consectetur. Velit elit vestibulum faucibus vitae.</p>
-        </a>
-
-        <a href="#"  class="our-products__item" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-          <p class="our-products__title">Противопожарные окна</p>
-          <p class="our-products__text">Lorem ipsum dolor sit amet consectetur. Velit elit vestibulum faucibus vitae.</p>
-        </a>
-
-        <a href="#"  class="our-products__item" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-          <p class="our-products__title">Противопожарные окна</p>
-          <p class="our-products__text">Lorem ipsum dolor sit amet consectetur. Velit elit vestibulum faucibus vitae.</p>
-        </a>
-
-        <a href="#"  class="our-products__item" style="background-image: url(<?= get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-          <p class="our-products__title">Противопожарные окна</p>
-          <p class="our-products__text">Lorem ipsum dolor sit amet consectetur. Velit elit vestibulum faucibus vitae.</p>
-        </a>
+        <? foreach (get_field('our', 266) as $key => $value): ?>
+          <a href="<?=$value['link'];?>" class="our-products__item" style="background-image: url(<?=$value['images']['url'];?>);">
+            <p class="our-products__title"><?=$value['title'];?></p>
+            <p class="our-products__text"><?=$value['description'];?></p>
+          </a>
+        <? endforeach;?>       
       </section>
     </div>
   </div>
