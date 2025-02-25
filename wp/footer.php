@@ -44,17 +44,11 @@
         </div>
 
         <div class="footer-content__social">
-          <a class="footer-content-social__item">
-            <img src="<?= get_template_directory_uri();?>/assets/img/svg/tg.svg" alt="">
-          </a>
-
-          <a class="footer-content-social__item">
-            <img src="<?= get_template_directory_uri();?>/assets/img/svg/wc.svg" alt="">
-          </a>
-
-          <a class="footer-content-social__item">
-            <img src="<?= get_template_directory_uri();?>/assets/img/svg/vk.svg" alt="">
-          </a>
+          <?foreach (get_field('social', 39) as $key => $value):?>
+            <a href="<?=$value['link'];?>" class="footer-content-social__item">
+              <?=$value['svg'];?>
+            </a>
+          <? endforeach;?>
         </div>
       </div>
     </div>
