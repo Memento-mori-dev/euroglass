@@ -5,15 +5,14 @@
     <div class="wrapper">
       <div class="banner__content">
         <p class="banner__title">
-          Lorem ipsum dolor sit amet consectetur
+          <?=get_field('title', 266);?>
         </p>
         
         <p class="banner__text">
-          Lorem ipsum dolor sit amet consectetur. Aliquam amet posuere id volutpat. Lectus ut consectetur venenatis porta habitant ultrices cras habitant. Velit eget orci varius ut quisque nisl praesent maecenas facilisis. Sed amet id cursus cras mauris commodo dictumst diam libero. 
-          Elementum in scelerisque tincidunt aliquam vitae malesuada purus augue convallis. Massa ultrices elementum tristique volutpat viverra elementum ut sed. Malesuada posuere nulla urna at ipsum maecenas ante.
+          <?=get_field('text', 266);?>
         </p>
 
-        <a href="#" class="banner__link">
+        <a href="<?=get_field('link', 266);?>" class="banner__link">
           Читать полностью
         </a>
       </div>
