@@ -14,18 +14,22 @@ $certificateArray = new WP_Query([
 ]);
 
 $certificateArray = $certificateArray->posts;
+
+$urlImgArr = array();
 ?>
 
 <? if (count($certificateArray) > 0):?>
 <section class="certificates">
     <div class="swiper swiper-certificates">
         <div class="swiper-wrapper">
-                <? foreach ($certificateArray as $value): ?>
+                <? foreach ($certificateArray as $key => $value): ?>
                     <?
                         $id = $value->ID;
                         $images = get_field('images', $id);
                         $imagesUrl = $images['url'];
                         $imagesAlt = $images['alt'];
+
+                        array_push($urlImgArr, $imagesUrl);
                     ?>
 
                     <div class="swiper-slide">
@@ -46,3 +50,22 @@ $certificateArray = $certificateArray->posts;
     <a href="/certificates/" class="btn btn__transparent">Все сертификаты</a>
 </div>
 <? endif;?>
+
+<script>
+    let gallery = [
+          <?foreach ($urlImgArr as $key => $value):?>
+            {src: '<?=$value;?>'},
+          <?endforeach;?>
+      ];
+      
+
+      document.querySelectorAll('.certificates__img').forEach((btn, index) => {
+          btn.onclick = function (e) { 
+              e.preventDefault();
+              const startIndex = Number(index || 0)
+              Fancybox.show(gallery, {
+              startIndex
+              });
+          }
+      });
+</script>

@@ -9,7 +9,7 @@
 
             <div class="contacts-item__content">
                 <p class="contacts__text">
-                    Россия, 620072, г. Екатеринбург, ул. 40-летия Комсомола, 38 литер «Л», офис 415
+                    <?=get_field('address', 39);?>
                 </p>
             </div>
             </div>
