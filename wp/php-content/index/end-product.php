@@ -4,7 +4,7 @@ $myposts = new WP_Query([
     'category_name' => 'gallery',
     'post_status' => 'publish',
     'order' => 'ASC',
-    'posts_per_page' => 20,
+    'posts_per_page' => 10,
 ]);
 
 $myposts = $myposts->posts;

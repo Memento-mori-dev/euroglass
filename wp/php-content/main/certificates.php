@@ -10,7 +10,7 @@ $certificateArray = new WP_Query([
     'category__and' => $args[0],
     'post_status' => 'publish',
     'order' => 'ASC',
-    'posts_per_page' => 20,
+    'posts_per_page' => 10,
 ]);
 
 $certificateArray = $certificateArray->posts;
