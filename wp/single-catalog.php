@@ -32,7 +32,7 @@ $imagesUrl = $images['url'];
                 </div>
 
                 <div class="card-baner__extra">
-                    <a href="#" class="btn btn__transparent">Заказать</a>
+                    <a href="#" class="btn btn__transparent open-modal" data-modal="call">Заказать</a>
 
                     <a href="<?= get_field('documentation', $id)['url']; ?>" class="card-baner__link" download>Скачать документацию</a>
                 </div>
