@@ -2321,6 +2321,10 @@ button {
     }
 }
 
+.certificates__img{
+    cursor: pointer;
+}
+
 @media (min-width: 860px) {
     .certificates__img {
         width: 100%;
@@ -3507,6 +3511,10 @@ button {
 .card-form__conditions a {
     font-family: var(--font-family);
     color: var(--white)
+}
+
+.certif__item{
+    cursor: pointer;
 }
 
 @media (min-width: 860px) {
@@ -6036,6 +6044,10 @@ button {
         font-size: 18px;
         letter-spacing: -.01em
     }
+}
+
+.gallery-img__item{
+    cursor: pointer;
 }
 
 @media (min-width: 860px) {
