@@ -36,10 +36,6 @@ $idPageCatalog = $pagePostCatalog->ID;
 
 $whyArr = get_field('why_all', $idPageCatalog);
 $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
-
-// echo '<pre>';
-// print_r();
-// echo '</pre>';
 ?>
 
     <div class="block">
