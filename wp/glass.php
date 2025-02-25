@@ -17,7 +17,8 @@ foreach ($allTags as $key => $value) {
     array_push($allTagsName, $value->description);
 }
 
-// 
+$whyArr = get_field('why_all', 220);
+$whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
 
 ?>
 
@@ -29,41 +30,19 @@ foreach ($allTags as $key => $value) {
         </p>
 
         <div class="glass-card">
+          <? foreach (get_field('card', 220) as $key => $value):?>
             <div class="glass-card__item">
                 <div class="glass-card__img">
-                    <img src="<?=get_template_directory_uri();?>/assets/img/page/glass/glass-car-1.svg" alt="">
+                    <?=$value['svg'];?>
                 </div>
 
                 <div class="glass-card__content">
-                    <p class="glass-card__title">Lorem ipsum dolor</p>
+                    <p class="glass-card__title"><?=$value['title'];?></p>
 
-                    <p class="glass-card__text">Lorem ipsum dolor sit amet consectetur. Donec pulvinar amet ac eget dictum. Neque s arcu amet gravida eget.</p>
+                    <p class="glass-card__text"><?=$value['text'];?></p>
                 </div>
             </div>
-
-            <div class="glass-card__item">
-                <div class="glass-card__img">
-                    <img src="<?=get_template_directory_uri();?>/assets/img/page/glass/glass-car-2.svg" alt="">
-                </div>
-
-                <div class="glass-card__content">
-                    <p class="glass-card__title">Lorem ipsum dolor</p>
-
-                    <p class="glass-card__text">Lorem ipsum dolor sit amet consectetur. Donec pulvinar amet ac eget dictum. Neque s arcu amet gravida eget.</p>
-                </div>
-            </div>
-
-            <div class="glass-card__item">
-                <div class="glass-card__img">
-                    <img src="<?=get_template_directory_uri();?>/assets/img/page/glass/glass-car-3.svg" alt="">
-                </div>
-
-                <div class="glass-card__content">
-                    <p class="glass-card__title">Lorem ipsum</p>
-
-                    <p class="glass-card__text">Lorem ipsum dolor sit amet consectetur. Donec pulvinar amet ac eget dictum. Neque s arcu amet gravida eget.</p>
-                </div>
-            </div>
+          <? endforeach;?>
         </div>
     </div>
 
@@ -139,17 +118,13 @@ foreach ($allTags as $key => $value) {
                 </tr>
             </thead>
             <tbody>
+              <? foreach (get_field('why', 220) as $key => $value):?>
                 <tr>
-                    <td>Lorem ipsum dolor</td>
-                    <td>Lorem ipsum dolor sit amet consectetur. Nisl vel dignissim tellus sollicitudin ut proin convallis vel rhoncus. Sit non in nulla aliquam eget aenean.</td>
-                    <td>Libero sit lacus proin praesent ac nisl est. Fusce diam scelerisque.</td>
+                    <td><?=$value['title'];?></td>
+                    <td><?=$value['euroglass'];?></td>
+                    <td><?=$value['other'];?></td>
                 </tr>
-
-                <tr>
-                    <td>Penatibus bibendum porttitor viverra iaculis</td>
-                    <td>Lorem ipsum dolor sit amet consectetur. Nisl vel dignissim tellus sollicitudin ut proin convallis vel rhoncus. Sit non in nulla aliquam eget aenean. Faucibus elementum in nibh integer feugiat. Libero sit lacus proin praesent ac nisl est. Fusce diam scelerisque.</td>
-                    <td>Libero sit lacus proin praesent ac nisl est. Fusce diam scelerisque.</td>
-                </tr>
+              <? endforeach;?>
             </tbody>
         </table>
 
@@ -169,25 +144,11 @@ foreach ($allTags as $key => $value) {
             <p class="glass-product__title">Стекло используется в нашей продукции</p>
 
             <div class="glass-product__content">
-                <div class="glass-product__item" style="background-image: url(<?=get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-                    Противопожарные окна
-                </div>
-
-                <div class="glass-product__item" style="background-image: url(<?=get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-                    Противопожарные окна
-                </div>
-
-                <div class="glass-product__item" style="background-image: url(<?=get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-                    Противопожарные окна
-                </div>
-
-                <div class="glass-product__item" style="background-image: url(<?=get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-                    Противопожарные окна
-                </div>
-
-                <div class="glass-product__item" style="background-image: url(<?=get_template_directory_uri();?>/assets/img/page/index/our-products.png);">
-                    Противопожарные окна
-                </div>
+              <? foreach (get_field('our_products', 220) as $key => $value):?>
+                  <div class="glass-product__item" style="background-image: url(<?=$value['images']['url'];?>);">
+                    <?=$value['title'];?>
+                  </div>
+              <? endforeach;?>
             </div>
         </div>
     </div>
@@ -204,49 +165,21 @@ foreach ($allTags as $key => $value) {
       <p class="section-title">Часто задаваемые вопросы</p>
 
       <div class="questions">
-        <div class="questions__element">
-          <div class="questions__item">
-            <p class="questions__title">Lorem ipsum dolor sit amet consectetur.</p>
+        <? foreach ($whyArr as $key => $why):?>
+          <div class="questions__element">
+            <? foreach ($why as $key => $value):?>
+              <div class="questions__item">
+                <p class="questions__title"><?=$value['title'];?></p>
 
-            <div class="questions__content">
-              <p class="questions__text">
-                Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.
-              </p>
-            </div>
+                <div class="questions__content">
+                  <p class="questions__text">
+                  <?=$value['text'];?>
+                  </p>
+                </div>
+              </div>
+            <? endforeach;?>
           </div>
-
-          <div class="questions__item">
-            <p class="questions__title">Lorem ipsum dolor sit amet consectetur.</p>
-
-            <div class="questions__content">
-              <p class="questions__text">
-                Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="questions__element">
-          <div class="questions__item">
-            <p class="questions__title">Lorem ipsum dolor sit amet consectetur.</p>
-
-            <div class="questions__content">
-              <p class="questions__text">
-                Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.
-              </p>
-            </div>
-          </div>
-
-          <div class="questions__item">
-            <p class="questions__title">Lorem ipsum dolor sit amet consectetur.</p>
-
-            <div class="questions__content">
-              <p class="questions__text">
-                Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.
-              </p>
-            </div>
-          </div>
-        </div>
+        <? endforeach;?>
       </div>
     </div>
 
@@ -254,25 +187,17 @@ foreach ($allTags as $key => $value) {
       <p class="section-title">Испытания стекла</p>
 
       <div class="tests">
-        <div class="tests__item">
-          <div class="tests-item__video">
-            <video src="https://n3.fireclass.pro/wp-content/themes/euroglass/assets/img/page/products/video.mp4" type="video/mp4"></video>
+        <? foreach (get_field('tests', 220) as $key => $value):?>
+          <div class="tests__item">
+            <div class="tests-item__video">
+              <video src="<?=$value['video']['url'];?>" type="video/mp4"></video>
+            </div>
+
+            <p class="tests__name">
+              <?=$value['title'];?>
+            </p>
           </div>
-
-          <p class="tests__name">
-            Испытание противопожарного окна Е60
-          </p>
-        </div>
-
-        <div class="tests__item">
-          <div class="tests-item__video">
-            <video src="https://n3.fireclass.pro/wp-content/themes/euroglass/assets/img/page/products/video.mp4" type="video/mp4"></video>
-          </div>
-
-          <p class="tests__name">
-            Испытание противопожарного окна Е60
-          </p>
-        </div>
+        <? endforeach;?>
       </div>
     </div>
 

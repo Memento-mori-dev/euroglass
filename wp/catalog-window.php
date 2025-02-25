@@ -14,7 +14,7 @@ foreach ($query as $key => $value) {
 
 // сatalog
 $myposts = new WP_Query([
-    'cat' => -29,
+    'cat' => array(-29, -30),
     'category_name' => 'сatalog',
     'category__and' => $arrCategory,
     'post_status' => 'publish',
@@ -22,64 +22,45 @@ $myposts = new WP_Query([
     'posts_per_page' => -1,
 ]);
 $myposts = $myposts->posts;
+
+$pageCatalog = new WP_Query([
+  'category_name' => 'pages_catalog',
+  'category__and' => $arrCategory[0], 
+  'post_status' => 'publish',
+  'order' => 'ASC',
+  'posts_per_page' => -1,
+]);
+
+$pagePostCatalog = $pageCatalog->post;
+$idPageCatalog = $pagePostCatalog->ID;
+
+$whyArr = get_field('why_all', $idPageCatalog);
+$whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
+
+// echo '<pre>';
+// print_r();
+// echo '</pre>';
 ?>
 
     <div class="block">
-      <p class="section-title">Противопожарные окна</p>
+      <p class="section-title"><?=$pagePostCatalog->post_title;?></p>
 
       <p class="text">
-        Мы создаём окна, которые обеспечивают защиту от огня. Они могут быть разных размеров и форм. В соответствии с требованиями Федерального закона №123, такие окна могут быть глухими или иметь специальные люки, которые автоматически закрываются при пожаре. По желанию заказчика мы можем изготовить окна с открывающимися створками, фрамугами или форточками.
+        <?=$pagePostCatalog->post_content;?>  
       </p>
 
-      <div class="banner-prod">
-        <div class="banner-prod__content">
-          <p class="banner-prod-content__title">Противопожарные окна 1 типа</p>
-          <p class="banner-prod-content__text">Lorem ipsum dolor sit amet consectetur. Orci integer aliquet porttitor magna. In morbi id arcu sit proin orci risus. Nisl turpis egestas tempus faucibus euismod duis odio. Tempus auctor dui ipsum vel.</p>
+      <? foreach(get_field('card', $idPageCatalog) as $key => $value):?>
+        <div class="banner-prod <?if(($key + 1) % 2 === 0){echo 'banner-prod_reverse';}?>">
+          <div class="banner-prod__content">
+            <p class="banner-prod-content__title"><?=$value['title'];?></p>
+            <p class="banner-prod-content__text"><?=$value['description'];?></p>
 
-          <div class="banner-prod-content__item">
-            <p class="banner-prod-content-item__title">Огнестойкость:</p>
+            <?=$value['text'];?>
+          </div>
 
-            <ul class="banner-prod-content-item__list">
-              <li>E 60</li>
-              <li>Параметры IW — по запросу.</li>
-            </ul>
-          </div>
-          <div class="banner-prod-content__item">
-            <p class="banner-prod-content-item__title">Материал рамной конструкции:</p>
-            <ul class="banner-prod-content-item__list">
-              <li>Алюминиевый профиль с усиливающими охлаждающими вставками</li>
-              <li>Профиль из углеродистой или нержавеющей стали.</li>
-            </ul>
-          </div>
+          <img src="<?=$value['images']['url'];?>" alt="" class="banner-prod__img">
         </div>
-
-        <img src="<?= get_template_directory_uri();?>/assets/img/page/products/products.png" alt="" class="banner-prod__img">
-      </div>
-
-      <div class="banner-prod banner-prod_reverse">
-        <div class="banner-prod__content">
-          <p class="banner-prod-content__title">Противопожарные окна 1 типа</p>
-          <p class="banner-prod-content__text">Lorem ipsum dolor sit amet consectetur. Orci integer aliquet porttitor magna. In morbi id arcu sit proin orci risus. Nisl turpis egestas tempus faucibus euismod duis odio. Tempus auctor dui ipsum vel.</p>
-
-          <div class="banner-prod-content__item">
-            <p class="banner-prod-content-item__title">Огнестойкость:</p>
-
-            <ul class="banner-prod-content-item__list">
-              <li>E 60</li>
-              <li>Параметры IW — по запросу.</li>
-            </ul>
-          </div>
-          <div class="banner-prod-content__item">
-            <p class="banner-prod-content-item__title">Материал рамной конструкции:</p>
-            <ul class="banner-prod-content-item__list">
-              <li>Алюминиевый профиль с усиливающими охлаждающими вставками</li>
-              <li>Профиль из углеродистой или нержавеющей стали.</li>
-            </ul>
-          </div>
-        </div>
-
-        <img src="<?= get_template_directory_uri();?>/assets/img/page/products/products.png" alt="" class="banner-prod__img">
-      </div>
+      <?endforeach;?>
     </div>
 
     <div class="block">
@@ -119,45 +100,18 @@ $myposts = $myposts->posts;
 
     <div class="block">
       <p class="section-title">О продукте</p>
-
+          <?
+            $about = get_field('about', $idPageCatalog);
+          ?>
       <p class="text text_w-880">
-        Lorem ipsum dolor sit amet consectetur. Penatibus bibendum porttitor viverra iaculis at nullam consectetur sed. Sit odio cum velit aliquet a sed arcu. Fermentum facilisi bibendum pharetra cursus enim ornare sit vitae sapien. Rhoncus dolor id magna tortor. Cursus interdum enim aliquet et sed neque leo vulputate. Imperdiet id ut imperdiet ac. 
-        Nibh orci porttitor ut sed est urna adipiscing at. Feugiat fringilla porta euismod facilisis fermentum dui mauris. Egestas integer commodo tincidunt dui duis ac consectetur fusce quis. Accumsan velit arcu viverra lectus eget lacus facilisis donec.
+        <?=$about['description'];?>
       </p>
 
       <div class="description">
-        <img src="<?= get_template_directory_uri();?>/assets/img/page/products/description.png" alt="" class="description__img">
+        <img src="<?=$about['images']['url'];?>" alt="" class="description__img">
 
         <div class="description__content">
-          <div class="description__item">
-            <p>Lorem</p>
-            <p>Lorem ipsum</p>
-          </div>
-
-          <div class="description__item">
-            <p>Lorem ipsum</p>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-          </div>
-
-          <div class="description__item">
-            <p>Lorem</p>
-            <p>Lorem ipsum</p>
-          </div>
-
-          <div class="description__item">
-            <p>Lorem ipsum</p>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-          </div>
-
-          <div class="description__item">
-            <p>Lorem</p>
-            <p>Lorem ipsum</p>
-          </div>
-
-          <div class="description__item">
-            <p>Lorem ipsum</p>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-          </div>
+          <?=$about['text'];?>
         </div>
       </div>
 
@@ -174,49 +128,21 @@ $myposts = $myposts->posts;
       <p class="section-title">Часто задаваемые вопросы</p>
 
       <div class="questions">
-        <div class="questions__element">
-          <div class="questions__item">
-            <p class="questions__title">Lorem ipsum dolor sit amet consectetur.</p>
+        <? foreach ($whyArr as $key => $why):?>
+          <div class="questions__element">
+            <? foreach ($why as $key => $value):?>
+              <div class="questions__item">
+                <p class="questions__title"><?=$value['title'];?></p>
 
-            <div class="questions__content">
-              <p class="questions__text">
-                Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.
-              </p>
-            </div>
+                <div class="questions__content">
+                  <p class="questions__text">
+                  <?=$value['text'];?>
+                  </p>
+                </div>
+              </div>
+            <? endforeach;?>
           </div>
-
-          <div class="questions__item">
-            <p class="questions__title">Lorem ipsum dolor sit amet consectetur.</p>
-
-            <div class="questions__content">
-              <p class="questions__text">
-                Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="questions__element">
-          <div class="questions__item">
-            <p class="questions__title">Lorem ipsum dolor sit amet consectetur.</p>
-
-            <div class="questions__content">
-              <p class="questions__text">
-                Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.
-              </p>
-            </div>
-          </div>
-
-          <div class="questions__item">
-            <p class="questions__title">Lorem ipsum dolor sit amet consectetur.</p>
-
-            <div class="questions__content">
-              <p class="questions__text">
-                Lorem ipsum dolor sit amet consectetur. Sem in vitae habitant massa integer morbi tristique ac imperdiet. Molestie mattis quam a quis arcu suscipit pharetra. Faucibus ullamcorper a ut proin erat amet consectetur velit. Tempus mauris nunc nulla morbi.
-              </p>
-            </div>
-          </div>
-        </div>
+        <? endforeach;?>
       </div>
     </div>
 
@@ -224,24 +150,16 @@ $myposts = $myposts->posts;
       <p class="section-title">Испытания стекла</p>
 
       <div class="tests">
-        <div class="tests__item">
-          <div class="tests-item__video">
-            <video src="<?= get_template_directory_uri();?>/assets/img/page/products/video.mp4" type="video/mp4"></video>
+        <? foreach (get_field('tests', $idPageCatalog) as $key => $value):?>
+          <div class="tests__item">
+            <div class="tests-item__video">
+              <video src="<?=$value['video']['url'];?>" type="video/mp4"></video>
+            </div>
+
+            <p class="tests__name">
+              <?=$value['title'];?>
+            </p>
           </div>
-
-          <p class="tests__name">
-            Испытание противопожарного окна Е60
-          </p>
-        </div>
-
-        <div class="tests__item">
-          <div class="tests-item__video">
-            <video src="<?= get_template_directory_uri();?>/assets/img/page/products/video.mp4" type="video/mp4"></video>
-          </div>
-
-          <p class="tests__name">
-            Испытание противопожарного окна Е60
-          </p>
-        </div>
+        <? endforeach;?>
       </div>
     </div>
