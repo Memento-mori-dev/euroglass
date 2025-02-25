@@ -18,7 +18,7 @@
                 Lorem ipsum dolor sit amet consectetur. Amet et sed aenean maecenas tortor donec arcu lacus sit. Consectetur suspendisse morbi pulvinar.
             </div>
 
-            <?=do_shortcode('[contact-form-7 id="09aa78f" title="contacts"]');?>
+            <?=do_shortcode('[contact-form-7 id="09aa78f" title="Форма с контактов"]');?>
         </div>
     </div>
 
