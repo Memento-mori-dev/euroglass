@@ -22,11 +22,10 @@ foreach ($allTags as $key => $value) {
 ?>
 
     <div class="block">
-        <p class="section-title">Статьи</p>
+        <p class="section-title">Противопожарное стекло FireClass</p>
 
         <p class="text">
-            Lorem ipsum dolor sit amet consectetur. Penatibus bibendum porttitor viverra iaculis at nullam consectetur sed. Sit odio cum velit aliquet a sed arcu. Fermentum facilisi bibendum pharetra cursus enim ornare sit vitae sapien. Rhoncus dolor id magna tortor. Cursus interdum enim aliquet et sed neque leo vulputate. Imperdiet id ut imperdiet ac.
-            Nibh orci porttitor ut sed est urna adipiscing at. Feugiat fringilla porta euismod facilisis fermentum dui mauris. Egestas integer commodo tincidunt dui duis ac consectetur fusce quis. Accumsan velit arcu viverra lectus eget lacus facilisis donec.    
+          <?=get_field('start_text', 220);?>    
         </p>
 
         <div class="glass-card">
@@ -163,8 +162,7 @@ foreach ($allTags as $key => $value) {
         <p class="section-title">О продукте</p>
 
         <p class="text text_w-880">
-            Lorem ipsum dolor sit amet consectetur. Penatibus bibendum porttitor viverra iaculis at nullam consectetur sed. Sit odio cum velit aliquet a sed arcu. Fermentum facilisi bibendum pharetra cursus enim ornare sit vitae sapien. Rhoncus dolor id magna tortor. Cursus interdum enim aliquet et sed neque leo vulputate. Imperdiet id ut imperdiet ac.
-            Nibh orci porttitor ut sed est urna adipiscing at. Feugiat fringilla porta euismod facilisis fermentum dui mauris. Egestas integer commodo tincidunt dui duis ac consectetur fusce quis. Accumsan velit arcu viverra lectus eget lacus facilisis donec.    
+          <?=get_field('about_text', 220);?>
         </p>
 
         <div class="glass-product">
