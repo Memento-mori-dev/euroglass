@@ -748,7 +748,7 @@ template {
 
     .footer-content__social {
         margin-top: -40px;
-        width: 100%;
+        width: 30%;
         display: flex
     }
 
