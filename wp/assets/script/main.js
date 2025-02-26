@@ -575,3 +575,57 @@ if (document.querySelector('.open-modal')) {
     document.querySelector('.modal__item.active').classList.remove('active');
   }
 }
+// modal
+
+
+// masks
+
+if (document.querySelector('.input[type=tel]')) {
+
+let phoneInputs = document.querySelectorAll('.input[type=tel]');
+
+phoneInputs.forEach(phoneInput => {
+    phoneInput.onfocus = function (event) {
+        let value = phoneInput.value;
+
+        if (value.length == 0) {
+            phoneInput.value = '+7 '
+        }
+    }
+
+    phoneInput.addEventListener('input', function(event) {
+        let value = phoneInput.value,
+            data = event.data,
+            length = value.length;
+
+            console.log(length, data, value);
+            
+
+        if (value.charAt(0) == '+' && length == 1) return;
+
+        if (isNaN(data)) {
+            phoneInput.value = value.slice(0, -1);
+        }
+    
+        if (typeof data != 'object') {
+            if (length == 2 || length == 6 || length == 10) {
+                phoneInput.value = value + ' ';
+            }
+            if (length == 3 || length == 7 || length == 11) {
+                if (data != ' ') {
+                    phoneInput.value = value.slice(0, -1) + ' ' + data;
+                }
+            }
+        }
+        
+        if (length <= 3) {
+            phoneInput.value = '+7 '
+        }
+
+        if (length > 15) {
+          phoneInput.value = value.slice(0, -1);
+        }
+    });
+})
+}
+// masks
