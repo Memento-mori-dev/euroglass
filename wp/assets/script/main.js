@@ -598,9 +598,6 @@ phoneInputs.forEach(phoneInput => {
             data = event.data,
             length = value.length;
 
-            console.log(length, data, value);
-            
-
         if (value.charAt(0) == '+' && length == 1) return;
 
         if (isNaN(data)) {
@@ -629,3 +626,21 @@ phoneInputs.forEach(phoneInput => {
 })
 }
 // masks
+
+
+
+// форма
+if (document.querySelector('form')) {
+  let forms = document.querySelectorAll('form');
+
+  forms.forEach(form => {
+    form.addEventListener('submit', function(event){
+      setTimeout(() => {
+        if(form.dataset.status == 'sent'){
+          console.log(form.querySelector('.form-7').style.display = 'none');
+        }
+      }, 500);
+    })
+  });
+}
+// форма
