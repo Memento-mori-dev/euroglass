@@ -2232,7 +2232,7 @@ button {
 
     .our-products__item {
         width: calc(33.3% - 16px);
-        min-height: 320px
+        height: 320px
     }
 
     .our-products__title {
@@ -2342,7 +2342,7 @@ button {
 @media (min-width: 860px) {
     .certificates__img {
         width: 100%;
-        max-height: 295px
+        height: 295px
     }
 
     .certificates .swiper-pagination,
@@ -2475,6 +2475,8 @@ button {
 }
 
 @media (max-width: 1400px) and (min-width: 860px) {
+
+    
     .certificates__btn-pc {
         display: none
     }
@@ -2715,8 +2717,7 @@ button {
 
     .certificates__img {
         width: 100%;
-        max-height: 460px;
-        object-fit: contain
+        height: 314px;
     }
 
     .certificates .swiper-wrapper {
@@ -2742,9 +2743,14 @@ button {
     .certificates .swiper-button-prev {
         display: none
     }
+
+    .certificates__img{
+        object-fit: contain;
+    }
 }
 
 @media (max-width: 860px) {
+    
     .completed-works .swiper {
         margin-right: -20px
     }
@@ -3911,6 +3917,7 @@ button {
 
     .banner-prod__img {
         width: 644px;
+        height: 400px;
         object-fit: cover
     }
 
@@ -3962,10 +3969,12 @@ button {
 
     .products__img {
         width: 544px;
-        height: 440px
+        height: 440px;
+        flex-shrink: 0;
     }
 
     .products__content {
+        width: 100%;
         padding: 42px 0 42px 16px
     }
 
@@ -4106,7 +4115,9 @@ button {
     }
 
     .description__img {
-        width: 656px
+        width: 656px;
+        height: 400px;
+        object-fit: cover;
     }
 
     .description__content {
