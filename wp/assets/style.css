@@ -466,6 +466,13 @@ template {
     color: var(--grey-t)
 }
 
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 100;
+}
+
 @media (min-width: 860px) {
     .header {
         padding: 28px 0
@@ -6475,6 +6482,7 @@ button {
     background-color: rgba(0, 0, 0, 0.3);
     pointer-events: none;
     transition: all 0.3s;
+    z-index: 1000;
   }
   .modal.active {
     pointer-events: auto;
