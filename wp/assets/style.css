@@ -6503,3 +6503,53 @@ button {
   .modal__item.active {
     display: block;
   }
+
+  .art__table table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    border: 1px solid #e1dfea;
+  }
+  .art__table table td {
+    min-width: 214px;
+    padding: 14px 16px;
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    border-left: 1px solid #e1dfea;
+  }
+  .art__table table td:first-child {
+    border-left: none;
+  }
+  .art__table thead {
+    background-color: var(--orange);
+    color: var(--white);
+  }
+  .art__table tbody {
+    color: var(--black);
+  }
+  .art__table tbody tr:nth-child(even) {
+    background-color: #f2f6f8;
+  }
+  
+  @media (max-width: 1400px) and (min-width: 860px) {
+    .art__table table td {
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+  }
+  @media (max-width: 860px) {
+    .art__table {
+      padding-bottom: 8px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-color: var(--orange) var(--blue); /* «цвет ползунка» «цвет полосы скроллбара» */
+      scrollbar-width: 4px;
+    }
+    .art__table::-webkit-scrollbar-button {
+      height: 0;
+      width: 0;
+    }
+  }
