@@ -1,7 +1,11 @@
 <? get_header();?>
 
   <section class="banner">
-    <img src="<?= get_template_directory_uri();?>/assets/img/page/index/banner.png" alt="" class="banner__img">
+	  
+	   
+    <?php if( get_field('kartinka_bannera', 266) ): ?>
+    <img src="<?php the_field('kartinka_bannera', 266); ?>"  alt="" class="banner__img" />
+<?php endif; ?>
     <div class="wrapper">
       <div class="banner__content">
         <p class="banner__title">
@@ -38,7 +42,7 @@
 
   <div class="block">
     <div class="block__header completed-works__header">
-      <p class="section-title">Произодство</p>
+      <p class="section-title">Производство</p>
     </div>
 
     <?=get_template_part('/php-content/index/productions');?>

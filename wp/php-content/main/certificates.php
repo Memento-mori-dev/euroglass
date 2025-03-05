@@ -1,5 +1,5 @@
 <div class="block__header certificates__header">
-    <p class="section-title">Сертификаты и лецензии</p>
+    <p class="section-title">Сертификаты и лицензии</p>
 
     <a href="/certificates/" class="btn btn__transparent certificates__btn-pc">Все сертификаты</a>
 </div>
