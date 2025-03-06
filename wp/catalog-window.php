@@ -35,7 +35,10 @@ $pagePostCatalog = $pageCatalog->post;
 $idPageCatalog = $pagePostCatalog->ID;
 
 $whyArr = get_field('why_all', $idPageCatalog);
-$whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
+
+if(gettype($whyArr) != 'boolean'){
+  $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
+}
 ?>
 
     <div class="block">
@@ -45,18 +48,20 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
         <?=$pagePostCatalog->post_content;?>  
       </p>
 
-      <? foreach(get_field('card', $idPageCatalog) as $key => $value):?>
-        <div class="banner-prod <?if(($key + 1) % 2 === 0){echo 'banner-prod_reverse';}?>">
-          <div class="banner-prod__content">
-            <p class="banner-prod-content__title"><?=$value['title'];?></p>
-            <p class="banner-prod-content__text"><?=$value['description'];?></p>
+      <? if (get_field('card', $idPageCatalog)):?>
+        <? foreach(get_field('card', $idPageCatalog) as $key => $value):?>
+          <div class="banner-prod <?if(($key + 1) % 2 === 0){echo 'banner-prod_reverse';}?>">
+            <div class="banner-prod__content">
+              <p class="banner-prod-content__title"><?=$value['title'];?></p>
+              <p class="banner-prod-content__text"><?=$value['description'];?></p>
 
-            <?=$value['text'];?>
+              <?=$value['text'];?>
+            </div>
+
+            <img src="<?=$value['images']['url'];?>" alt="" class="banner-prod__img">
           </div>
-
-          <img src="<?=$value['images']['url'];?>" alt="" class="banner-prod__img">
-        </div>
-      <?endforeach;?>
+        <?endforeach;?>
+      <?endif;?>
     </div>
 
     <div class="block">
@@ -99,10 +104,13 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
           <?
             $about = get_field('about', $idPageCatalog);
           ?>
+      <? if ($about['description']):?>
       <p class="text text_w-880">
         <?=$about['description'];?>
       </p>
-
+      <?endif;?>
+      
+      <? if ($about['images']['url']):?>
       <div class="description">
         <img src="<?=$about['images']['url'];?>" alt="" class="description__img">
 
@@ -110,6 +118,7 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
           <?=$about['text'];?>
         </div>
       </div>
+      <?endif;?>
 
       <div class="description__certificates">
         <?=get_template_part('/php-content/main/certificates', null, $arrCategory);?>
@@ -120,6 +129,7 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
       <?=get_template_part('/php-content/catalog/form');?>
     </div>
 
+    <? if (gettype($whyArr) != 'boolean'):?>
     <div class="block">
       <p class="section-title">Часто задаваемые вопросы</p>
 
@@ -141,10 +151,11 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
         <? endforeach;?>
       </div>
     </div>
+    <?endif;?>
 
+    <? if (get_field('tests', $idPageCatalog)):?>
     <div class="block">
-      <p class="section-title">Испытания стекла</p>
-
+      <p class="section-title">Испытания стекла</p>      
       <div class="tests">
         <? foreach (get_field('tests', $idPageCatalog) as $key => $value):?>
           <div class="tests__item">
@@ -159,3 +170,4 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
         <? endforeach;?>
       </div>
     </div>
+    <?endif;?>

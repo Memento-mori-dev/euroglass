@@ -17,6 +17,15 @@
 </div>
 
 <div class="block">
+    <div class="block__header completed-works__header">
+      <p class="section-title">Производство</p>
+    </div>
+
+    <?=get_template_part('/php-content/index/productions');?>
+
+  </div>
+
+<div class="block">
     <?=get_template_part('/php-content/main/certificates');?>
 </div>
 
