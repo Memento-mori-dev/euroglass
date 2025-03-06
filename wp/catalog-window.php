@@ -63,7 +63,8 @@ if(gettype($whyArr) != 'boolean'){
         <?endforeach;?>
       <?endif;?>
     </div>
-
+    
+    <? if (count($myposts) > 0):?> 
     <div class="block">
         <? foreach($myposts as $post):?>
             <?
@@ -94,11 +95,13 @@ if(gettype($whyArr) != 'boolean'){
             <?wp_reset_postdata();?>
         <?endforeach;?>
     </div>
+    <?endif;?>
 
     <div class="block">
       <?=get_template_part('/php-content/catalog/calculation');?>
     </div>
 
+    <? if (get_field('about', $idPageCatalog)['description']):?>
     <div class="block">
       <p class="section-title">О продукте</p>
           <?
@@ -124,6 +127,7 @@ if(gettype($whyArr) != 'boolean'){
         <?=get_template_part('/php-content/main/certificates', null, $arrCategory);?>
       </div>
     </div>
+    <?endif;?>
 
     <div class="block">
       <?=get_template_part('/php-content/catalog/form');?>
