@@ -13,7 +13,7 @@ foreach ($arr as $key => $value) {
   }
 }
 
-$typesArr = getHeadings(array(17))[0];
+// $typesArr = getHeadings(array(17))[0];
 ?>
 
 <!doctype html>
@@ -76,82 +76,44 @@ $typesArr = getHeadings(array(17))[0];
 
       <div class="header__sub-menu">
         <div class="header-sub-menu__content sub-menu" style="height: 362px;">
+            <?
+              $menuArray = get_posts([
+                'post_type' => 'menu-catalog',
+                'order' => 'ASC',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+              ]);
+            ?>
 
           <ul class="header-sub-menu__list">
-            <? foreach ($typesArr as $key => $value): ?>
+            <? foreach ($menuArray as $key => $value): ?>
+              <?
+                $idMenu = $value->ID;
+                ?>
+
               <li class="<? if ($key == 0) {
                             echo 'active';
-                          } ?>"> <a href="/catalog/?type=<?= $value->term_id; ?>"><?= $value->name; ?></a></li>
+                          } ?>"> <a href="<?=get_field('link', $idMenu);?>"><?=$value->post_title;?></a></li>
             <? endforeach; ?>
           </ul>
-
+          
           <div class="header-sub-menu__detail">
-            <? foreach ($typesArr as $key => $value): ?>
-              <?
-              $idType = $value->term_id;
-              ?>
-
-              <div class="header-sub-menu-detail__item detail-menu <? if ($key == 0) {
-                                                                      echo 'active';
-                                                                    } ?>">
-                <? foreach ($allPar as $key => $value): ?>
-                  <?
-                  $id = $value[0];
-                  $name = $value[1];
-                  ?>
-                  <? if ($id == '16'): ?>
-                    <div class="header-sub-menu__item">
-                      <p class="header-sub-menu__title"><?= $name; ?></p>
-
-                      <ul class="header-sub-menu-item__list">
-
-                        <? foreach (getHeadings(array($id))[0] as $key => $value): ?>
-                          <?
-                          $id = $value->term_id;
-                          $name = $value->name;
-
-                          $myposts = new WP_Query([
-                            'category_name' => 'сatalog',
-                            'category__and' => array($id, $idType),
-                            'post_status' => 'publish',
-                            'order' => 'ASC',
-                            'posts_per_page' => -1,
-                          ]);
-                          $myposts = $myposts->posts;
-
-                          $idPost = $myposts[0]->ID;
-                          ?>
-
-                          <? if ($idPost): ?>
-                            <li><a href="<?= get_permalink($idPost); ?>"><?= $name; ?></a></li>
-                          <? endif; ?>
-                        <? endforeach; ?>
-                      </ul>
-                    </div>
-                  <? else: ?>
-                    <div class="header-sub-menu__item">
-                      <p class="header-sub-menu__title"><?= $name; ?></p>
-
-                      <ul class="header-sub-menu-item__list">
-
-                        <? foreach (getHeadings(array($id))[0] as $key => $value): ?>
-                          <?
-                          $id = $value->term_id;
-                          $name = $value->name;
-                          ?>
-
-                          <li><a href="/catalog/?type=<?= $idType; ?>&add=<?= $id; ?>"><?= $name; ?></a></li>
-                        <? endforeach; ?>
-                      </ul>
-                    </div>
-                  <? endif; ?>
-
-                <? endforeach; ?>
-              </div>
-
-            <? endforeach; ?>
+          <? foreach ($menuArray as $key => $value): ?>
+            <div class="header-sub-menu-detail__item detail-menu <? if ($key == 0) { echo 'active'; } ?>">
+              <? foreach (get_field('menu', $value->ID) as $key => $value): ?>
+                <div class="header-sub-menu__item">
+                  <p class="header-sub-menu__title"><?=$value['imya'];?></p>
+                  <ul class="header-sub-menu-item__list">
+                    <? foreach ($value['podkatalog'] as $key => $value): ?>
+                    <li><a href="<?=$value['link'];?>"><?=$value['imya'];?></a></li>
+                    <? endforeach; ?>
+                  </ul>
+                </div>
+              <? endforeach; ?>
+            </div>
+          <? endforeach; ?>
           </div>
-        </div>
+          
       </div>
 
       <div class="header__phone-menu">
