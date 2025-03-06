@@ -13,7 +13,7 @@ foreach ($arr as $key => $value) {
   }
 }
 
-// $typesArr = getHeadings(array(17))[0];
+$typesArr = getHeadings(array(17))[0];
 ?>
 
 <!doctype html>
@@ -113,7 +113,7 @@ foreach ($arr as $key => $value) {
             </div>
           <? endforeach; ?>
           </div>
-          
+        </div>
       </div>
 
       <div class="header__phone-menu">
@@ -123,9 +123,12 @@ foreach ($arr as $key => $value) {
               <a href="#">Продукция</a>
               <div class="header-phone-menu__sub-menu">
                 <ul class="header-phone-menu-sub-menu__content">
-                  <? foreach ($typesArr as $key => $value): ?>
+                  <? foreach ($menuArray as $key => $value): ?>
+                    <?
+                      $idMenu = $value->ID;
+                    ?>
                     <li>
-                      <a href="/catalog/?type=<?= $value->term_id;?>" class=""><?= $value->name; ?></a>
+                      <a href="<?=get_field('link', $idMenu);?>" class=""><?=$value->post_title;?></a>
                     </li>
                   <? endforeach; ?>
                 </ul>
