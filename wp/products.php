@@ -41,10 +41,10 @@ if(gettype($whyArr) != 'boolean'){
 }
 ?>
     <div class="block">
-      <p class="section-title"><?=the_title();?></p>
+    <p class="section-title"><?=get_the_title($idPageCatalog);?></p>
 
       <p class="text">
-        <?=get_the_content();?>
+        <?=get_the_content( null, false,$idPageCatalog);?>
       </p>
 
       <? if (get_field('card', $idPageCatalog)):?>
