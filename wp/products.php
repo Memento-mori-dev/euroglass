@@ -10,8 +10,9 @@ get_header();
 
 // arr страницы все остальные под типы
 
-$urlDivided = parse_url(((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-parse_str($urlDivided['query'], $query);
+$id = get_the_ID();
+
+$query = explode(",", get_field('sorting_id', $id));
 
 // получение всех подкатегорий
 $arrCategory = array();
@@ -30,18 +31,7 @@ $myposts = new WP_Query([
 ]);
 $myposts = $myposts->posts;
 
-// $pageCatalog = new WP_Query([
-//   'category_name' => 'pages_catalog',
-//   'category__and' => $arrCategory[0], 
-//   'post_status' => 'publish',
-//   'order' => 'ASC',
-//   'posts_per_page' => -1,
-// ]);
-
-// $pagePostCatalog = $pageCatalog->post;
-// $idPageCatalog = $pagePostCatalog->ID;
-
-$idPageCatalog = get_the_ID();
+$idPageCatalog = get_field('page_id', $id); // id шаблона
 
 $whyArr = get_field('why_all', $idPageCatalog);
 
