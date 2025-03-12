@@ -17,23 +17,25 @@ foreach ($allTags as $key => $value) {
     array_push($allTagsName, $value->description);
 }
 
-$whyArr = get_field('why_all', 220);
-$whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
+if(get_field('why_all', $idPost)){
+  $whyArr = get_field('why_all', $idPost);
+  $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
+}
 
+$idPost = get_the_ID();
 ?>
-
     <div class="block">
         <p class="section-title"><?=the_title();?></p>
 
-        <?if(get_field('start_text', 220)):?>
+        <?if(get_field('start_text', $idPost)):?>
           <p class="text">
-            <?=get_field('start_text', 220);?>    
+            <?=get_field('start_text', $idPost);?>    
           </p>
         <?endif;?>
 
-        <?if(count(get_field('card', 220)) > 0):?>
+        <?if(get_field('card', $idPost)):?>
           <div class="glass-card">
-            <? foreach (get_field('card', 220) as $key => $value):?>
+            <? foreach (get_field('card', $idPost) as $key => $value):?>
               <div class="glass-card__item">
                   <div class="glass-card__img">
                       <?=$value['svg'];?>
@@ -102,7 +104,7 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
         </div>
     </div>
     
-    <?if(count(get_field('why', 220)) > 0):?>
+    <?if(get_field('why', $idPost)):?>
       <div class="block">
           <p class="section-title">Почему наше стекло лучше?</p>
 
@@ -123,7 +125,7 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
                   </tr>
               </thead>
               <tbody>
-                <? foreach (get_field('why', 220) as $key => $value):?>
+                <? foreach (get_field('why', $idPost) as $key => $value):?>
                   <tr>
                       <td><?=$value['title'];?></td>
                       <td><?=$value['euroglass'];?></td>
@@ -139,19 +141,19 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
       </div>
     <?endif;?>
 
-    <?if(get_field('about_text', 220)):?>
+    <?if(get_field('about_text', $idPost)):?>
       <div class="block">
           <p class="section-title">О продукте</p>
 
           <p class="text text_w-880">
-            <?=get_field('about_text', 220);?>
+            <?=get_field('about_text', $idPost);?>
           </p>
 
           <div class="glass-product">
               <p class="glass-product__title">Стекло используется в нашей продукции</p>
 
               <div class="glass-product__content">
-                <? foreach (get_field('our_products', 220) as $key => $value):?>
+                <? foreach (get_field('our_products', $idPost) as $key => $value):?>
                     <div class="glass-product__item" style="background-image: url(<?=$value['images']['url'];?>);">
                       <?=$value['title'];?>
                     </div>
@@ -169,7 +171,7 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
         <?=get_template_part('/php-content/catalog/form-card');?>
     </div>
 
-    <?if(count($whyArr) > 0):?>
+    <?if($whyArr):?>
       <div class="block">
         <p class="section-title">Часто задаваемые вопросы</p>
 
@@ -193,12 +195,12 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
       </div>
     <?endif;?>
 
-    <?if(count(get_field('tests', 220)) > 0):?>
+    <?if(get_field('tests', $idPost)):?>
       <div class="block">
         <p class="section-title">Испытания стекла</p>
 
         <div class="tests">
-          <? foreach (get_field('tests', 220) as $key => $value):?>
+          <? foreach (get_field('tests', $idPost) as $key => $value):?>
             <div class="tests__item">
               <div class="tests-item__video">
                 <video src="<?=$value['video']['url'];?>" type="video/mp4"></video>
