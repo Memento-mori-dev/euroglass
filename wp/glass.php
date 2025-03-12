@@ -23,27 +23,31 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
 ?>
 
     <div class="block">
-        <p class="section-title">Противопожарное стекло FireClass</p>
+        <p class="section-title"><?=the_title();?></p>
 
-        <p class="text">
-          <?=get_field('start_text', 220);?>    
-        </p>
+        <?if(get_field('start_text', 220)):?>
+          <p class="text">
+            <?=get_field('start_text', 220);?>    
+          </p>
+        <?endif;?>
 
-        <div class="glass-card">
-          <? foreach (get_field('card', 220) as $key => $value):?>
-            <div class="glass-card__item">
-                <div class="glass-card__img">
-                    <?=$value['svg'];?>
-                </div>
+        <?if(count(get_field('card', 220)) > 0):?>
+          <div class="glass-card">
+            <? foreach (get_field('card', 220) as $key => $value):?>
+              <div class="glass-card__item">
+                  <div class="glass-card__img">
+                      <?=$value['svg'];?>
+                  </div>
 
-                <div class="glass-card__content">
-                    <p class="glass-card__title"><?=$value['title'];?></p>
+                  <div class="glass-card__content">
+                      <p class="glass-card__title"><?=$value['title'];?></p>
 
-                    <p class="glass-card__text"><?=$value['text'];?></p>
-                </div>
-            </div>
-          <? endforeach;?>
-        </div>
+                      <p class="glass-card__text"><?=$value['text'];?></p>
+                  </div>
+              </div>
+            <? endforeach;?>
+          </div>
+        <?endif;?>
     </div>
 
     <div class="block">
@@ -97,61 +101,65 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
             <? endforeach;?>
         </div>
     </div>
+    
+    <?if(count(get_field('why', 220)) > 0):?>
+      <div class="block">
+          <p class="section-title">Почему наше стекло лучше?</p>
 
-    <div class="block">
-        <p class="section-title">Почему наше стекло лучше?</p>
+          <table class="glass-why">
+              <thead>
+                  <tr>
+                      <td>
 
-        <table class="glass-why">
-            <thead>
-                <tr>
-                    <td>
+                      </td>
 
-                    </td>
+                      <td>
+                          EUROGLASS
+                      </td>
 
-                    <td>
-                        EUROGLASS
-                    </td>
+                      <td>
+                          Другие бренды
+                      </td>
+                  </tr>
+              </thead>
+              <tbody>
+                <? foreach (get_field('why', 220) as $key => $value):?>
+                  <tr>
+                      <td><?=$value['title'];?></td>
+                      <td><?=$value['euroglass'];?></td>
+                      <td><?=$value['other'];?></td>
+                  </tr>
+                <? endforeach;?>
+              </tbody>
+          </table>
 
-                    <td>
-                        Другие бренды
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-              <? foreach (get_field('why', 220) as $key => $value):?>
-                <tr>
-                    <td><?=$value['title'];?></td>
-                    <td><?=$value['euroglass'];?></td>
-                    <td><?=$value['other'];?></td>
-                </tr>
-              <? endforeach;?>
-            </tbody>
-        </table>
+          <div class="glass-why__phone" style="background-image: url(<?=get_template_directory_uri();?>/assets/img/page/glass/glass-why.png);">
+              <a href="#" class="glass-why-phone__link"></a>
+          </div>
+      </div>
+    <?endif;?>
 
-        <div class="glass-why__phone" style="background-image: url(<?=get_template_directory_uri();?>/assets/img/page/glass/glass-why.png);">
-            <a href="#" class="glass-why-phone__link"></a>
-        </div>
-    </div>
+    <?if(get_field('about_text', 220)):?>
+      <div class="block">
+          <p class="section-title">О продукте</p>
 
-    <div class="block">
-        <p class="section-title">О продукте</p>
+          <p class="text text_w-880">
+            <?=get_field('about_text', 220);?>
+          </p>
 
-        <p class="text text_w-880">
-          <?=get_field('about_text', 220);?>
-        </p>
+          <div class="glass-product">
+              <p class="glass-product__title">Стекло используется в нашей продукции</p>
 
-        <div class="glass-product">
-            <p class="glass-product__title">Стекло используется в нашей продукции</p>
-
-            <div class="glass-product__content">
-              <? foreach (get_field('our_products', 220) as $key => $value):?>
-                  <div class="glass-product__item" style="background-image: url(<?=$value['images']['url'];?>);">
-                    <?=$value['title'];?>
-                  </div>
-              <? endforeach;?>
-            </div>
-        </div>
-    </div>
+              <div class="glass-product__content">
+                <? foreach (get_field('our_products', 220) as $key => $value):?>
+                    <div class="glass-product__item" style="background-image: url(<?=$value['images']['url'];?>);">
+                      <?=$value['title'];?>
+                    </div>
+                <? endforeach;?>
+              </div>
+          </div>
+      </div>
+    <?endif;?>
 
     <div class="block">
         <?=get_template_part('/php-content/main/certificates');?>
@@ -161,45 +169,49 @@ $whyArr = array_chunk($whyArr, ceil(count($whyArr) /2));
         <?=get_template_part('/php-content/catalog/form-card');?>
     </div>
 
-    <div class="block">
-      <p class="section-title">Часто задаваемые вопросы</p>
+    <?if(count($whyArr) > 0):?>
+      <div class="block">
+        <p class="section-title">Часто задаваемые вопросы</p>
 
-      <div class="questions">
-        <? foreach ($whyArr as $key => $why):?>
-          <div class="questions__element">
-            <? foreach ($why as $key => $value):?>
-              <div class="questions__item">
-                <p class="questions__title"><?=$value['title'];?></p>
+        <div class="questions">
+          <? foreach ($whyArr as $key => $why):?>
+            <div class="questions__element">
+              <? foreach ($why as $key => $value):?>
+                <div class="questions__item">
+                  <p class="questions__title"><?=$value['title'];?></p>
 
-                <div class="questions__content">
-                  <p class="questions__text">
-                  <?=$value['text'];?>
-                  </p>
+                  <div class="questions__content">
+                    <p class="questions__text">
+                    <?=$value['text'];?>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            <? endforeach;?>
-          </div>
-        <? endforeach;?>
-      </div>
-    </div>
-
-    <div class="block">
-      <p class="section-title">Испытания стекла</p>
-
-      <div class="tests">
-        <? foreach (get_field('tests', 220) as $key => $value):?>
-          <div class="tests__item">
-            <div class="tests-item__video">
-              <video src="<?=$value['video']['url'];?>" type="video/mp4"></video>
+              <? endforeach;?>
             </div>
-
-            <p class="tests__name">
-              <?=$value['title'];?>
-            </p>
-          </div>
-        <? endforeach;?>
+          <? endforeach;?>
+        </div>
       </div>
-    </div>
+    <?endif;?>
+
+    <?if(count(get_field('tests', 220)) > 0):?>
+      <div class="block">
+        <p class="section-title">Испытания стекла</p>
+
+        <div class="tests">
+          <? foreach (get_field('tests', 220) as $key => $value):?>
+            <div class="tests__item">
+              <div class="tests-item__video">
+                <video src="<?=$value['video']['url'];?>" type="video/mp4"></video>
+              </div>
+
+              <p class="tests__name">
+                <?=$value['title'];?>
+              </p>
+            </div>
+          <? endforeach;?>
+        </div>
+      </div>
+    <?endif;?>
 
     <?=get_template_part('/php-content/main/years');?>
 
