@@ -3740,12 +3740,7 @@ button {
     display: flex;
     flex-wrap: wrap
 }
-.calculation__item_one span:first-child{
-    display: none;
-}
-.calculation__item_one span:nth-child(2){
-    margin-left: 0;
-}
+
 
 .calculation__item .input {
     background: none

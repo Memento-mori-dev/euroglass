@@ -634,11 +634,6 @@ if (document.querySelector('form')) {
   let forms = document.querySelectorAll('form');
 
   forms.forEach(form => {
-    if (form.classList.contains('calculation-7')) {
-      document.querySelector('.input-calc').value = document.querySelector('.calculation').querySelector('.section-title').textContent;
-    }
-
-
     form.addEventListener('submit', function(event){
       setTimeout(() => {
         if(form.dataset.status == 'sent'){

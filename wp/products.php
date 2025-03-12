@@ -97,7 +97,7 @@ if(gettype($whyArr) != 'boolean'){
     <?endif;?>
 
     <div class="block">
-      <?=get_template_part('/php-content/catalog/calculation');?>
+      <?=do_shortcode('[contact-form-7 id="95c1e4f" title="Калькулятор окон" html_class="calculation-7"]');?>
     </div>
 
     <? if (get_field('about', $idPageCatalog)['description']):?>
