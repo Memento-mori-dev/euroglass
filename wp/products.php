@@ -95,10 +95,12 @@ if(gettype($whyArr) != 'boolean'){
         <?endforeach;?>
     </div>
     <?endif;?>
-
-    <div class="block">
-      <?=do_shortcode('[contact-form-7 id="95c1e4f" title="Калькулятор окон" html_class="calculation-7"]');?>
-    </div>
+    
+    <? if(get_field('short_code', $idPageCatalog)):?>
+      <div class="block">
+        <?=do_shortcode(get_field('short_code', $idPageCatalog));?>
+      </div>
+    <?endif;?>
 
     <? if (get_field('about', $idPageCatalog)['description']):?>
     <div class="block">
